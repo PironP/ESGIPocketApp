@@ -29,14 +29,18 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginButtonPressed(_ sender: Any) {
         
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        
         // Call async func to log in
-        Login.login(username: emailTextField.text!, password: passwordTextField.text!, callback: { response in
+        Login.login(email: email, password: password, callback: { response in
             
             // execute the code in the main thread
             DispatchQueue.main.async(execute: {
                 if response != "" {
                     // response is the JWT
                     print(response)
+                    self.saveLoginDetailsToLocalStorage(email: email, password: password)
                     let homeViewController = HomeViewController()
                     self.present(homeViewController, animated: true, completion: nil)
                 }
@@ -52,4 +56,25 @@ class LoginViewController: UIViewController {
         self.present(signUpViewController, animated: true, completion: nil)
     }
     
+    
+    // If login successed, store login information in local storage
+    func saveLoginDetailsToLocalStorage(email: String, password: String) {
+        
+        var dict = Dictionary<String, Any>()
+        dict = ["email" :email, "password" :password]
+        
+        let basePath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let filePath = basePath.appendingPathComponent("loginDetails")
+        print(filePath)
+        guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .init(rawValue: 0)) else {
+            return
+        }
+        
+        do {
+            try data.write(to: filePath)
+        } catch {
+        }
+        
+
+    }
 }
