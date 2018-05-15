@@ -22,6 +22,8 @@
 		E831FF2920A1E21000EC1927 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2720A1E21000EC1927 /* SignUpViewController.xib */; };
 		E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */; };
 		E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */; };
+		E8F3130120AB60910016D511 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130020AB60910016D511 /* CurrentUser.swift */; };
+		E8F3130320AB69870016D511 /* Discussion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130220AB69870016D511 /* Discussion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		E831FF2720A1E21000EC1927 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
+		E8F3130020AB60910016D511 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		E8F3130220AB69870016D511 /* Discussion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discussion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			children = (
 				E804693120A32EE900F4F643 /* Login.swift */,
 				E804693720A984E200F4F643 /* Classe.swift */,
+				E8F3130020AB60910016D511 /* CurrentUser.swift */,
+				E8F3130220AB69870016D511 /* Discussion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,12 +200,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E831FF2420A1DA5500EC1927 /* LoginViewController.swift in Sources */,
+				E8F3130320AB69870016D511 /* Discussion.swift in Sources */,
 				E804693220A32EE900F4F643 /* Login.swift in Sources */,
 				E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */,
 				E804693820A984E200F4F643 /* Classe.swift in Sources */,
 				E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */,
 				E804693520A9827900F4F643 /* SelectClassViewController.swift in Sources */,
 				E8013C9E209334EC002FF92C /* AppDelegate.swift in Sources */,
+				E8F3130120AB60910016D511 /* CurrentUser.swift in Sources */,
 				E804692E20A32C3100F4F643 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -40,6 +40,11 @@ class LoginViewController: UIViewController {
                     // response is the JWT
                     
                     self.saveLoginDetailsToLocalStorage(email: email, password: password)
+                    
+                    let currentUser = CurrentUser.currentUser
+                    currentUser.jwt = response
+                    currentUser.email = loginDetails["email"]!
+                    
                     let homeViewController = HomeViewController()
                     self.dismiss(animated: true, completion: nil)
                     self.present(homeViewController, animated: true, completion: nil)

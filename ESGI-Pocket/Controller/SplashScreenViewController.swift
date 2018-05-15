@@ -50,7 +50,9 @@ class SplashScreenViewController: UIViewController {
         Login.login(email: loginDetails["email"]!, password: loginDetails["password"]!, callback: { response in
             if response != "" {
                 
-                let jwt  = response
+                let currentUser = CurrentUser.currentUser
+                currentUser.jwt = response
+                currentUser.email = loginDetails["email"]!
                 let homeView = HomeViewController()
                 self.present(homeView, animated: true, completion: nil)
             }
