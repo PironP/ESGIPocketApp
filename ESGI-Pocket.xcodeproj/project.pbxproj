@@ -12,11 +12,16 @@
 		E8013CA8209334ED002FF92C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8013CA6209334ED002FF92C /* LaunchScreen.storyboard */; };
 		E804692E20A32C3100F4F643 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804692C20A32C3100F4F643 /* HomeViewController.swift */; };
 		E804692F20A32C3100F4F643 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E804692D20A32C3100F4F643 /* HomeViewController.xib */; };
-		E804693220A32EE900F4F643 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804693120A32EE900F4F643 /* login.swift */; };
+		E804693220A32EE900F4F643 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804693120A32EE900F4F643 /* Login.swift */; };
+		E804693520A9827900F4F643 /* SelectClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804693320A9827900F4F643 /* SelectClassViewController.swift */; };
+		E804693620A9827900F4F643 /* SelectClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E804693420A9827900F4F643 /* SelectClassViewController.xib */; };
+		E804693820A984E200F4F643 /* Classe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804693720A984E200F4F643 /* Classe.swift */; };
 		E831FF2420A1DA5500EC1927 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831FF2220A1DA5500EC1927 /* LoginViewController.swift */; };
 		E831FF2520A1DA5500EC1927 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2320A1DA5500EC1927 /* LoginViewController.xib */; };
 		E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831FF2620A1E21000EC1927 /* SignUpViewController.swift */; };
 		E831FF2920A1E21000EC1927 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2720A1E21000EC1927 /* SignUpViewController.xib */; };
+		E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */; };
+		E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +32,16 @@
 		E8013CA9209334ED002FF92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E804692C20A32C3100F4F643 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E804692D20A32C3100F4F643 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		E804693120A32EE900F4F643 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		E804693120A32EE900F4F643 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		E804693320A9827900F4F643 /* SelectClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClassViewController.swift; sourceTree = "<group>"; };
+		E804693420A9827900F4F643 /* SelectClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectClassViewController.xib; sourceTree = "<group>"; };
+		E804693720A984E200F4F643 /* Classe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classe.swift; sourceTree = "<group>"; };
 		E831FF2220A1DA5500EC1927 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E831FF2320A1DA5500EC1927 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E831FF2620A1E21000EC1927 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E831FF2720A1E21000EC1927 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,7 @@
 		E8013C9C209334EC002FF92C /* ESGI-Pocket */ = {
 			isa = PBXGroup;
 			children = (
+				E813196C20A9EBD0006C83CC /* Controller */,
 				E804693020A32EBD00F4F643 /* Model */,
 				E831FF1920A1D2F400EC1927 /* View */,
 				E8013C9D209334EC002FF92C /* AppDelegate.swift */,
@@ -76,21 +87,33 @@
 		E804693020A32EBD00F4F643 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E804693120A32EE900F4F643 /* login.swift */,
+				E804693120A32EE900F4F643 /* Login.swift */,
+				E804693720A984E200F4F643 /* Classe.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E813196C20A9EBD0006C83CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E831FF2220A1DA5500EC1927 /* LoginViewController.swift */,
+				E831FF2620A1E21000EC1927 /* SignUpViewController.swift */,
+				E804692C20A32C3100F4F643 /* HomeViewController.swift */,
+				E804693320A9827900F4F643 /* SelectClassViewController.swift */,
+				E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E831FF1920A1D2F400EC1927 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */,
 				E8013CA6209334ED002FF92C /* LaunchScreen.storyboard */,
-				E831FF2220A1DA5500EC1927 /* LoginViewController.swift */,
 				E831FF2320A1DA5500EC1927 /* LoginViewController.xib */,
-				E831FF2620A1E21000EC1927 /* SignUpViewController.swift */,
 				E831FF2720A1E21000EC1927 /* SignUpViewController.xib */,
-				E804692C20A32C3100F4F643 /* HomeViewController.swift */,
 				E804692D20A32C3100F4F643 /* HomeViewController.xib */,
+				E804693420A9827900F4F643 /* SelectClassViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +181,8 @@
 				E804692F20A32C3100F4F643 /* HomeViewController.xib in Resources */,
 				E8013CA8209334ED002FF92C /* LaunchScreen.storyboard in Resources */,
 				E8013CA5209334ED002FF92C /* Assets.xcassets in Resources */,
+				E804693620A9827900F4F643 /* SelectClassViewController.xib in Resources */,
+				E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,8 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E831FF2420A1DA5500EC1927 /* LoginViewController.swift in Sources */,
-				E804693220A32EE900F4F643 /* login.swift in Sources */,
+				E804693220A32EE900F4F643 /* Login.swift in Sources */,
+				E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */,
+				E804693820A984E200F4F643 /* Classe.swift in Sources */,
 				E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */,
+				E804693520A9827900F4F643 /* SelectClassViewController.swift in Sources */,
 				E8013C9E209334EC002FF92C /* AppDelegate.swift in Sources */,
 				E804692E20A32C3100F4F643 /* HomeViewController.swift in Sources */,
 			);

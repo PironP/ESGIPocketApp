@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
 
@@ -39,10 +38,12 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.async(execute: {
                 if response != "" {
                     // response is the JWT
-                    print(response)
+                    
                     self.saveLoginDetailsToLocalStorage(email: email, password: password)
                     let homeViewController = HomeViewController()
+                    self.dismiss(animated: true, completion: nil)
                     self.present(homeViewController, animated: true, completion: nil)
+                    
                 }
                 else {
                     self.loginErrorLabel.isHidden = false
@@ -64,8 +65,8 @@ class LoginViewController: UIViewController {
         dict = ["email" :email, "password" :password]
         
         let basePath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let filePath = basePath.appendingPathComponent("loginDetails")
-        print(filePath)
+        let filePath = basePath.appendingPathComponent("loginDetails.json")
+        
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .init(rawValue: 0)) else {
             return
         }

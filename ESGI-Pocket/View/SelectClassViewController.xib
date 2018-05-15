@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectClassViewController" customModule="ESGI_Pocket" customModuleProvider="target">
+            <connections>
+                <outlet property="classPickerView" destination="ACg-4D-205" id="Ezg-hK-c9o"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On y est presque !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGW-9e-EXt">
+                    <rect key="frame" x="30" y="35" width="258.5" height="36"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allez courage. Dernière ligne droite." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Kd-58-TgG">
+                    <rect key="frame" x="30" y="86" width="239" height="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dans quelle année, filière et groupe es-tu ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSv-uS-fXg">
+                    <rect key="frame" x="30" y="103" width="286" height="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attention, ne te trompe pas ! Tu ne pourras plus changer par la suite." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XU4-3C-axr">
+                    <rect key="frame" x="30" y="140" width="300" height="33.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="wJd-bZ-ZcA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Année *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NG-zk-cws">
+                    <rect key="frame" x="30" y="198.5" width="67" height="21.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACg-4D-205">
+                    <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                </pickerView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4NG-zk-cws" firstAttribute="top" secondItem="XU4-3C-axr" secondAttribute="bottom" constant="25" id="1Nr-2C-V7k"/>
+                <constraint firstItem="hGW-9e-EXt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="780-IE-N4O"/>
+                <constraint firstItem="qSv-uS-fXg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="G8f-TL-m2h"/>
+                <constraint firstItem="qSv-uS-fXg" firstAttribute="top" secondItem="5Kd-58-TgG" secondAttribute="bottom" id="JmE-Sh-4w3"/>
+                <constraint firstItem="hGW-9e-EXt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="K6c-14-LLp"/>
+                <constraint firstItem="4NG-zk-cws" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="O2W-pc-4uU"/>
+                <constraint firstItem="XU4-3C-axr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="QSq-Hk-vIY"/>
+                <constraint firstItem="XU4-3C-axr" firstAttribute="top" secondItem="qSv-uS-fXg" secondAttribute="bottom" constant="20" id="Qed-2r-TLu"/>
+                <constraint firstItem="ACg-4D-205" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ua3-oT-aBO"/>
+                <constraint firstItem="ACg-4D-205" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Vpe-ed-cmT"/>
+                <constraint firstItem="ACg-4D-205" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="cVK-7V-gnO"/>
+                <constraint firstItem="5Kd-58-TgG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="kNH-8L-PGp"/>
+                <constraint firstItem="5Kd-58-TgG" firstAttribute="top" secondItem="hGW-9e-EXt" secondAttribute="bottom" constant="15" id="wZa-hs-kkg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
