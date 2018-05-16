@@ -35,7 +35,7 @@ class SplashScreenViewController: UIViewController {
         // read local storage
         let basePath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let filePath = basePath.appendingPathComponent("loginDetails.json")
-        
+        print(basePath)
         guard let data = try? Data(contentsOf: filePath),
             let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
             let loginDetails = json as? [String:String] else {
@@ -49,12 +49,13 @@ class SplashScreenViewController: UIViewController {
         // Try to login
         Login.login(email: loginDetails["email"]!, password: loginDetails["password"]!, callback: { response in
             if response != "" {
-                
-                let currentUser = CurrentUser.currentUser
-                currentUser.jwt = response
-                currentUser.email = loginDetails["email"]!
-                let homeView = HomeViewController()
-                self.present(homeView, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    let currentUser = CurrentUser.currentUser
+                    currentUser.jwt = response
+                    currentUser.email = loginDetails["email"]!
+                    let homeView = HomeViewController()
+                    self.present(homeView, animated: true, completion: nil)
+                }
             }
             else {
                 

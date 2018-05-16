@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
                     
                     let currentUser = CurrentUser.currentUser
                     currentUser.jwt = response
-                    currentUser.email = loginDetails["email"]!
+                    currentUser.email = email
                     
                     let homeViewController = HomeViewController()
                     self.dismiss(animated: true, completion: nil)
