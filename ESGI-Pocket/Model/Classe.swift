@@ -11,7 +11,7 @@ import Foundation
 class Classe {
     
     
-    static func getSection(callback: @escaping ([[String:Any]]) -> ()) {
+    func getSection(callback: @escaping ([[String:Any]]) -> ()) {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/sections")!
         

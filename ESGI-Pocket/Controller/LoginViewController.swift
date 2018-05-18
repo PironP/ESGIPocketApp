@@ -32,7 +32,8 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text!
         
         // Call async func to log in
-        Login.login(email: email, password: password, callback: { response in
+        let loginModel = Login()
+        loginModel.login(email: email, password: password, callback: { response in
             
             // execute the code in the main thread
             DispatchQueue.main.async(execute: {

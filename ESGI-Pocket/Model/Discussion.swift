@@ -11,7 +11,7 @@ import Foundation
 class Discussion {
     
     
-    static func getDiscussion(callback: @escaping ([[String:Any]]) -> ()) {
+    func getDiscussion(callback: @escaping ([[String:Any]]) -> ()) {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/discussions")
         

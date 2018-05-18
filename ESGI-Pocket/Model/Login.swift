@@ -11,7 +11,7 @@ import Foundation
 class Login {
     
     // Async func for log the user, return in a callback the jwt or empty string if error
-    static func login(email: String, password: String, callback: @escaping (String) -> ()) {
+    func login(email: String, password: String, callback: @escaping (String) -> ()) {
         
         let loginUrl = URL(string: "https://esgipocket.herokuapp.com/auth/login")!
         
@@ -51,7 +51,7 @@ class Login {
     }
     
     
-    static func signin(email: String, password: String, firstname: String, lastName: String, callback: @escaping (Bool) -> ()) {
+    func signin(email: String, password: String, firstname: String, lastName: String, callback: @escaping (Bool) -> ()) {
         
         let loginUrl = URL(string: "https://esgipocket.herokuapp.com/users")!
         

@@ -58,7 +58,8 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        Login.signin(email: email, password: password, firstname: firstName, lastName: lastName, callback: { response in
+        let loginModel = Login()
+        loginModel.signin(email: email, password: password, firstname: firstName, lastName: lastName, callback: { response in
             if response {
                 let selectClassViewController = SelectClassViewController()
                 self.present(selectClassViewController, animated: true, completion: nil)
