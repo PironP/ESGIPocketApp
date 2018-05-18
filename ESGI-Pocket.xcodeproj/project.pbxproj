@@ -20,6 +20,8 @@
 		E831FF2520A1DA5500EC1927 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2320A1DA5500EC1927 /* LoginViewController.xib */; };
 		E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831FF2620A1E21000EC1927 /* SignUpViewController.swift */; };
 		E831FF2920A1E21000EC1927 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2720A1E21000EC1927 /* SignUpViewController.xib */; };
+		E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8594F5520AD5D2600C3510B /* MessageViewCell.swift */; };
+		E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8594F5620AD5D2600C3510B /* MessageViewCell.xib */; };
 		E88F792A20ACCB2800368E48 /* LessonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F792820ACCB2800368E48 /* LessonsListViewController.swift */; };
 		E88F792B20ACCB2800368E48 /* LessonsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88F792920ACCB2800368E48 /* LessonsListViewController.xib */; };
 		E88F792E20ACCBA100368E48 /* DiscussionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F792C20ACCBA100368E48 /* DiscussionsListViewController.swift */; };
@@ -52,6 +54,8 @@
 		E831FF2320A1DA5500EC1927 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E831FF2620A1E21000EC1927 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E831FF2720A1E21000EC1927 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		E8594F5520AD5D2600C3510B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
+		E8594F5620AD5D2600C3510B /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
 		E88F792820ACCB2800368E48 /* LessonsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListViewController.swift; sourceTree = "<group>"; };
 		E88F792920ACCB2800368E48 /* LessonsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonsListViewController.xib; sourceTree = "<group>"; };
 		E88F792C20ACCBA100368E48 /* DiscussionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionsListViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				E88F793020ACCBEA00368E48 /* MessagesListViewController.swift */,
 				E88F793420ACCC3100368E48 /* QuizListViewController.swift */,
 				E88F793820ACCC6600368E48 /* PlanningViewController.swift */,
+				E8594F5520AD5D2600C3510B /* MessageViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				E831FF2720A1E21000EC1927 /* SignUpViewController.xib */,
 				E804692D20A32C3100F4F643 /* HomeViewController.xib */,
 				E804693420A9827900F4F643 /* SelectClassViewController.xib */,
+				E8594F5620AD5D2600C3510B /* MessageViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 				E831FF2520A1DA5500EC1927 /* LoginViewController.xib in Resources */,
 				E88F793320ACCBEA00368E48 /* MessagesListViewController.xib in Resources */,
 				E88F792F20ACCBA100368E48 /* DiscussionsListViewController.xib in Resources */,
+				E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */,
 				E804692F20A32C3100F4F643 /* HomeViewController.xib in Resources */,
 				E88F793B20ACCC6600368E48 /* PlanningViewController.xib in Resources */,
 				E8013CA8209334ED002FF92C /* LaunchScreen.storyboard in Resources */,
@@ -234,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */,
 				E831FF2420A1DA5500EC1927 /* LoginViewController.swift in Sources */,
 				E8F3130320AB69870016D511 /* Discussion.swift in Sources */,
 				E804693220A32EE900F4F643 /* Login.swift in Sources */,
