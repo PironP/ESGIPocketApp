@@ -19,7 +19,9 @@ class SelectClassViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        classPickerView.dataSource = classes as! UIPickerViewDataSource;
+        // If currentuser token is not set try login
+        
+        //classPickerView.dataSource = classes as! UIPickerViewDataSource;
         
         // Do any additional setup after loading the view.
     }

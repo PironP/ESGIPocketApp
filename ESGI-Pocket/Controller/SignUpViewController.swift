@@ -60,17 +60,29 @@ class SignUpViewController: UIViewController {
         
         let loginModel = Login()
         loginModel.signin(email: email, password: password, firstname: firstName, lastName: lastName, callback: { response in
-            if response {
-                let selectClassViewController = SelectClassViewController()
-                self.present(selectClassViewController, animated: true, completion: nil)
-                self.dismiss(animated: true, completion: nil)
-            }
+            
+            DispatchQueue.main.async(execute: {
+                if response != "" {
+                    CurrentUser.currentUser.id = response
+                    let confirmEmailViewController = ConfirmEmailViewController()
+                    confirmEmailViewController.userId = response
+                    
+                    
+                    self.present(confirmEmailViewController, animated: true, completion: nil)
+                }
+            })
         })
     }
     
     
     @IBAction func backToLoginButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func validateEmail(_ sender: Any) {
+        let confirmEmailViewController = ConfirmEmailViewController()
+        
+        self.present(confirmEmailViewController, animated: true, completion: nil)
     }
     
 

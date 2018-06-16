@@ -46,6 +46,8 @@ class LoginViewController: UIViewController {
                     currentUser.jwt = response
                     currentUser.email = email
                     
+                    
+                    // Is present() necessary ? Error with windows hierarchy ?
                     let homeViewController = HomeViewController()
                     self.dismiss(animated: true, completion: nil)
                     self.present(homeViewController, animated: true, completion: nil)

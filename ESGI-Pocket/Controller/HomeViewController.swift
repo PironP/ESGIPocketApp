@@ -23,20 +23,18 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func navigationButtonPressed(_ sender: UIButton) {
+    @IBAction func navigationButtonPressed(_ sender: UIBarButtonItem) {
         switch sender.tag {
         case 0:
-            let lessonsListView = LessonsListViewController()
-            self.present(lessonsListView, animated: true, completion: nil)
-        case 1:
-            let discussionsListView = DiscussionsListViewController()
-            self.present(discussionsListView, animated: true, completion: nil)
-        case 2:
-            let messagesListView = MessagesListViewController()
-            self.present(messagesListView, animated: true, completion: nil)
-        case 3:
             let quizListView = QuizListViewController()
             self.present(quizListView, animated: true, completion: nil)
+            
+        case 1:
+            let lessonsListView = LessonsListViewController()
+            self.present(lessonsListView, animated: true, completion: nil)
+        case 3:
+            let discussionsListView = DiscussionsListViewController()
+            self.present(discussionsListView, animated: true, completion: nil)
         case 4:
             let planningView = PlanningViewController()
             self.present(planningView, animated: true, completion: nil)
@@ -45,10 +43,29 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction func navigationButton(_ sender: Any) {
+    }
+    
+    
     @IBAction func disconnectButtonPressed(_ sender: Any) {
-        // delete local storage
+        
+        
+        let basePath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let filePath = basePath.appendingPathComponent("loginDetails.json")
+        print(basePath)
+        
+        let dict = ["email" :"", "password" :""]
+        guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .init(rawValue: 0)) else {
+            return
+        }
+        do {
+            try data.write(to: filePath)
+        } catch {
+            
+        }
+        
         let loginView = LoginViewController()
         self.dismiss(animated: true, completion: nil)
-        self.present(loginView, animated: true, completion: nil)
+        //self.present(loginView, animated: true, completion: nil)
     }
 }

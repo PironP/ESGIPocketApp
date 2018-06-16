@@ -51,12 +51,12 @@ class Login {
     }
     
     
-    func signin(email: String, password: String, firstname: String, lastName: String, callback: @escaping (Bool) -> ()) {
+    func signin(email: String, password: String, firstname: String, lastName: String, callback: @escaping (String) -> ()) {
         
         let loginUrl = URL(string: "https://esgipocket.herokuapp.com/users")!
         
         var dict = Dictionary<String, Any>()
-        dict = ["email" :email, "password" :password, "lastname": lastName, "forname":firstname, "status":"student"]
+        dict = ["email" :email, "password" :password, "lastname": lastName, "firstname":firstname, "status":"student"]
 
         var  jsonData = NSData()
         
@@ -78,11 +78,63 @@ class Login {
             let status = (response as! HTTPURLResponse).statusCode
 
             if status == 404 {
-                callback(false)
+                
+                callback("")
                 return
             }
 
+            guard let responseData = data,
+                let json = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments),
+                let dict = json as? [String:Any] else {
+                    callback("")
+                    return
+            }
+            
+            if (dict["_id"] == nil) {
+                callback("")
+                return
+            }
+
+            callback(dict["_id"] as! String)
+            
+            
+        }
+        task.resume()
+    }
+    
+    func checkValidationCode(id: String, validationCode: String, callback: @escaping (Bool) -> ()) {
+        
+        let url = URL(string: "https://esgipocket.herokuapp.com/users/activate")!
+        
+        var dict = Dictionary<String, Any>()
+        dict = ["activationCode" : Int(validationCode), "id" : CurrentUser.currentUser.id]
+        
+        var  jsonData = NSData()
+        
+        do {
+            jsonData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted) as NSData
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("\(jsonData.length)", forHTTPHeaderField: "Content-Length")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData as Data
+    
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            
+            let status = (response as! HTTPURLResponse).statusCode
+            
+            if status == 404 || status == 500 || status == 401 {
+                callback(false)
+                return
+            }
+            
             callback(true)
+            
         }
         task.resume()
     }

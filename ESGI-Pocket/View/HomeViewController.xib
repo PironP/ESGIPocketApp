@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,26 +20,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESGI Pocket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa3-5t-UfG">
-                    <rect key="frame" x="116.5" y="45" width="142.5" height="30"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prochain cours :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztT-IS-RAU">
-                    <rect key="frame" x="50" y="105" width="123.5" height="20.5"/>
+                    <rect key="frame" x="50" y="101" width="123.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{lesson_name}}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPO-Sy-NU3">
-                    <rect key="frame" x="126" y="145.5" width="123.5" height="20.5"/>
+                    <rect key="frame" x="126" y="141.5" width="123.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="kz3-sF-Dcc">
-                    <rect key="frame" x="30" y="181" width="315" height="20.5"/>
+                    <rect key="frame" x="30" y="177" width="315" height="20.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{start_time}}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSL-fB-RR3">
                             <rect key="frame" x="0.0" y="0.0" width="100.5" height="20.5"/>
@@ -55,117 +49,87 @@
                         </label>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xi-L7-qfp">
-                    <rect key="frame" x="127" y="271.5" width="120" height="33"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="3iD-KD-pRk"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="Cours">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="navigationButtonPressed:" destination="-1" eventType="touchUpInside" id="Njg-kG-cMQ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePN-LL-2wq">
-                    <rect key="frame" x="127.5" y="339.5" width="120" height="33"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="44a-Er-CS6"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="Discussions">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="navigationButtonPressed:" destination="-1" eventType="touchUpInside" id="Dpc-E5-pTH"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmZ-p3-KG2">
-                    <rect key="frame" x="127.5" y="407.5" width="120" height="33"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="5Xe-8c-6lN"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="Messages">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="navigationButtonPressed:" destination="-1" eventType="touchUpInside" id="ewC-2y-CUl"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdz-4K-Dpb">
-                    <rect key="frame" x="127.5" y="475.5" width="120" height="33"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="fC3-wr-YwH"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="Quiz">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="navigationButtonPressed:" destination="-1" eventType="touchUpInside" id="8bb-h0-UA5"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-M3-jTU">
-                    <rect key="frame" x="127.5" y="543.5" width="120" height="33"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="120" id="pfv-nQ-6pa"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="Planning">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="navigationButtonPressed:" destination="-1" eventType="touchUpInside" id="giE-lZ-kOp"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd5-4s-Cwq">
-                    <rect key="frame" x="132.5" y="627" width="109" height="30"/>
+                    <rect key="frame" x="132.5" y="572" width="109" height="30"/>
                     <state key="normal" title="Se déconnecter"/>
                     <connections>
                         <action selector="disconnectButtonPressed:" destination="-1" eventType="touchUpInside" id="RN5-hK-bld"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-logo" translatesAutoresizingMaskIntoConstraints="NO" id="TIj-wv-Xac">
+                    <rect key="frame" x="90.5" y="30" width="194" height="61"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="61" id="hID-rr-Apa"/>
+                        <constraint firstAttribute="width" constant="194" id="ryU-yO-zMf"/>
+                    </constraints>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgO-wd-mHY">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="mJH-8V-bee"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem image="nav-quiz" width="55" style="plain" id="bqL-Sg-8Zb">
+                            <connections>
+                                <action selector="navigationButtonPressed:" destination="-1" id="5v1-8q-DgC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jiL-sA-Djz"/>
+                        <barButtonItem tag="1" image="nav-courses" width="55" style="plain" id="vo4-tw-j4M">
+                            <connections>
+                                <action selector="navigationButtonPressed:" destination="-1" id="rdV-Mq-a4X"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="DJt-JI-XKX"/>
+                        <barButtonItem tag="2" image="nav-logo" width="55" style="plain" id="VAP-Pz-obr">
+                            <connections>
+                                <action selector="navigationButtonPressed:" destination="-1" id="M3P-fJ-sPR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="iMI-1e-gPf"/>
+                        <barButtonItem tag="3" image="nav-chat" width="55" style="plain" id="HKR-HA-eWx">
+                            <connections>
+                                <action selector="navigationButtonPressed:" destination="-1" id="8O2-vC-WXC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="F28-KG-odh"/>
+                        <barButtonItem tag="4" image="nav-planning" width="55" style="plain" id="jTg-KI-Cks">
+                            <connections>
+                                <action selector="navigationButtonPressed:" destination="-1" id="84x-nm-XgO"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="tintColor" red="0.73439369070000005" green="0.73062756920000005" blue="0.73815981220000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="kz3-sF-Dcc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="4U0-jK-3zA"/>
-                <constraint firstItem="bdz-4K-Dpb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4h0-Hq-bAC"/>
-                <constraint firstItem="pmZ-p3-KG2" firstAttribute="top" secondItem="ePN-LL-2wq" secondAttribute="bottom" constant="35" id="Brr-YQ-ZjX"/>
-                <constraint firstItem="ePN-LL-2wq" firstAttribute="top" secondItem="8xi-L7-qfp" secondAttribute="bottom" constant="35" id="CT6-Il-EDT"/>
+                <constraint firstAttribute="trailing" secondItem="qgO-wd-mHY" secondAttribute="trailing" id="58s-FW-dgk"/>
+                <constraint firstItem="TIj-wv-Xac" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="8Mc-an-k4a"/>
+                <constraint firstItem="qgO-wd-mHY" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="FoS-wd-TDM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kz3-sF-Dcc" secondAttribute="trailing" constant="30" id="II5-O9-LXZ"/>
-                <constraint firstItem="pmZ-p3-KG2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MO4-uG-bYK"/>
-                <constraint firstItem="ePN-LL-2wq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ngo-7I-jhH"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Dd5-4s-Cwq" secondAttribute="bottom" constant="10" id="Obo-xa-95c"/>
-                <constraint firstItem="Fa3-5t-UfG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="T4a-3w-Tny"/>
-                <constraint firstItem="QIO-M3-jTU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UUo-Wr-Ckr"/>
+                <constraint firstItem="TIj-wv-Xac" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Pne-9n-2HX"/>
                 <constraint firstItem="ztT-IS-RAU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Xpj-Gf-ZaQ"/>
                 <constraint firstItem="tPO-Sy-NU3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Y13-de-Bhi"/>
-                <constraint firstItem="bdz-4K-Dpb" firstAttribute="top" secondItem="pmZ-p3-KG2" secondAttribute="bottom" constant="35" id="boB-Mg-n4a"/>
-                <constraint firstItem="Fa3-5t-UfG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bt4-WZ-jOD"/>
-                <constraint firstItem="8xi-L7-qfp" firstAttribute="top" secondItem="kz3-sF-Dcc" secondAttribute="bottom" constant="70" id="i9e-fx-ovh"/>
                 <constraint firstItem="kz3-sF-Dcc" firstAttribute="top" secondItem="tPO-Sy-NU3" secondAttribute="bottom" constant="15" id="ixb-r0-u09"/>
                 <constraint firstItem="Dd5-4s-Cwq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="liy-3w-Gv9"/>
-                <constraint firstItem="8xi-L7-qfp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qeb-M3-97A"/>
+                <constraint firstItem="qgO-wd-mHY" firstAttribute="top" secondItem="Dd5-4s-Cwq" secondAttribute="bottom" constant="5" id="q1e-uC-BG1"/>
+                <constraint firstItem="ztT-IS-RAU" firstAttribute="top" secondItem="TIj-wv-Xac" secondAttribute="bottom" constant="10" id="rN4-up-KE1"/>
                 <constraint firstItem="tPO-Sy-NU3" firstAttribute="top" secondItem="ztT-IS-RAU" secondAttribute="bottom" constant="20" id="rbS-hQ-Uip"/>
-                <constraint firstItem="QIO-M3-jTU" firstAttribute="top" secondItem="bdz-4K-Dpb" secondAttribute="bottom" constant="35" id="u1V-Un-Ass"/>
-                <constraint firstItem="ztT-IS-RAU" firstAttribute="top" secondItem="Fa3-5t-UfG" secondAttribute="bottom" constant="30" id="zaT-tA-tnY"/>
+                <constraint firstItem="qgO-wd-mHY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vax-xe-6fZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4d7-WW-3f8">
-            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <nil key="textColor"/>
-            <nil key="highlightedColor"/>
-        </label>
+        <barButtonItem title="Item" id="x2t-6m-Ug7"/>
     </objects>
+    <resources>
+        <image name="main-logo" width="400" height="104"/>
+        <image name="nav-chat" width="100" height="100"/>
+        <image name="nav-courses" width="100" height="100"/>
+        <image name="nav-logo" width="100" height="100"/>
+        <image name="nav-planning" width="100" height="100"/>
+        <image name="nav-quiz" width="100" height="100"/>
+    </resources>
 </document>

@@ -20,8 +20,11 @@
 		E831FF2520A1DA5500EC1927 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2320A1DA5500EC1927 /* LoginViewController.xib */; };
 		E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831FF2620A1E21000EC1927 /* SignUpViewController.swift */; };
 		E831FF2920A1E21000EC1927 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2720A1E21000EC1927 /* SignUpViewController.xib */; };
+		E83CF92720C45E5300758D0C /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83CF92620C45E5300758D0C /* Quiz.swift */; };
 		E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8594F5520AD5D2600C3510B /* MessageViewCell.swift */; };
 		E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8594F5620AD5D2600C3510B /* MessageViewCell.xib */; };
+		E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */; };
+		E86DB52320BBFF2000F06E67 /* ConfirmEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */; };
 		E88F792A20ACCB2800368E48 /* LessonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F792820ACCB2800368E48 /* LessonsListViewController.swift */; };
 		E88F792B20ACCB2800368E48 /* LessonsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88F792920ACCB2800368E48 /* LessonsListViewController.xib */; };
 		E88F792E20ACCBA100368E48 /* DiscussionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F792C20ACCBA100368E48 /* DiscussionsListViewController.swift */; };
@@ -54,8 +57,11 @@
 		E831FF2320A1DA5500EC1927 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E831FF2620A1E21000EC1927 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E831FF2720A1E21000EC1927 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		E83CF92620C45E5300758D0C /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		E8594F5520AD5D2600C3510B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		E8594F5620AD5D2600C3510B /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
+		E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewController.swift; sourceTree = "<group>"; };
+		E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmEmailViewController.xib; sourceTree = "<group>"; };
 		E88F792820ACCB2800368E48 /* LessonsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListViewController.swift; sourceTree = "<group>"; };
 		E88F792920ACCB2800368E48 /* LessonsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonsListViewController.xib; sourceTree = "<group>"; };
 		E88F792C20ACCBA100368E48 /* DiscussionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionsListViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 				E804693720A984E200F4F643 /* Classe.swift */,
 				E8F3130020AB60910016D511 /* CurrentUser.swift */,
 				E8F3130220AB69870016D511 /* Discussion.swift */,
+				E83CF92620C45E5300758D0C /* Quiz.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +144,7 @@
 				E88F793420ACCC3100368E48 /* QuizListViewController.swift */,
 				E88F793820ACCC6600368E48 /* PlanningViewController.swift */,
 				E8594F5520AD5D2600C3510B /* MessageViewCell.swift */,
+				E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 				E804692D20A32C3100F4F643 /* HomeViewController.xib */,
 				E804693420A9827900F4F643 /* SelectClassViewController.xib */,
 				E8594F5620AD5D2600C3510B /* MessageViewCell.xib */,
+				E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +237,7 @@
 				E8013CA8209334ED002FF92C /* LaunchScreen.storyboard in Resources */,
 				E8013CA5209334ED002FF92C /* Assets.xcassets in Resources */,
 				E88F792B20ACCB2800368E48 /* LessonsListViewController.xib in Resources */,
+				E86DB52320BBFF2000F06E67 /* ConfirmEmailViewController.xib in Resources */,
 				E804693620A9827900F4F643 /* SelectClassViewController.xib in Resources */,
 				E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */,
 				E88F793720ACCC3100368E48 /* QuizListViewController.xib in Resources */,
@@ -245,9 +255,11 @@
 				E831FF2420A1DA5500EC1927 /* LoginViewController.swift in Sources */,
 				E8F3130320AB69870016D511 /* Discussion.swift in Sources */,
 				E804693220A32EE900F4F643 /* Login.swift in Sources */,
+				E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */,
 				E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */,
 				E88F793220ACCBEA00368E48 /* MessagesListViewController.swift in Sources */,
 				E88F792E20ACCBA100368E48 /* DiscussionsListViewController.swift in Sources */,
+				E83CF92720C45E5300758D0C /* Quiz.swift in Sources */,
 				E804693820A984E200F4F643 /* Classe.swift in Sources */,
 				E88F793620ACCC3100368E48 /* QuizListViewController.swift in Sources */,
 				E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */,

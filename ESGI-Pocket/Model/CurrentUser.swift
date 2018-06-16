@@ -10,8 +10,9 @@ import Foundation
 
 final class CurrentUser {
     
-    var prenom: String = ""
-    var nom: String = ""
+    var id: String = ""
+    var firstname: String = ""
+    var lastname: String = ""
     var email: String = ""
     var jwt: String = ""
     

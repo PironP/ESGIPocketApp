@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmEmailViewController" customModule="ESGI_Pocket" customModuleProvider="target">
+            <connections>
+                <outlet property="codePart1" destination="wG1-7a-4YI" id="lHq-dU-C51"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On y est presque !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM9-EV-Vvx">
+                    <rect key="frame" x="30" y="35" width="258.5" height="36"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heureux de te compter parmis nous !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntZ-DV-w1X">
+                    <rect key="frame" x="30" y="86" width="247.5" height="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nous t'avons envoyé un email avec ton code d'activation à entrer ci dessous." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Al0-nP-b36">
+                    <rect key="frame" x="30" y="133" width="300" height="33.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="0K8-2B-7so"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Si tu n'as rien reçu, pense à vérifier ton dossier &quot;Spam&quot;." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpP-Nm-q7a">
+                    <rect key="frame" x="30" y="186.5" width="300" height="33.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="Sv6-JU-cIo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code d'activation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmZ-07-CB7">
+                    <rect key="frame" x="93" y="280" width="189.5" height="28"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="- - - - - -" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wG1-7a-4YI" userLabel="Code">
+                    <rect key="frame" x="117" y="318" width="140" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="iCL-ny-5pk"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80i-4V-akI">
+                    <rect key="frame" x="100.5" y="373" width="173" height="28"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
+                    <state key="normal" title="Renvoyer l'email d'activation">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="newCodeBtnPressed:" destination="-1" eventType="touchUpInside" id="7pp-dy-Une"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEM-Z1-XaS">
+                    <rect key="frame" x="118" y="451" width="138" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Activer mon compte">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="activateAccountBtnPressed:" destination="-1" eventType="touchUpInside" id="Tj6-OG-Ml1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Al0-nP-b36" firstAttribute="top" secondItem="ntZ-DV-w1X" secondAttribute="bottom" constant="30" id="4wg-Za-fc4"/>
+                <constraint firstItem="Al0-nP-b36" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="5zy-gG-aur"/>
+                <constraint firstItem="80i-4V-akI" firstAttribute="top" secondItem="wG1-7a-4YI" secondAttribute="bottom" constant="25" id="BLZ-L4-pkH"/>
+                <constraint firstItem="tEM-Z1-XaS" firstAttribute="top" secondItem="80i-4V-akI" secondAttribute="bottom" constant="50" id="DMQ-tY-AE6"/>
+                <constraint firstItem="eM9-EV-Vvx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="LaN-Rt-dPa"/>
+                <constraint firstItem="wG1-7a-4YI" firstAttribute="top" secondItem="zmZ-07-CB7" secondAttribute="bottom" constant="10" id="Lkf-WT-5YS"/>
+                <constraint firstItem="zmZ-07-CB7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="M3e-FL-Ioh"/>
+                <constraint firstItem="wG1-7a-4YI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ae3-Rp-E4G"/>
+                <constraint firstItem="tEM-Z1-XaS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eVk-Wj-Fp3"/>
+                <constraint firstItem="BpP-Nm-q7a" firstAttribute="top" secondItem="Al0-nP-b36" secondAttribute="bottom" constant="20" id="fQL-YK-KoX"/>
+                <constraint firstItem="ntZ-DV-w1X" firstAttribute="top" secondItem="eM9-EV-Vvx" secondAttribute="bottom" constant="15" id="fv7-a3-aZ1"/>
+                <constraint firstItem="ntZ-DV-w1X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="jmW-5a-vwQ"/>
+                <constraint firstItem="80i-4V-akI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mpY-zF-LSc"/>
+                <constraint firstItem="eM9-EV-Vvx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="oRe-pm-5Vs"/>
+                <constraint firstItem="BpP-Nm-q7a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="pDq-6A-ZJ8"/>
+                <constraint firstItem="zmZ-07-CB7" firstAttribute="top" secondItem="BpP-Nm-q7a" secondAttribute="bottom" constant="60" id="yw8-Yt-RCb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
