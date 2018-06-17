@@ -1,23 +1,21 @@
 //
-//  Classe.swift
+//  Question.swift
 //  ESGI-Pocket
 //
-//  Created by pierre piron on 14/05/2018.
+//  Created by pierre piron on 17/06/2018.
 //  Copyright © 2018 pierre piron. All rights reserved.
 //
 
 import Foundation
 
-class Classe {
-    
-    
-    func getSection(callback: @escaping ([[String:Any]]) -> ()) {
-        
-        let url = URL(string: "https://esgipocket.herokuapp.com/sections")!
+class Question {
 
+    func getQuestions(callback: @escaping ([[String:Any]]) -> ()) {
+        
+        let url = URL(string: "https://esgipocket.herokuapp.com/questions")!
         var request = URLRequest(url: url)
         request.setValue(CurrentUser.currentUser.jwt, forHTTPHeaderField: "authorization")
-    
+
         let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
             guard let responseData = data, let dataString = String(data: responseData, encoding: String.Encoding.utf8) else {
                 callback([])
@@ -34,6 +32,5 @@ class Classe {
         }
         task.resume()
     }
-    
     
 }

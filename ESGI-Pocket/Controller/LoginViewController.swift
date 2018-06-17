@@ -37,21 +37,18 @@ class LoginViewController: UIViewController {
             
             // execute the code in the main thread
             DispatchQueue.main.async(execute: {
-                if response != "" {
+                if response != "" && !response.contains("Unauthorized") {
                     // response is the JWT
                     
                     self.saveLoginDetailsToLocalStorage(email: email, password: password)
-                    
+
                     let currentUser = CurrentUser.currentUser
                     currentUser.jwt = response
                     currentUser.email = email
                     
-                    
-                    // Is present() necessary ? Error with windows hierarchy ?
-                    let homeViewController = HomeViewController()
                     self.dismiss(animated: true, completion: nil)
-                    self.present(homeViewController, animated: true, completion: nil)
-                    
+
+                
                 }
                 else {
                     self.loginErrorLabel.isHidden = false

@@ -31,6 +31,13 @@ class SplashScreenViewController: UIViewController {
     // if there is credenitals try to login,
     // if there is not, or login failed, show login view controller
     func login() {
+  
+        if CurrentUser.currentUser.jwt != "" {
+            // User already loged in
+            let homeView = HomeViewController()
+            self.present(homeView, animated: true, completion: nil)
+            return
+        }
         
         // read local storage
         let basePath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -52,6 +59,7 @@ class SplashScreenViewController: UIViewController {
             if response != "" && !response.contains("Unauthorized"){
                 DispatchQueue.main.async {
                     let currentUser = CurrentUser.currentUser
+
                     currentUser.jwt = response
                     currentUser.email = loginDetails["email"]!
                     let homeView = HomeViewController()

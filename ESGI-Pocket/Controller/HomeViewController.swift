@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
             self.present(quizListView, animated: true, completion: nil)
             
         case 1:
-            let lessonsListView = LessonsListViewController()
-            self.present(lessonsListView, animated: true, completion: nil)
+            let  topicView = TopicViewController()
+            self.present(topicView, animated: true, completion: nil)
         case 3:
             let discussionsListView = DiscussionsListViewController()
             self.present(discussionsListView, animated: true, completion: nil)
@@ -63,6 +63,8 @@ class HomeViewController: UIViewController {
         } catch {
             
         }
+        
+        CurrentUser.currentUser.jwt = ""
         
         let loginView = LoginViewController()
         self.dismiss(animated: true, completion: nil)

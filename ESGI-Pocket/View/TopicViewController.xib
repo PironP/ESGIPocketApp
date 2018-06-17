@@ -10,9 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiscussionsListViewController" customModule="ESGI_Pocket" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopicViewController" customModule="ESGI_Pocket" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="YH5-YI-rM6" id="W0K-i3-FbR"/>
+                <outlet property="tableView" destination="czX-90-jDT" id="o8e-LE-N8e"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,29 +21,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vw-WG-x0A">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pk9-rY-BKA">
                     <rect key="frame" x="15" y="20" width="50" height="30"/>
                     <state key="normal" title="Accueil"/>
                     <connections>
-                        <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="CRZ-WN-dQA"/>
+                        <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="z5s-v3-WJb"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YH5-YI-rM6">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="czX-90-jDT">
                     <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="6vw-WG-x0A" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4ZA-hC-OxD"/>
-                <constraint firstItem="6vw-WG-x0A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="EwU-9B-JvS"/>
-                <constraint firstItem="YH5-YI-rM6" firstAttribute="top" secondItem="6vw-WG-x0A" secondAttribute="bottom" id="KQw-ii-WkC"/>
-                <constraint firstItem="YH5-YI-rM6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KWx-fV-Ooc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YH5-YI-rM6" secondAttribute="trailing" id="ShT-BZ-6Hp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YH5-YI-rM6" secondAttribute="bottom" id="c2y-lO-Wdl"/>
+                <constraint firstItem="Pk9-rY-BKA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OUE-92-eEU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="czX-90-jDT" secondAttribute="bottom" id="RAC-Nj-KdL"/>
+                <constraint firstItem="czX-90-jDT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZGs-jj-pnl"/>
+                <constraint firstItem="czX-90-jDT" firstAttribute="top" secondItem="Pk9-rY-BKA" secondAttribute="bottom" id="aYu-Vd-SHV"/>
+                <constraint firstItem="Pk9-rY-BKA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="tL6-YL-k1z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="czX-90-jDT" secondAttribute="trailing" id="v94-6d-yxx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
 </document>

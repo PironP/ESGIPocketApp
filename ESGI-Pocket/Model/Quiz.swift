@@ -14,23 +14,20 @@ class Quiz {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/quizzes")!
         
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let responseData = data else {
+        var request = URLRequest(url: url)
+        request.setValue(CurrentUser.currentUser.jwt, forHTTPHeaderField: "authorization")
+
+        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let responseData = data, let dataString = String(data: responseData, encoding: String.Encoding.utf8) else {
                 callback([])
                 return
             }
             
             guard let json = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments),
-                let dict = json as? [[String:Any]] else {
-                    
+                let dict = json as? [[String: Any]] else{
                     callback([])
                     return
             }
-            
-            
-            dict.forEach({ (section) in
-                print(section)
-            })
             
             callback(dict)
         }

@@ -13,7 +13,7 @@ class Login {
     // Async func for log the user, return in a callback the jwt or empty string if error
     func login(email: String, password: String, callback: @escaping (String) -> ()) {
         
-        let loginUrl = URL(string: "https://esgipocket.herokuapp.com/auth/login")!
+        let loginUrl = URL(string: "https://esgipocket.herokuapp.com/login")!
         
         var dict = Dictionary<String, Any>()
         dict = ["email" :email, "password" :password]
@@ -40,12 +40,29 @@ class Login {
                 callback("")
                 return
             }
-            guard let responseData = data, let dataString = String(data: responseData, encoding: String.Encoding.utf8) else {
+            
+//            guard let responseData = data, let dataString = String(data: responseData, encoding: String.Encoding.utf8) else {
+//                callback("")
+//                return
+//            }
+            guard let responseData = data,
+                let json = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments),
+                let dataString = String(data: responseData, encoding: String.Encoding.utf8),
+                let dict = json as? [String:Any] else {
+                    callback("")
+                    return
+            }
+            
+            if status == 401 && dataString.contains("activate") {
+                // go to verify email
+            }
+            
+            if status == 401 {
                 callback("")
                 return
             }
             
-            callback(dataString)
+            callback(dict["token"] as! String)
         }
         task.resume()
     }

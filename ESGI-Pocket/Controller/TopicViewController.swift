@@ -1,18 +1,18 @@
 //
-//  LessonsListViewController.swift
+//  TopicViewController.swift
 //  ESGI-Pocket
 //
-//  Created by pierre piron on 16/05/2018.
+//  Created by pierre piron on 17/06/2018.
 //  Copyright © 2018 pierre piron. All rights reserved.
 //
 
 import UIKit
 
-class LessonsListViewController: UIViewController {
+class TopicViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var courses = [[String:Any]]()
-
+    var topics = [[String:Any]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,12 +20,12 @@ class LessonsListViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.isHidden = true
         
-        let courseModel = Course()
-        courseModel.getCourses(callback: { response in
+        let topicModel = Topic()
+        topicModel.getTopic(callback: { response in
             if response.count == 0 {
                 return
             }
-            self.courses = response
+            self.topics = response
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
@@ -39,29 +39,30 @@ class LessonsListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
     @IBAction func homeButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
 }
 
-extension LessonsListViewController: UITableViewDataSource{
+extension TopicViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.courses.count
+        return self.topics.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "coursesCell") ?? UITableViewCell(style: .default, reuseIdentifier: "coursesCell")
-        cell.textLabel?.text = courses[indexPath.row]["name"] as! String
+        let cell = tableView.dequeueReusableCell(withIdentifier: "discussionCell") ?? UITableViewCell(style: .default, reuseIdentifier: "discussionCell")
+        cell.textLabel?.text = topics[indexPath.row]["name"] as! String
         
         return cell
     }
     
 }
 
-extension LessonsListViewController: UITableViewDelegate{
+extension TopicViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }

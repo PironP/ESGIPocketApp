@@ -10,13 +10,29 @@ import UIKit
 
 class DiscussionsListViewController: UIViewController {
 
-    @IBOutlet weak var discussionTableView: UITableView!
-    var discussions = [String]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    var discussions = [[String:Any]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.isHidden = true
 
-        // Do any additional setup after loading the view.
+        let discussionModel = Discussion()
+        discussionModel.getDiscussions(callback: { response in
+            if response.count == 0 {
+                return
+            }
+            self.discussions = response
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.tableView.isHidden = false
+            }
+            
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,38 +50,22 @@ class DiscussionsListViewController: UIViewController {
 extension DiscussionsListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.discussions.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "discussionCell", for: indexPath)
-        cell.textLabel?.text = discussions[indexPath.row]
-//        if let listCell = cell as? UITableViewCell {
-//            listCell.titleList.text = self.request.titles[indexPath.row]
-//            listCell.channelTitleList.text = self.request.channelTitles[indexPath.row]
-//            listCell.imageList.image = self.request.imageList[indexPath.row]
-//        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "discussionCell") ?? UITableViewCell(style: .default, reuseIdentifier: "discussionCell")
+        cell.textLabel?.text = discussions[indexPath.row]["name"] as! String
+
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
 }
 
 extension DiscussionsListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let videoId = self.request.id[indexPath.row]
-        let descriptionVideo = self.request.descriptions[indexPath.row]
-        let videoImage = self.request.imageList[indexPath.row]
-        let videoName = self.request.titles[indexPath.row]
-        let videoChannel = self.request.channelTitles[indexPath.row]
-        let videoViewController = VideoViewController()
-        videoViewController.videoId = videoId
-        videoViewController.descriptionVideo = descriptionVideo
-        videoViewController.videoImage = videoImage
-        videoViewController.videoName = videoName
-        videoViewController.videoChannel = videoChannel
-        self.navigationController?.pushViewController(videoViewController, animated: true)*/
+        
     }
 
 }
