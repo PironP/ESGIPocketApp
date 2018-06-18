@@ -1,0 +1,6 @@
+framework module Pods_ESGI_Pocket {
+  umbrella header "Pods-ESGI-Pocket-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,29 +7,24 @@
 //
 
 import Foundation
+import Alamofire
 
 class Topic {
     
     func getTopic(callback: @escaping ([[String:Any]]) -> ()) {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/topics")!
-        var request = URLRequest(url: url)
-        request.setValue(CurrentUser.currentUser.jwt, forHTTPHeaderField: "authorization")
 
-        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
-            guard let responseData = data, let dataString = String(data: responseData, encoding: String.Encoding.utf8) else {
+        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
+        
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            
+            guard let json = response.result.value else {
                 callback([])
                 return
             }
-            
-            guard let json = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments),
-                let dict = json as? [[String: Any]] else{
-                    callback([])
-                    return
-            }            
-            
-            callback(dict)
+
+            callback(json as! [[String : Any]])
         }
-        task.resume()
     }
 }

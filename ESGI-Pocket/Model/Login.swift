@@ -7,64 +7,56 @@
 //
 
 import Foundation
+import Alamofire
 
 class Login {
     
     // Async func for log the user, return in a callback the jwt or empty string if error
-    func login(email: String, password: String, callback: @escaping (String) -> ()) {
+    func login(email: String, password: String, callback: @escaping (Bool) -> ()) {
         
         let loginUrl = URL(string: "https://esgipocket.herokuapp.com/login")!
         
-        var dict = Dictionary<String, Any>()
-        dict = ["email" :email, "password" :password]
-        var  jsonData = NSData()
+        let parameters: Parameters = [
+            "email": email,
+            "password": password
+        ]
         
-        do {
-            jsonData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted) as NSData
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        var request = URLRequest(url: loginUrl)
-        request.httpMethod = "POST"
-        request.setValue("\(jsonData.length)", forHTTPHeaderField: "Content-Length")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonData as Data
-        
-        let task = URLSession.shared.dataTask(with: request) {
-            (data, response, error) in
+        Alamofire.request(loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             
-            let status = (response as! HTTPURLResponse).statusCode
-            
-            if status == 404 {
-                callback("")
+            guard let statusCode = response.response?.statusCode else {
+                callback(false)
+                return
+            }
+
+            if statusCode == 404 {
+                callback(false)
                 return
             }
             
-//            guard let responseData = data, let dataString = String(data: responseData, encoding: String.Encoding.utf8) else {
-//                callback("")
-//                return
-//            }
-            guard let responseData = data,
-                let json = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments),
-                let dataString = String(data: responseData, encoding: String.Encoding.utf8),
-                let dict = json as? [String:Any] else {
-                    callback("")
+            guard let json = response.result.value,
+                let jsonData = json as? [String : Any] else {
+                    callback(false)
                     return
             }
             
-            if status == 401 && dataString.contains("activate") {
-                // go to verify email
+            if statusCode == 401 {
+                if jsonData["error"] as! String == "Bad Credentials" {
+                    callback(false)
+                    return
+                }
+                else if (jsonData["error"] as! String).contains("activate") {
+                    // go to confirm email
+                    callback(false)
+                    return
+                }
             }
             
-            if status == 401 {
-                callback("")
-                return
-            }
+            CurrentUser.currentUser.jwt = jsonData["token"] as! String
+            //CurrentUser.currentUser.id = dict["id"] as! String
             
-            callback(dict["token"] as! String)
+            callback(true)
         }
-        task.resume()
+    
     }
     
     
@@ -72,87 +64,60 @@ class Login {
         
         let loginUrl = URL(string: "https://esgipocket.herokuapp.com/users")!
         
-        var dict = Dictionary<String, Any>()
-        dict = ["email" :email, "password" :password, "lastname": lastName, "firstname":firstname, "status":"student"]
-
-        var  jsonData = NSData()
+        let parameters: Parameters = [
+            "email" :email, "password" :password, "lastname": lastName, "firstname":firstname, "status":"student"
+        ]
         
-        do {
-            jsonData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted) as NSData
-        } catch {
-            print(error.localizedDescription)
-        }
-
-        var request = URLRequest(url: loginUrl)
-        request.httpMethod = "POST"
-        request.setValue("\(jsonData.length)", forHTTPHeaderField: "Content-Length")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonData as Data
-        
-        let task = URLSession.shared.dataTask(with: request) {
-            (data, response, error) in
+        Alamofire.request(loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             
-            let status = (response as! HTTPURLResponse).statusCode
-
-            if status == 404 {
-                
+            guard let statusCode = response.response?.statusCode else {
                 callback("")
                 return
             }
-
-            guard let responseData = data,
-                let json = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments),
-                let dict = json as? [String:Any] else {
+            
+            if statusCode == 404 {
+                callback("")
+                return
+            }
+            
+            guard let json = response.result.value,
+                let jsonData = json as? [String : Any] else {
                     callback("")
                     return
             }
             
-            if (dict["_id"] == nil) {
-                callback("")
-                return
-            }
-
-            callback(dict["_id"] as! String)
-            
-            
+            callback(jsonData["_id"] as! String)
         }
-        task.resume()
     }
     
     func checkValidationCode(id: String, validationCode: String, callback: @escaping (Bool) -> ()) {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/users/activate")!
         
-        var dict = Dictionary<String, Any>()
-        dict = ["activationCode" : Int(validationCode), "id" : CurrentUser.currentUser.id]
+        let parameters: Parameters = [
+            "activationCode" : Int(validationCode), "id" : CurrentUser.currentUser.id
+        ]
         
-        var  jsonData = NSData()
-        
-        do {
-            jsonData = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted) as NSData
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("\(jsonData.length)", forHTTPHeaderField: "Content-Length")
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonData as Data
-    
-        let task = URLSession.shared.dataTask(with: request) {
-            (data, response, error) in
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             
-            let status = (response as! HTTPURLResponse).statusCode
-            
-            if status == 404 || status == 500 || status == 401 {
+            guard let statusCode = response.response?.statusCode else {
                 callback(false)
                 return
             }
             
-            callback(true)
+            if statusCode == 404 || statusCode == 500 || statusCode == 401 {
+                callback(false)
+                return
+            }
             
+            guard let json = response.result.value,
+                let jsonData = json as? [String : Any] else {
+                    callback(false)
+                    return
+            }
+            
+            callback(true)
         }
-        task.resume()
+
     }
 }

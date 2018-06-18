@@ -7,30 +7,64 @@
 //
 
 import Foundation
+import Alamofire
 
 class Message {
     
     func getMessages(callback: @escaping ([[String:Any]]) -> ()) {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/messages")!
-        var request = URLRequest(url: url)
-        request.setValue(CurrentUser.currentUser.jwt, forHTTPHeaderField: "authorization")
 
-        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
-            guard let responseData = data, let dataString = String(data: responseData, encoding: String.Encoding.utf8) else {
+        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
+        
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            
+            guard let json = response.result.value else {
                 callback([])
                 return
             }
             
-            guard let json = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments),
-                let dict = json as? [[String: Any]] else{
-                    callback([])
-                    return
+            callback(json as! [[String : Any]])
+        }
+    }
+    
+    func sendMessage(message: Dictionary<String, Any>, callback: @escaping (Bool) -> ()) {
+        
+        let url = URL(string: "https://esgipocket.herokuapp.com/messages")!
+
+        var  jsonData = NSData()
+        
+        do {
+            jsonData = try JSONSerialization.data(withJSONObject: message, options: .prettyPrinted) as NSData
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue(CurrentUser.currentUser.jwt, forHTTPHeaderField: "authorization")
+        request.httpBody = jsonData as Data
+        
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            
+            let status = (response as! HTTPURLResponse).statusCode
+            
+            guard let dataString = String(data: data!, encoding: String.Encoding.utf8) else {
+                callback(false)
+                return
             }
             
-            callback(dict)
+            print(dataString)
+            
+            if status == 404 || status == 500 {
+                callback(false)
+                return
+            }
+            
+            callback(true)
+            return
         }
         task.resume()
     }
-    
 }

@@ -66,6 +66,10 @@ extension DiscussionsListViewController: UITableViewDataSource{
 extension DiscussionsListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let discussionView = DiscussionViewController()
+        discussionView.idDiscussion = self.discussions[indexPath.row]["_id"] as! String
+       
+        self.present(discussionView, animated: true, completion: nil)
     }
 
 }

@@ -37,14 +37,12 @@ class LoginViewController: UIViewController {
             
             // execute the code in the main thread
             DispatchQueue.main.async(execute: {
-                if response != "" && !response.contains("Unauthorized") {
+                if response == true {
                     // response is the JWT
                     
                     self.saveLoginDetailsToLocalStorage(email: email, password: password)
 
-                    let currentUser = CurrentUser.currentUser
-                    currentUser.jwt = response
-                    currentUser.email = email
+                    CurrentUser.currentUser.email = email
                     
                     self.dismiss(animated: true, completion: nil)
 

@@ -56,11 +56,10 @@ class SplashScreenViewController: UIViewController {
         // Try to login
         let loginModel = Login()
         loginModel.login(email: loginDetails["email"]!, password: loginDetails["password"]!, callback: { response in
-            if response != "" && !response.contains("Unauthorized"){
+            if response == true {
                 DispatchQueue.main.async {
                     let currentUser = CurrentUser.currentUser
 
-                    currentUser.jwt = response
                     currentUser.email = loginDetails["email"]!
                     let homeView = HomeViewController()
                     self.present(homeView, animated: true, completion: nil)

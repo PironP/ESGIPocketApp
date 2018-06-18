@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		586556783ABFDD2FA5BA8135 /* Pods_ESGI_Pocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C676344403D4E9D8F6E85C0 /* Pods_ESGI_Pocket.framework */; };
 		E8013C9E209334EC002FF92C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8013C9D209334EC002FF92C /* AppDelegate.swift */; };
 		E8013CA5209334ED002FF92C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8013CA4209334ED002FF92C /* Assets.xcassets */; };
 		E8013CA8209334ED002FF92C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8013CA6209334ED002FF92C /* LaunchScreen.storyboard */; };
@@ -22,6 +23,8 @@
 		E809FCE920D6FD78008DB88A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE820D6FD78008DB88A /* Course.swift */; };
 		E809FCEC20D700B0008DB88A /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCEA20D700B0008DB88A /* TopicViewController.swift */; };
 		E809FCED20D700B0008DB88A /* TopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809FCEB20D700B0008DB88A /* TopicViewController.xib */; };
+		E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */; };
+		E816614E20D7A3AE001BB754 /* DiscussionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E816614C20D7A3AE001BB754 /* DiscussionViewController.xib */; };
 		E831FF2420A1DA5500EC1927 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831FF2220A1DA5500EC1927 /* LoginViewController.swift */; };
 		E831FF2520A1DA5500EC1927 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2320A1DA5500EC1927 /* LoginViewController.xib */; };
 		E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831FF2620A1E21000EC1927 /* SignUpViewController.swift */; };
@@ -48,6 +51,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00FB5176C11AE9100C58CE7F /* Pods-ESGI-Pocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESGI-Pocket.release.xcconfig"; path = "Pods/Target Support Files/Pods-ESGI-Pocket/Pods-ESGI-Pocket.release.xcconfig"; sourceTree = "<group>"; };
+		224A6F83E87AB4718D0223EC /* Pods-ESGI-Pocket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESGI-Pocket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ESGI-Pocket/Pods-ESGI-Pocket.debug.xcconfig"; sourceTree = "<group>"; };
+		8C676344403D4E9D8F6E85C0 /* Pods_ESGI_Pocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESGI_Pocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8013C9A209334EC002FF92C /* ESGI-Pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ESGI-Pocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8013C9D209334EC002FF92C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8013CA4209334ED002FF92C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +71,8 @@
 		E809FCE820D6FD78008DB88A /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		E809FCEA20D700B0008DB88A /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
 		E809FCEB20D700B0008DB88A /* TopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicViewController.xib; sourceTree = "<group>"; };
+		E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionViewController.swift; sourceTree = "<group>"; };
+		E816614C20D7A3AE001BB754 /* DiscussionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscussionViewController.xib; sourceTree = "<group>"; };
 		E831FF2220A1DA5500EC1927 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E831FF2320A1DA5500EC1927 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E831FF2620A1E21000EC1927 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -95,17 +103,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				586556783ABFDD2FA5BA8135 /* Pods_ESGI_Pocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1FBCA5C7C6893C06E057564 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C676344403D4E9D8F6E85C0 /* Pods_ESGI_Pocket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D83C04BEDB4E13B2F571AB8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				224A6F83E87AB4718D0223EC /* Pods-ESGI-Pocket.debug.xcconfig */,
+				00FB5176C11AE9100C58CE7F /* Pods-ESGI-Pocket.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E8013C91209334EC002FF92C = {
 			isa = PBXGroup;
 			children = (
 				E8013C9C209334EC002FF92C /* ESGI-Pocket */,
 				E8013C9B209334EC002FF92C /* Products */,
+				D83C04BEDB4E13B2F571AB8A /* Pods */,
+				D1FBCA5C7C6893C06E057564 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,15 +161,15 @@
 		E804693020A32EBD00F4F643 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E804693120A32EE900F4F643 /* Login.swift */,
 				E804693720A984E200F4F643 /* Classe.swift */,
+				E809FCE820D6FD78008DB88A /* Course.swift */,
 				E8F3130020AB60910016D511 /* CurrentUser.swift */,
 				E8F3130220AB69870016D511 /* Discussion.swift */,
-				E83CF92620C45E5300758D0C /* Quiz.swift */,
-				E809FCE020D6CB42008DB88A /* Topic.swift */,
+				E804693120A32EE900F4F643 /* Login.swift */,
 				E809FCE420D6FCC9008DB88A /* Message.swift */,
 				E809FCE620D6FD48008DB88A /* Question.swift */,
-				E809FCE820D6FD78008DB88A /* Course.swift */,
+				E83CF92620C45E5300758D0C /* Quiz.swift */,
+				E809FCE020D6CB42008DB88A /* Topic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,18 +177,19 @@
 		E813196C20A9EBD0006C83CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E831FF2220A1DA5500EC1927 /* LoginViewController.swift */,
-				E831FF2620A1E21000EC1927 /* SignUpViewController.swift */,
-				E804692C20A32C3100F4F643 /* HomeViewController.swift */,
-				E804693320A9827900F4F643 /* SelectClassViewController.swift */,
-				E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */,
-				E88F792820ACCB2800368E48 /* LessonsListViewController.swift */,
-				E88F792C20ACCBA100368E48 /* DiscussionsListViewController.swift */,
-				E88F793020ACCBEA00368E48 /* MessagesListViewController.swift */,
-				E88F793420ACCC3100368E48 /* QuizListViewController.swift */,
-				E88F793820ACCC6600368E48 /* PlanningViewController.swift */,
-				E8594F5520AD5D2600C3510B /* MessageViewCell.swift */,
 				E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */,
+				E88F792C20ACCBA100368E48 /* DiscussionsListViewController.swift */,
+				E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */,
+				E804692C20A32C3100F4F643 /* HomeViewController.swift */,
+				E88F792820ACCB2800368E48 /* LessonsListViewController.swift */,
+				E831FF2220A1DA5500EC1927 /* LoginViewController.swift */,
+				E88F793020ACCBEA00368E48 /* MessagesListViewController.swift */,
+				E8594F5520AD5D2600C3510B /* MessageViewCell.swift */,
+				E88F793820ACCC6600368E48 /* PlanningViewController.swift */,
+				E88F793420ACCC3100368E48 /* QuizListViewController.swift */,
+				E804693320A9827900F4F643 /* SelectClassViewController.swift */,
+				E831FF2620A1E21000EC1927 /* SignUpViewController.swift */,
+				E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */,
 				E809FCEA20D700B0008DB88A /* TopicViewController.swift */,
 			);
 			path = Controller;
@@ -169,20 +198,21 @@
 		E831FF1920A1D2F400EC1927 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E809FCEB20D700B0008DB88A /* TopicViewController.xib */,
+				E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */,
+				E88F792D20ACCBA100368E48 /* DiscussionsListViewController.xib */,
+				E816614C20D7A3AE001BB754 /* DiscussionViewController.xib */,
+				E804692D20A32C3100F4F643 /* HomeViewController.xib */,
+				E8013CA6209334ED002FF92C /* LaunchScreen.storyboard */,
+				E88F792920ACCB2800368E48 /* LessonsListViewController.xib */,
+				E831FF2320A1DA5500EC1927 /* LoginViewController.xib */,
+				E88F793120ACCBEA00368E48 /* MessagesListViewController.xib */,
+				E8594F5620AD5D2600C3510B /* MessageViewCell.xib */,
 				E88F793920ACCC6600368E48 /* PlanningViewController.xib */,
 				E88F793520ACCC3100368E48 /* QuizListViewController.xib */,
-				E88F793120ACCBEA00368E48 /* MessagesListViewController.xib */,
-				E88F792920ACCB2800368E48 /* LessonsListViewController.xib */,
-				E88F792D20ACCBA100368E48 /* DiscussionsListViewController.xib */,
-				E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */,
-				E8013CA6209334ED002FF92C /* LaunchScreen.storyboard */,
-				E831FF2320A1DA5500EC1927 /* LoginViewController.xib */,
-				E831FF2720A1E21000EC1927 /* SignUpViewController.xib */,
-				E804692D20A32C3100F4F643 /* HomeViewController.xib */,
 				E804693420A9827900F4F643 /* SelectClassViewController.xib */,
-				E8594F5620AD5D2600C3510B /* MessageViewCell.xib */,
-				E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */,
+				E831FF2720A1E21000EC1927 /* SignUpViewController.xib */,
+				E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */,
+				E809FCEB20D700B0008DB88A /* TopicViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8013CAC209334ED002FF92C /* Build configuration list for PBXNativeTarget "ESGI-Pocket" */;
 			buildPhases = (
+				FF7ED81139256C251C9C8D5E /* [CP] Check Pods Manifest.lock */,
 				E8013C96209334EC002FF92C /* Sources */,
 				E8013C97209334EC002FF92C /* Frameworks */,
 				E8013C98209334EC002FF92C /* Resources */,
+				D3261C1D0AD20222072E5BF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E816614E20D7A3AE001BB754 /* DiscussionViewController.xib in Resources */,
 				E831FF2920A1E21000EC1927 /* SignUpViewController.xib in Resources */,
 				E831FF2520A1DA5500EC1927 /* LoginViewController.xib in Resources */,
 				E88F793320ACCBEA00368E48 /* MessagesListViewController.xib in Resources */,
@@ -265,6 +298,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D3261C1D0AD20222072E5BF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ESGI-Pocket/Pods-ESGI-Pocket-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ESGI-Pocket/Pods-ESGI-Pocket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF7ED81139256C251C9C8D5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ESGI-Pocket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E8013C96209334EC002FF92C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -282,6 +354,7 @@
 				E83CF92720C45E5300758D0C /* Quiz.swift in Sources */,
 				E809FCEC20D700B0008DB88A /* TopicViewController.swift in Sources */,
 				E804693820A984E200F4F643 /* Classe.swift in Sources */,
+				E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */,
 				E88F793620ACCC3100368E48 /* QuizListViewController.swift in Sources */,
 				E809FCE920D6FD78008DB88A /* Course.swift in Sources */,
 				E809FCE720D6FD48008DB88A /* Question.swift in Sources */,
@@ -426,6 +499,7 @@
 		};
 		E8013CAD209334ED002FF92C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 224A6F83E87AB4718D0223EC /* Pods-ESGI-Pocket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,6 +518,7 @@
 		};
 		E8013CAE209334ED002FF92C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00FB5176C11AE9100C58CE7F /* Pods-ESGI-Pocket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
