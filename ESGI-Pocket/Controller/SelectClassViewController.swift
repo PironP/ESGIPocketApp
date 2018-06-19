@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SelectClassViewController: UIViewController {
 
     
-    var classes: [[String:Any]] = []
+    var classes = JSON()
     
     @IBOutlet weak var classPickerView: UIPickerView!
     
@@ -23,7 +24,6 @@ class SelectClassViewController: UIViewController {
         
         //classPickerView.dataSource = classes as! UIPickerViewDataSource;
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,14 +32,5 @@ class SelectClassViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

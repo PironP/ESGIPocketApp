@@ -26,11 +26,13 @@ class HomeViewController: UIViewController {
     @IBAction func navigationButtonPressed(_ sender: UIBarButtonItem) {
         switch sender.tag {
         case 0:
-            let quizListView = QuizListViewController()
-            self.present(quizListView, animated: true, completion: nil)
+            let  topicView = TopicViewController()
+            topicView.fileTypeRequestd = 1
+            self.present(topicView, animated: true, completion: nil)
             
         case 1:
             let  topicView = TopicViewController()
+            topicView.fileTypeRequestd = 2
             self.present(topicView, animated: true, completion: nil)
         case 3:
             let discussionsListView = DiscussionsListViewController()

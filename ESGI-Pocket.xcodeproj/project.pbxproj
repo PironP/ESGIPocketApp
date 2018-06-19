@@ -16,11 +16,11 @@
 		E804693220A32EE900F4F643 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804693120A32EE900F4F643 /* Login.swift */; };
 		E804693520A9827900F4F643 /* SelectClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804693320A9827900F4F643 /* SelectClassViewController.swift */; };
 		E804693620A9827900F4F643 /* SelectClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E804693420A9827900F4F643 /* SelectClassViewController.xib */; };
-		E804693820A984E200F4F643 /* Classe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804693720A984E200F4F643 /* Classe.swift */; };
-		E809FCE120D6CB42008DB88A /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE020D6CB42008DB88A /* Topic.swift */; };
-		E809FCE520D6FCC9008DB88A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE420D6FCC9008DB88A /* Message.swift */; };
-		E809FCE720D6FD48008DB88A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE620D6FD48008DB88A /* Question.swift */; };
-		E809FCE920D6FD78008DB88A /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE820D6FD78008DB88A /* Course.swift */; };
+		E804693820A984E200F4F643 /* ClasseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804693720A984E200F4F643 /* ClasseProvider.swift */; };
+		E809FCE120D6CB42008DB88A /* TopicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE020D6CB42008DB88A /* TopicProvider.swift */; };
+		E809FCE520D6FCC9008DB88A /* MessageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE420D6FCC9008DB88A /* MessageProvider.swift */; };
+		E809FCE720D6FD48008DB88A /* QuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE620D6FD48008DB88A /* QuestionProvider.swift */; };
+		E809FCE920D6FD78008DB88A /* CourseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE820D6FD78008DB88A /* CourseProvider.swift */; };
 		E809FCEC20D700B0008DB88A /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCEA20D700B0008DB88A /* TopicViewController.swift */; };
 		E809FCED20D700B0008DB88A /* TopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809FCEB20D700B0008DB88A /* TopicViewController.xib */; };
 		E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */; };
@@ -29,7 +29,14 @@
 		E831FF2520A1DA5500EC1927 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2320A1DA5500EC1927 /* LoginViewController.xib */; };
 		E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831FF2620A1E21000EC1927 /* SignUpViewController.swift */; };
 		E831FF2920A1E21000EC1927 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2720A1E21000EC1927 /* SignUpViewController.xib */; };
-		E83CF92720C45E5300758D0C /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83CF92620C45E5300758D0C /* Quiz.swift */; };
+		E83CF92720C45E5300758D0C /* QuizProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83CF92620C45E5300758D0C /* QuizProvider.swift */; };
+		E8445D6E20D974EC00F1631E /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D6D20D974EC00F1631E /* Topic.swift */; };
+		E8445D7020D9756F00F1631E /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D6F20D9756F00F1631E /* Quiz.swift */; };
+		E8445D7220D975AB00F1631E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7120D975AB00F1631E /* Question.swift */; };
+		E8445D7420D975E300F1631E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7320D975E300F1631E /* Message.swift */; };
+		E8445D7620D975F500F1631E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7520D975F500F1631E /* User.swift */; };
+		E8445D7820D9771800F1631E /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7720D9771800F1631E /* Course.swift */; };
+		E8445D7A20D977AC00F1631E /* Classe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7920D977AC00F1631E /* Classe.swift */; };
 		E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8594F5520AD5D2600C3510B /* MessageViewCell.swift */; };
 		E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8594F5620AD5D2600C3510B /* MessageViewCell.xib */; };
 		E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */; };
@@ -47,7 +54,7 @@
 		E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */; };
 		E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */; };
 		E8F3130120AB60910016D511 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130020AB60910016D511 /* CurrentUser.swift */; };
-		E8F3130320AB69870016D511 /* Discussion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130220AB69870016D511 /* Discussion.swift */; };
+		E8F3130320AB69870016D511 /* ThreadProvider.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130220AB69870016D511 /* ThreadProvider.swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,11 +71,11 @@
 		E804693120A32EE900F4F643 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E804693320A9827900F4F643 /* SelectClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClassViewController.swift; sourceTree = "<group>"; };
 		E804693420A9827900F4F643 /* SelectClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectClassViewController.xib; sourceTree = "<group>"; };
-		E804693720A984E200F4F643 /* Classe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classe.swift; sourceTree = "<group>"; };
-		E809FCE020D6CB42008DB88A /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
-		E809FCE420D6FCC9008DB88A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		E809FCE620D6FD48008DB88A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		E809FCE820D6FD78008DB88A /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		E804693720A984E200F4F643 /* ClasseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseProvider.swift; sourceTree = "<group>"; };
+		E809FCE020D6CB42008DB88A /* TopicProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicProvider.swift; sourceTree = "<group>"; };
+		E809FCE420D6FCC9008DB88A /* MessageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProvider.swift; sourceTree = "<group>"; };
+		E809FCE620D6FD48008DB88A /* QuestionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProvider.swift; sourceTree = "<group>"; };
+		E809FCE820D6FD78008DB88A /* CourseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProvider.swift; sourceTree = "<group>"; };
 		E809FCEA20D700B0008DB88A /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
 		E809FCEB20D700B0008DB88A /* TopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicViewController.xib; sourceTree = "<group>"; };
 		E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +84,14 @@
 		E831FF2320A1DA5500EC1927 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E831FF2620A1E21000EC1927 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E831FF2720A1E21000EC1927 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
-		E83CF92620C45E5300758D0C /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		E83CF92620C45E5300758D0C /* QuizProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProvider.swift; sourceTree = "<group>"; };
+		E8445D6D20D974EC00F1631E /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		E8445D6F20D9756F00F1631E /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		E8445D7120D975AB00F1631E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		E8445D7320D975E300F1631E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E8445D7520D975F500F1631E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E8445D7720D9771800F1631E /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		E8445D7920D977AC00F1631E /* Classe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classe.swift; sourceTree = "<group>"; };
 		E8594F5520AD5D2600C3510B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		E8594F5620AD5D2600C3510B /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
 		E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +109,7 @@
 		E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
 		E8F3130020AB60910016D511 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
-		E8F3130220AB69870016D511 /* Discussion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discussion.swift; sourceTree = "<group>"; };
+		E8F3130220AB69870016D511 /* ThreadProvider.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadProvider.swift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,15 +175,22 @@
 		E804693020A32EBD00F4F643 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E804693720A984E200F4F643 /* Classe.swift */,
-				E809FCE820D6FD78008DB88A /* Course.swift */,
+				E8445D7920D977AC00F1631E /* Classe.swift */,
+				E804693720A984E200F4F643 /* ClasseProvider.swift */,
+				E8445D7720D9771800F1631E /* Course.swift */,
+				E809FCE820D6FD78008DB88A /* CourseProvider.swift */,
 				E8F3130020AB60910016D511 /* CurrentUser.swift */,
-				E8F3130220AB69870016D511 /* Discussion.swift */,
 				E804693120A32EE900F4F643 /* Login.swift */,
-				E809FCE420D6FCC9008DB88A /* Message.swift */,
-				E809FCE620D6FD48008DB88A /* Question.swift */,
-				E83CF92620C45E5300758D0C /* Quiz.swift */,
-				E809FCE020D6CB42008DB88A /* Topic.swift */,
+				E8445D7320D975E300F1631E /* Message.swift */,
+				E809FCE420D6FCC9008DB88A /* MessageProvider.swift */,
+				E8445D7120D975AB00F1631E /* Question.swift */,
+				E809FCE620D6FD48008DB88A /* QuestionProvider.swift */,
+				E8445D6F20D9756F00F1631E /* Quiz.swift */,
+				E83CF92620C45E5300758D0C /* QuizProvider.swift */,
+				E8F3130220AB69870016D511 /* ThreadProvider.swift.swift */,
+				E8445D6D20D974EC00F1631E /* Topic.swift */,
+				E809FCE020D6CB42008DB88A /* TopicProvider.swift */,
+				E8445D7520D975F500F1631E /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,10 +328,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ESGI-Pocket/Pods-ESGI-Pocket-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -344,26 +367,33 @@
 			files = (
 				E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */,
 				E831FF2420A1DA5500EC1927 /* LoginViewController.swift in Sources */,
-				E8F3130320AB69870016D511 /* Discussion.swift in Sources */,
-				E809FCE120D6CB42008DB88A /* Topic.swift in Sources */,
+				E8F3130320AB69870016D511 /* ThreadProvider.swift.swift in Sources */,
+				E809FCE120D6CB42008DB88A /* TopicProvider.swift in Sources */,
 				E804693220A32EE900F4F643 /* Login.swift in Sources */,
 				E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */,
+				E8445D6E20D974EC00F1631E /* Topic.swift in Sources */,
 				E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */,
+				E8445D7620D975F500F1631E /* User.swift in Sources */,
 				E88F793220ACCBEA00368E48 /* MessagesListViewController.swift in Sources */,
 				E88F792E20ACCBA100368E48 /* DiscussionsListViewController.swift in Sources */,
-				E83CF92720C45E5300758D0C /* Quiz.swift in Sources */,
+				E83CF92720C45E5300758D0C /* QuizProvider.swift in Sources */,
+				E8445D7820D9771800F1631E /* Course.swift in Sources */,
 				E809FCEC20D700B0008DB88A /* TopicViewController.swift in Sources */,
-				E804693820A984E200F4F643 /* Classe.swift in Sources */,
+				E804693820A984E200F4F643 /* ClasseProvider.swift in Sources */,
+				E8445D7420D975E300F1631E /* Message.swift in Sources */,
 				E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */,
 				E88F793620ACCC3100368E48 /* QuizListViewController.swift in Sources */,
-				E809FCE920D6FD78008DB88A /* Course.swift in Sources */,
-				E809FCE720D6FD48008DB88A /* Question.swift in Sources */,
+				E809FCE920D6FD78008DB88A /* CourseProvider.swift in Sources */,
+				E809FCE720D6FD48008DB88A /* QuestionProvider.swift in Sources */,
 				E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */,
 				E88F793A20ACCC6600368E48 /* PlanningViewController.swift in Sources */,
 				E804693520A9827900F4F643 /* SelectClassViewController.swift in Sources */,
 				E8013C9E209334EC002FF92C /* AppDelegate.swift in Sources */,
+				E8445D7220D975AB00F1631E /* Question.swift in Sources */,
+				E8445D7A20D977AC00F1631E /* Classe.swift in Sources */,
 				E8F3130120AB60910016D511 /* CurrentUser.swift in Sources */,
-				E809FCE520D6FCC9008DB88A /* Message.swift in Sources */,
+				E8445D7020D9756F00F1631E /* Quiz.swift in Sources */,
+				E809FCE520D6FCC9008DB88A /* MessageProvider.swift in Sources */,
 				E804692E20A32C3100F4F643 /* HomeViewController.swift in Sources */,
 				E88F792A20ACCB2800368E48 /* LessonsListViewController.swift in Sources */,
 			);

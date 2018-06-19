@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizListViewController" customModule="ESGI_Pocket" customModuleProvider="target">
             <connections>
+                <outlet property="noQuizLabel" destination="JzS-Bm-MDt" id="xRw-i1-3aK"/>
+                <outlet property="tableView" destination="GWq-29-OzG" id="XJK-eY-84v"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,28 +22,40 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGP-op-TQl">
-                    <rect key="frame" x="154.5" y="323" width="66.5" height="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LC-1j-0wq">
+                    <rect key="frame" x="15" y="20" width="46" height="30"/>
+                    <state key="normal" title="Retour"/>
+                    <connections>
+                        <action selector="returnButtonPressed:" destination="-1" eventType="touchUpInside" id="bfk-7I-Amg"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GWq-29-OzG">
+                    <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzS-Bm-MDt">
+                    <rect key="frame" x="37.5" y="323" width="300" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="b4t-hr-q7t"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LC-1j-0wq">
-                    <rect key="frame" x="15" y="20" width="50" height="30"/>
-                    <state key="normal" title="Accueil"/>
-                    <connections>
-                        <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="4a5-DQ-dsk"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="QGP-op-TQl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7ZH-q9-KNt"/>
+                <constraint firstItem="GWq-29-OzG" firstAttribute="top" secondItem="3LC-1j-0wq" secondAttribute="bottom" id="7tW-S8-bAI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GWq-29-OzG" secondAttribute="bottom" id="RAG-or-SJV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GWq-29-OzG" secondAttribute="trailing" id="dSh-Dq-UHz"/>
                 <constraint firstItem="3LC-1j-0wq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dqy-S5-lVn"/>
-                <constraint firstItem="QGP-op-TQl" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="n0p-xz-l2W"/>
+                <constraint firstItem="JzS-Bm-MDt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gZh-jG-q29"/>
+                <constraint firstItem="JzS-Bm-MDt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k2q-FA-rx5"/>
+                <constraint firstItem="GWq-29-OzG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="klG-Te-RHP"/>
                 <constraint firstItem="3LC-1j-0wq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="tVX-eV-jRl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="109.5" y="53.5"/>
         </view>
     </objects>
 </document>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,15 +30,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{timestamp}}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5d-RZ-i12">
-                                <rect key="frame" x="174.5" y="0.0" width="105.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="191" y="2" width="89" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{message}}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tt-eg-pMT">
-                        <rect key="frame" x="36" y="30.5" width="238" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{message}}" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tt-eg-pMT">
+                        <rect key="frame" x="36" y="30.5" width="263" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                 <constraints>
                     <constraint firstItem="8tt-eg-pMT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="66y-LT-1aG"/>
                     <constraint firstItem="5XV-KM-eW3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="BkY-nn-HCx"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="8tt-eg-pMT" secondAttribute="trailing" constant="30" id="Er4-BO-Z5T"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8tt-eg-pMT" secondAttribute="trailing" constant="5" id="Er4-BO-Z5T"/>
                     <constraint firstItem="8tt-eg-pMT" firstAttribute="top" secondItem="5XV-KM-eW3" secondAttribute="bottom" constant="5" id="HcT-v2-JTl"/>
                     <constraint firstAttribute="trailing" secondItem="5XV-KM-eW3" secondAttribute="trailing" constant="20" id="I5R-5J-Qnv"/>
                     <constraint firstItem="5XV-KM-eW3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="jO8-LS-q58"/>

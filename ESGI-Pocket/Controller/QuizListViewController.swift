@@ -7,22 +7,58 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class QuizListViewController: UIViewController {
 
+    var idTopic: String!
+    var quizList = JSON()
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noQuizLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.tableView.dataSource = self
+        self.tableView.isHidden = true
+        
+        let quizProvider = QuizProvider()
+        quizProvider.getQuiz(callback: { response in
+            if response.count == 0 {
+                self.noQuizLabel.isHidden = false
+                return
+            }
+            self.quizList = response
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.tableView.isHidden = false
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func homeButtonPressed(_ sender: Any) {
+    @IBAction func returnButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
+}
+
+
+extension QuizListViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.quizList.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath)
+        cell.textLabel?.text = self.quizList[indexPath.row]["name"].stringValue
+        
+        return cell
+    }
+        
 }

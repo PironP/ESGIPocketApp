@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class DiscussionsListViewController: UIViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
-    var discussions = [[String:Any]]()
+    var discussions = JSON()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,8 @@ class DiscussionsListViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.isHidden = true
 
-        let discussionModel = Discussion()
-        discussionModel.getDiscussions(callback: { response in
+        let discussionProvider = DiscussionProvider()
+        discussionProvider.getDiscussions(callback: { response in
             if response.count == 0 {
                 return
             }
@@ -56,7 +57,7 @@ extension DiscussionsListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "discussionCell") ?? UITableViewCell(style: .default, reuseIdentifier: "discussionCell")
-        cell.textLabel?.text = discussions[indexPath.row]["name"] as! String
+        cell.textLabel?.text = discussions[indexPath.row]["name"].stringValue
 
         return cell
     }
@@ -67,7 +68,7 @@ extension DiscussionsListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let discussionView = DiscussionViewController()
-        discussionView.idDiscussion = self.discussions[indexPath.row]["_id"] as! String
+        discussionView.idDiscussion = self.discussions[indexPath.row]["_id"].stringValue
        
         self.present(discussionView, animated: true, completion: nil)
     }

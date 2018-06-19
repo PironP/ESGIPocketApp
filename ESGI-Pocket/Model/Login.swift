@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class Login {
     
@@ -44,7 +45,7 @@ class Login {
                     callback(false)
                     return
                 }
-                else if (jsonData["error"] as! String).contains("activate") {
+                else if (jsonData["id"] != nil) {
                     // go to confirm email
                     callback(false)
                     return
@@ -62,7 +63,7 @@ class Login {
     
     func signin(email: String, password: String, firstname: String, lastName: String, callback: @escaping (String) -> ()) {
         
-        let loginUrl = URL(string: "https://esgipocket.herokuapp.com/users")!
+        let loginUrl = URL(string: "https://esgipocket.herokuapp.com//users")!
         
         let parameters: Parameters = [
             "email" :email, "password" :password, "lastname": lastName, "firstname":firstname, "status":"student"

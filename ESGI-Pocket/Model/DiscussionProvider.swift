@@ -1,5 +1,5 @@
 //
-//  Discussion.swift
+//  ThreadProvider.swift
 //  ESGI-Pocket
 //
 //  Created by pierre piron on 15/05/2018.
@@ -8,11 +8,12 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
-class Discussion {
+class ThreadProvider.swift {
     
     
-    func getDiscussions(callback: @escaping ([[String:Any]]) -> ()) {
+    func getDiscussions(callback: @escaping (JSON) -> ()) {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/threads")!
 
@@ -20,12 +21,15 @@ class Discussion {
         
         Alamofire.request(url, headers: headers).responseJSON { response in
             
-            guard let json = response.result.value else {
-                callback([])
-                return
+            if response.result.isSuccess {
+                
+                let json = JSON(response.result.value)
+                
+                callback(json)
             }
-            
-            callback(json as! [[String : Any]])
+            else {
+                callback(JSON())
+            }
         }
     }
 }

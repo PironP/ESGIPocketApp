@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,41 +24,41 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="zOp-zR-NhB">
-                    <rect key="frame" x="20" y="80" width="335" height="200"/>
+                    <rect key="frame" x="20" y="20" width="335" height="200"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sh-Ev-Zzo">
-                    <rect key="frame" x="30" y="300" width="46.5" height="22.5"/>
+                    <rect key="frame" x="30" y="220" width="46.5" height="22.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@myges.fr" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ry-Fw-3eP">
-                    <rect key="frame" x="30" y="332.5" width="315" height="30"/>
+                    <rect key="frame" x="30" y="252.5" width="315" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyB-XA-kSe">
-                    <rect key="frame" x="30" y="382.5" width="116.5" height="22.5"/>
+                    <rect key="frame" x="30" y="302.5" width="116.5" height="22.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="************" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97v-b9-kDv">
-                    <rect key="frame" x="30" y="415" width="315" height="30"/>
+                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="************" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97v-b9-kDv">
+                    <rect key="frame" x="30" y="335" width="315" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnb-tK-9ib">
-                    <rect key="frame" x="30" y="452" width="129" height="28"/>
+                    <rect key="frame" x="30" y="372" width="129" height="28"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="13"/>
                     <state key="normal" title="Mot de passe oublié ?">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfg-Dl-mHE">
-                    <rect key="frame" x="130" y="515" width="115" height="30"/>
+                    <rect key="frame" x="130" y="435" width="115" height="30"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="SE CONNECTER">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +75,7 @@
                     </connections>
                 </button>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email et/ou mot de passe incorrect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKG-gK-cmr">
-                    <rect key="frame" x="86.5" y="560" width="202.5" height="15.5"/>
+                    <rect key="frame" x="86.5" y="480" width="202.5" height="15.5"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="13"/>
                     <color key="textColor" red="0.85030764250000002" green="0.03381310739" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
@@ -86,7 +86,7 @@
                 <constraint firstItem="97v-b9-kDv" firstAttribute="top" secondItem="ZyB-XA-kSe" secondAttribute="bottom" constant="10" id="0r1-8n-27Y"/>
                 <constraint firstItem="Cnb-tK-9ib" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="73E-Ex-Bb7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="D0z-Ob-O1h" secondAttribute="bottom" constant="30" id="8Hy-xU-ilW"/>
-                <constraint firstItem="4sh-Ev-Zzo" firstAttribute="top" secondItem="zOp-zR-NhB" secondAttribute="bottom" constant="20" id="BmW-99-HeL"/>
+                <constraint firstItem="4sh-Ev-Zzo" firstAttribute="top" secondItem="zOp-zR-NhB" secondAttribute="bottom" id="BmW-99-HeL"/>
                 <constraint firstItem="cfg-Dl-mHE" firstAttribute="top" secondItem="97v-b9-kDv" secondAttribute="bottom" constant="70" id="EcN-XN-ybA"/>
                 <constraint firstItem="5ry-Fw-3eP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="IaO-yW-eUX"/>
                 <constraint firstItem="4sh-Ev-Zzo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="N4F-lr-ORz"/>
@@ -96,7 +96,7 @@
                 <constraint firstItem="IKG-gK-cmr" firstAttribute="top" secondItem="cfg-Dl-mHE" secondAttribute="bottom" constant="15" id="VzR-sZ-4O2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cfg-Dl-mHE" secondAttribute="trailing" constant="130" id="alt-O6-Q5q"/>
                 <constraint firstItem="5ry-Fw-3eP" firstAttribute="top" secondItem="4sh-Ev-Zzo" secondAttribute="bottom" constant="10" id="eNd-t2-K7H"/>
-                <constraint firstItem="zOp-zR-NhB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="iYb-30-2a9"/>
+                <constraint firstItem="zOp-zR-NhB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iYb-30-2a9"/>
                 <constraint firstAttribute="trailing" secondItem="zOp-zR-NhB" secondAttribute="trailing" constant="20" id="mfZ-bH-OA3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="D0z-Ob-O1h" secondAttribute="trailing" constant="130" id="mlT-5C-tD9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="97v-b9-kDv" secondAttribute="trailing" constant="30" id="moq-1U-lUj"/>

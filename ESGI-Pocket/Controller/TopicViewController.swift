@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class TopicViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var topics = [[String:Any]]()
+    var topics = JSON()
+    var fileTypeRequestd: Int! // 1 for quiz 2 for courses
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +22,8 @@ class TopicViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.isHidden = true
         
-        let topicModel = Topic()
-        topicModel.getTopic(callback: { response in
+        let topicProvider = TopicProvider()
+        topicProvider.getTopic(callback: { response in
             if response.count == 0 {
                 return
             }
@@ -54,8 +56,8 @@ extension TopicViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "discussionCell") ?? UITableViewCell(style: .default, reuseIdentifier: "discussionCell")
-        cell.textLabel?.text = topics[indexPath.row]["name"] as! String
+        let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell") ?? UITableViewCell(style: .default, reuseIdentifier: "topicCell")
+        cell.textLabel?.text = topics[indexPath.row]["name"].stringValue
         
         return cell
     }
@@ -64,7 +66,16 @@ extension TopicViewController: UITableViewDataSource{
 
 extension TopicViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if self.fileTypeRequestd == 2 {
+            let lessonsListView = LessonsListViewController()
+            lessonsListView.idTopic = self.topics[indexPath.row]["_id"].stringValue
+            self.present(lessonsListView, animated: true, completion: nil)
+        } else {
+            let quizListView = QuizListViewController()
+            quizListView.idTopic = self.topics[indexPath.row]["_id"].stringValue
+            self.present(quizListView, animated: true, completion: nil)
+        }
+
     }
     
 }

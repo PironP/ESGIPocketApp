@@ -2,29 +2,21 @@
 //  Question.swift
 //  ESGI-Pocket
 //
-//  Created by pierre piron on 17/06/2018.
+//  Created by pierre piron on 19/06/2018.
 //  Copyright © 2018 pierre piron. All rights reserved.
 //
 
 import Foundation
-import Alamofire
 
 class Question {
-
-    func getQuestions(callback: @escaping ([[String:Any]]) -> ()) {
-        
-        let url = URL(string: "https://esgipocket.herokuapp.com/questions")!
-
-        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
-        
-        Alamofire.request(url, headers: headers).responseJSON { response in
-            
-            guard let json = response.result.value else {
-                callback([])
-                return
-            }
-            
-            callback(json as! [[String : Any]])
-        }
+    
+    var id: String
+    var content: String
+    var quiz: Quiz
+    
+    init(id: String, content: String, quiz: Quiz) {
+        self.id = id
+        self.content = content
+        self.quiz = quiz
     }
 }

@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class LessonsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var courses = [[String:Any]]()
+    var idTopic = ""
+    @IBOutlet weak var noCoursesLabel: UILabel!
+    var courses = JSON()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +23,11 @@ class LessonsListViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.isHidden = true
         
-        let courseModel = Course()
-        courseModel.getCourses(callback: { response in
+        let courseProvider = CourseProvider()
+        courseProvider.getTopicCourses(idTopic: self.idTopic, callback: { response in
             if response.count == 0 {
+                self.noCoursesLabel.text? = "Personne n'a partagé de cours pour cette matière. N'hésite pas à partager le tien depuis notre application pour PC."
+                self.noCoursesLabel.isHidden = false
                 return
             }
             self.courses = response
@@ -39,7 +44,7 @@ class LessonsListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func homeButtonPressed(_ sender: Any) {
+    @IBAction func returnButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -54,7 +59,7 @@ extension LessonsListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "coursesCell") ?? UITableViewCell(style: .default, reuseIdentifier: "coursesCell")
-        cell.textLabel?.text = courses[indexPath.row]["name"] as! String
+        cell.textLabel?.text = courses[indexPath.row]["title"].stringValue
         
         return cell
     }
@@ -64,6 +69,9 @@ extension LessonsListViewController: UITableViewDataSource{
 extension LessonsListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if let url = URL(string: self.courses[indexPath.row]["content"].stringValue) {
+            UIApplication.shared.open(url)
+        }
     }
     
 }
