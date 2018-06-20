@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class CourseProvider {
     
-    func getTopicCourses(idTopic: String, callback: @escaping (JSON) -> ()) {
+    func getTopicCourses(idTopic: String, callback: @escaping ([Course]) -> ()) {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/topics/" + idTopic + "/courses")!
 
@@ -20,14 +20,21 @@ class CourseProvider {
         
         Alamofire.request(url, headers: headers).responseJSON { response in
             
+            var coursesList: [Course] = []
+            
             if response.result.isSuccess {
                 
                 let json = JSON(response.result.value)
                 
-                callback(json)
+                for (index,subJson):(String, JSON) in json {
+                    coursesList.append(Course(json: subJson))
+                }
+                
+                
+                callback(coursesList)
             }
             else {
-                callback(JSON())
+                callback(coursesList)
             }
         }
     }

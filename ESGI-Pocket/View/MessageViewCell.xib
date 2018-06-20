@@ -21,24 +21,24 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5XV-KM-eW3">
-                        <rect key="frame" x="20" y="5" width="280" height="20.5"/>
+                        <rect key="frame" x="20" y="5" width="280" height="18"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{username}}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyW-d5-jLN">
-                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{timestamp}}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5d-RZ-i12">
-                                <rect key="frame" x="191" y="2" width="89" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="196.5" y="1" width="83.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{message}}" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tt-eg-pMT">
-                        <rect key="frame" x="36" y="30.5" width="263" height="20.5"/>
+                        <rect key="frame" x="36" y="33" width="263" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                     <constraint firstItem="8tt-eg-pMT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="66y-LT-1aG"/>
                     <constraint firstItem="5XV-KM-eW3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="BkY-nn-HCx"/>
                     <constraint firstAttribute="trailingMargin" secondItem="8tt-eg-pMT" secondAttribute="trailing" constant="5" id="Er4-BO-Z5T"/>
-                    <constraint firstItem="8tt-eg-pMT" firstAttribute="top" secondItem="5XV-KM-eW3" secondAttribute="bottom" constant="5" id="HcT-v2-JTl"/>
+                    <constraint firstItem="8tt-eg-pMT" firstAttribute="top" secondItem="5XV-KM-eW3" secondAttribute="bottom" constant="10" id="HcT-v2-JTl"/>
                     <constraint firstAttribute="trailing" secondItem="5XV-KM-eW3" secondAttribute="trailing" constant="20" id="I5R-5J-Qnv"/>
                     <constraint firstItem="5XV-KM-eW3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="jO8-LS-q58"/>
                 </constraints>

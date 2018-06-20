@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Topic {
     
@@ -16,5 +17,10 @@ class Topic {
     init(id: String, name: String) {
         self.id = id
         self.name = name
+    }
+    
+    init(json: JSON) {
+        self.id = json["_id"].stringValue
+        self.name = json["name"].stringValue
     }
 }

@@ -1,8 +1,8 @@
 //
-//  ClasseProvider.swift
+//  UserProvider.swift
 //  ESGI-Pocket
 //
-//  Created by pierre piron on 14/05/2018.
+//  Created by pierre piron on 19/06/2018.
 //  Copyright © 2018 pierre piron. All rights reserved.
 //
 
@@ -10,30 +10,36 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class ClasseProvider {
+class UserProvider {
     
-    func getSection(callback: @escaping ([Classe]) -> ()) {
+    func getUser(username: String, callback: @escaping ([User]) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/sections")!
+        let url: URL
+        
+        if username == "" {
+            url = URL(string: "https://esgipocket.herokuapp.com/users")!
+        } else {
+            url = URL(string: "https://esgipocket.herokuapp.com/users/" + username)!
+        }
 
+        
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         
         Alamofire.request(url, headers: headers).responseJSON { response in
             
-            var classeList: [Classe] = []
+            var userList: [User] = []
             
             if response.result.isSuccess {
                 
                 let json = JSON(response.result.value)
                 
                 for (index,subJson):(String, JSON) in json {
-                    classeList.append(Classe(json: subJson))
+                    userList.append(User(json: subJson))
                 }
-                
-                callback(classeList)
+                callback(userList)
             }
             else {
-                callback(classeList)
+                callback(userList)
             }
         }
     }

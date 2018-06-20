@@ -46,6 +46,11 @@ class DiscussionsListViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func privateMessageButtonPressed(_ sender: Any) {
+        let messageListView = MessagesListViewController()
+        self.present(messageListView, animated: true, completion: nil)
+    }
+    
 }
 
 extension DiscussionsListViewController: UITableViewDataSource{

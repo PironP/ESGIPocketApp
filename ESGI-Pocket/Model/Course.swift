@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Course {
     
@@ -24,5 +25,14 @@ class Course {
         self.archive = archive
         self.topic = topic
         self.classe = classe
+    }
+    
+    init(json: JSON) {
+        self.id = json["_id"].stringValue
+        self.title = json["title"].stringValue
+        self.content = json["content"].stringValue
+        self.archive = json["archive"].boolValue
+        self.topic = Topic(json: json["topic"])
+        self.classe = Classe(json: json["classe"])
     }
 }

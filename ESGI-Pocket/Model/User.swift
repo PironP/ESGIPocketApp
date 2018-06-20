@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class User {
     
@@ -24,5 +25,14 @@ class User {
         self.email = email
         self.role = role
         self.classe = classe
+    }
+    
+    init(json: JSON) {
+        self.id = json["_id"].stringValue
+        self.firstname = json["firstname"].stringValue
+        self.lastname = json["lastname"].stringValue
+        self.email = json["email"].stringValue
+        self.role = json["role"].intValue
+        self.classe = Classe(json: json["classe"])
     }
 }

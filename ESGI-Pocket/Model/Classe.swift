@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Classe {
     
@@ -20,5 +21,12 @@ class Classe {
         self.year = year
         self.group = group
         self.speciality = speciality
+    }
+    
+    init(json: JSON) {
+        self.id = json["_id"].stringValue
+        self.year = json["year"].stringValue
+        self.group = json["group"].stringValue
+        self.speciality = json["speciality"].stringValue
     }
 }

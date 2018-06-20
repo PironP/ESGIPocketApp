@@ -30,6 +30,7 @@
 		E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831FF2620A1E21000EC1927 /* SignUpViewController.swift */; };
 		E831FF2920A1E21000EC1927 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831FF2720A1E21000EC1927 /* SignUpViewController.xib */; };
 		E83CF92720C45E5300758D0C /* QuizProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83CF92620C45E5300758D0C /* QuizProvider.swift */; };
+		E8434CC820D994B2008FF02E /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8434CC720D994B2008FF02E /* UserProvider.swift */; };
 		E8445D6E20D974EC00F1631E /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D6D20D974EC00F1631E /* Topic.swift */; };
 		E8445D7020D9756F00F1631E /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D6F20D9756F00F1631E /* Quiz.swift */; };
 		E8445D7220D975AB00F1631E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7120D975AB00F1631E /* Question.swift */; };
@@ -37,6 +38,7 @@
 		E8445D7620D975F500F1631E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7520D975F500F1631E /* User.swift */; };
 		E8445D7820D9771800F1631E /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7720D9771800F1631E /* Course.swift */; };
 		E8445D7A20D977AC00F1631E /* Classe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7920D977AC00F1631E /* Classe.swift */; };
+		E85171BA20DA40FC00069C03 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85171B920DA40FC00069C03 /* Thread.swift */; };
 		E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8594F5520AD5D2600C3510B /* MessageViewCell.swift */; };
 		E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8594F5620AD5D2600C3510B /* MessageViewCell.xib */; };
 		E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */; };
@@ -54,7 +56,7 @@
 		E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */; };
 		E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */; };
 		E8F3130120AB60910016D511 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130020AB60910016D511 /* CurrentUser.swift */; };
-		E8F3130320AB69870016D511 /* ThreadProvider.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130220AB69870016D511 /* ThreadProvider.swift.swift */; };
+		E8F3130320AB69870016D511 /* ThreadProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130220AB69870016D511 /* ThreadProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,7 @@
 		E831FF2620A1E21000EC1927 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E831FF2720A1E21000EC1927 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		E83CF92620C45E5300758D0C /* QuizProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizProvider.swift; sourceTree = "<group>"; };
+		E8434CC720D994B2008FF02E /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
 		E8445D6D20D974EC00F1631E /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		E8445D6F20D9756F00F1631E /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		E8445D7120D975AB00F1631E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 		E8445D7520D975F500F1631E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E8445D7720D9771800F1631E /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		E8445D7920D977AC00F1631E /* Classe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classe.swift; sourceTree = "<group>"; };
+		E85171B920DA40FC00069C03 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		E8594F5520AD5D2600C3510B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		E8594F5620AD5D2600C3510B /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
 		E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +113,7 @@
 		E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
 		E8F3130020AB60910016D511 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
-		E8F3130220AB69870016D511 /* ThreadProvider.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadProvider.swift.swift; sourceTree = "<group>"; };
+		E8F3130220AB69870016D511 /* ThreadProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,10 +191,12 @@
 				E809FCE620D6FD48008DB88A /* QuestionProvider.swift */,
 				E8445D6F20D9756F00F1631E /* Quiz.swift */,
 				E83CF92620C45E5300758D0C /* QuizProvider.swift */,
-				E8F3130220AB69870016D511 /* ThreadProvider.swift.swift */,
+				E85171B920DA40FC00069C03 /* Thread.swift */,
+				E8F3130220AB69870016D511 /* ThreadProvider.swift */,
 				E8445D6D20D974EC00F1631E /* Topic.swift */,
 				E809FCE020D6CB42008DB88A /* TopicProvider.swift */,
 				E8445D7520D975F500F1631E /* User.swift */,
+				E8434CC720D994B2008FF02E /* UserProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,7 +373,7 @@
 			files = (
 				E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */,
 				E831FF2420A1DA5500EC1927 /* LoginViewController.swift in Sources */,
-				E8F3130320AB69870016D511 /* ThreadProvider.swift.swift in Sources */,
+				E8F3130320AB69870016D511 /* ThreadProvider.swift in Sources */,
 				E809FCE120D6CB42008DB88A /* TopicProvider.swift in Sources */,
 				E804693220A32EE900F4F643 /* Login.swift in Sources */,
 				E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */,
@@ -378,6 +384,7 @@
 				E88F792E20ACCBA100368E48 /* DiscussionsListViewController.swift in Sources */,
 				E83CF92720C45E5300758D0C /* QuizProvider.swift in Sources */,
 				E8445D7820D9771800F1631E /* Course.swift in Sources */,
+				E85171BA20DA40FC00069C03 /* Thread.swift in Sources */,
 				E809FCEC20D700B0008DB88A /* TopicViewController.swift in Sources */,
 				E804693820A984E200F4F643 /* ClasseProvider.swift in Sources */,
 				E8445D7420D975E300F1631E /* Message.swift in Sources */,
@@ -388,6 +395,7 @@
 				E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */,
 				E88F793A20ACCC6600368E48 /* PlanningViewController.swift in Sources */,
 				E804693520A9827900F4F643 /* SelectClassViewController.swift in Sources */,
+				E8434CC820D994B2008FF02E /* UserProvider.swift in Sources */,
 				E8013C9E209334EC002FF92C /* AppDelegate.swift in Sources */,
 				E8445D7220D975AB00F1631E /* Question.swift in Sources */,
 				E8445D7A20D977AC00F1631E /* Classe.swift in Sources */,

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ESGI-Pocket/Model/Message.swift"
-            timestampString = "551124445.8312761"
+            timestampString = "551177561.799788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33">
+            startingLineNumber = "49"
+            endingLineNumber = "49">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,6 +46,134 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "login(email:password:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ESGI-Pocket/Controller/MessagesListViewController.swift"
+            timestampString = "551177561.799935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "searchUser(username:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ESGI-Pocket/Controller/MessagesListViewController.swift"
+            timestampString = "551177561.800262"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "searchUser(username:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;ESGI_Pocket.User&gt;) -&gt; () in ESGI_Pocket.MessagesListViewController.searchUser(username: Swift.String) -&gt; ()"
+                  moduleName = "ESGI-Pocket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pierrepiron/Projet/Projet%20annuel/ESGIPocketApp/ESGI-Pocket/ESGI-Pocket/Controller/MessagesListViewController.swift"
+                  timestampString = "551177561.947463"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Array&lt;ESGI_Pocket.User&gt;) -&gt; () in ESGI_Pocket.MessagesListViewController.searchUser(username: Swift.String) -&gt; ()"
+                  moduleName = "ESGI-Pocket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pierrepiron/Projet/Projet%20annuel/ESGIPocketApp/ESGI-Pocket/ESGI-Pocket/Controller/MessagesListViewController.swift"
+                  timestampString = "551177561.9504859"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ESGI-Pocket/Controller/MessagesListViewController.swift"
+            timestampString = "551177561.800496"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "searchUser(username:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ESGI-Pocket/Model/UserProvider.swift"
+            timestampString = "551177561.800729"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getUser(username:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ESGI-Pocket/Model/UserProvider.swift"
+            timestampString = "551177561.800781"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getUser(username:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ESGI-Pocket/Model/UserProvider.swift"
+            timestampString = "551177561.800827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getUser(username:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

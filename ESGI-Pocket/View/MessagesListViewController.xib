@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessagesListViewController" customModule="ESGI_Pocket" customModuleProvider="target">
             <connections>
+                <outlet property="queryTextField" destination="vgl-a5-esf" id="oA9-bM-OGt"/>
+                <outlet property="tableView" destination="pcj-4P-fv0" id="JDI-uE-NHd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,6 +44,9 @@
                                 <constraint firstAttribute="width" constant="100" id="zQF-oK-aff"/>
                             </constraints>
                             <state key="normal" title="Rechercher"/>
+                            <connections>
+                                <action selector="searchButtonPressed:" destination="-1" eventType="touchUpInside" id="BgM-5s-GnQ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -60,13 +65,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pcj-4P-fv0">
-                    <rect key="frame" x="0.0" y="175" width="375" height="492"/>
+                    <rect key="frame" x="0.0" y="115" width="375" height="552"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="pcj-4P-fv0" firstAttribute="top" secondItem="8lP-1F-pFM" secondAttribute="bottom" constant="70" id="1v7-dn-JGg"/>
+                <constraint firstItem="pcj-4P-fv0" firstAttribute="top" secondItem="8lP-1F-pFM" secondAttribute="bottom" constant="10" id="1v7-dn-JGg"/>
                 <constraint firstItem="8lP-1F-pFM" firstAttribute="top" secondItem="sO2-Al-3W8" secondAttribute="bottom" constant="25" id="2F9-ZI-0yq"/>
                 <constraint firstItem="sO2-Al-3W8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="AKm-t5-Wyb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pcj-4P-fv0" secondAttribute="trailing" id="BjC-40-l6O"/>

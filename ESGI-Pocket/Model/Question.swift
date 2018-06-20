@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class Question {
     
@@ -18,5 +19,11 @@ class Question {
         self.id = id
         self.content = content
         self.quiz = quiz
+    }
+    
+    init(json: JSON) {
+        self.id = json["_id"].stringValue
+        self.content = json["content"].stringValue
+        self.quiz = Quiz(json: json["quiz"])
     }
 }

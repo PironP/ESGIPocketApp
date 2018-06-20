@@ -14,7 +14,7 @@ class LessonsListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var idTopic = ""
     @IBOutlet weak var noCoursesLabel: UILabel!
-    var courses = JSON()
+    var courses: [Course] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ extension LessonsListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "coursesCell") ?? UITableViewCell(style: .default, reuseIdentifier: "coursesCell")
-        cell.textLabel?.text = courses[indexPath.row]["title"].stringValue
+        cell.textLabel?.text = courses[indexPath.row].title
         
         return cell
     }
@@ -69,7 +69,7 @@ extension LessonsListViewController: UITableViewDataSource{
 extension LessonsListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let url = URL(string: self.courses[indexPath.row]["content"].stringValue) {
+        if let url = URL(string: self.courses[indexPath.row].content) {
             UIApplication.shared.open(url)
         }
     }

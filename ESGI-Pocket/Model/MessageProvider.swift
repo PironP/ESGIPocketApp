@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class MessageProvider {
     
-    func getThreadMessages(threadId: String, callback: @escaping (JSON) -> ()) {
+    func getThreadMessages(threadId: String, callback: @escaping ([Message]) -> ()) {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/threads/" + threadId + "/messages")!
 
@@ -20,19 +20,19 @@ class MessageProvider {
         
         Alamofire.request(url, method: .get, headers: headers).responseJSON { response in
             
+            var messageList: [Message] = []
+            
             if response.result.isSuccess {
             
                 let json = JSON(response.result.value)
                 
-//                for message in json {
-//                    let user = User(id: messsage["User"]["id"].stringValue, firstname: messsage["User"]["firstname"].stringValue, lastname: messsage["User"]["lastname"].stringValue, email: messsage["User"]["email"].stringValue, role: messsage["User"]["role"].number, classe: nil)
-//                    messageList.append(contentsOf: Message(id: json["id"].stringValue, message: json["message"].stringValue, user: user, thread: nil))
-//                })
-                
-                callback(json)
+                for (index,subJson):(String, JSON) in json {
+                    messageList.append(Message(json: subJson))
+                }
+                callback(messageList)
             }
             else {
-                callback(JSON())
+                callback(messageList)
             }
         }
     }

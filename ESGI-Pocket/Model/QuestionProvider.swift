@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class QuestionProvider {
 
-    func getQuestions(callback: @escaping (JSON) -> ()) {
+    func getQuestions(callback: @escaping ([Question]) -> ()) {
         
         let url = URL(string: "https://esgipocket.herokuapp.com/questions")!
 
@@ -20,14 +20,20 @@ class QuestionProvider {
         
         Alamofire.request(url, headers: headers).responseJSON { response in
             
+            var questionList: [Question] = []
+            
             if response.result.isSuccess {
                 
                 let json = JSON(response.result.value)
                 
-                callback(json)
+                for (index,subJson):(String, JSON) in json {
+                    questionList.append(Question(json: subJson))
+                }
+                
+                callback(questionList)
             }
             else {
-                callback(JSON())
+                callback(questionList)
             }
         }
     }

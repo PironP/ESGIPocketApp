@@ -14,11 +14,13 @@ class DiscussionViewController: UIViewController {
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var idDiscussion = ""
-    var messages = JSON()
+    var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.messageTextField.delegate = self
+        
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "MessageViewCell", bundle: nil), forCellReuseIdentifier: "messageCell")
         self.tableView.separatorStyle = .none
@@ -81,9 +83,9 @@ extension DiscussionViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
          if let listCell = cell as? MessageViewCell {
-            listCell.messageLabel.text = messages[indexPath.row]["message"].stringValue
-            listCell.timestampLabel.text = messages[indexPath.row]["createdAt"].stringValue
-            listCell.usernameLabel.text =  messages[indexPath.row]["user"]["firstname"].stringValue + " " + messages[indexPath.row]["user"]["lastname"].stringValue
+            listCell.messageLabel.text = messages[indexPath.row].message
+            listCell.timestampLabel.text = messages[indexPath.row].createdAt
+            listCell.usernameLabel.text =  messages[indexPath.row].user.firstname + " " + messages[indexPath.row].user.lastname
             
         }
         
@@ -94,4 +96,11 @@ extension DiscussionViewController: UITableViewDataSource{
         return 75
     }
     
+}
+
+extension DiscussionViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 }
