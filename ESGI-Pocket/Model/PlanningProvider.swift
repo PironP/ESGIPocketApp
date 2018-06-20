@@ -1,8 +1,8 @@
 //
-//  TopicProvider.swift
+//  PlanningProvider.swift
 //  ESGI-Pocket
 //
-//  Created by pierre piron on 17/06/2018.
+//  Created by pierre piron on 20/06/2018.
 //  Copyright © 2018 pierre piron. All rights reserved.
 //
 
@@ -10,29 +10,31 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class TopicProvider {
+class PlanningProvider {
     
-    func getTopic(callback: @escaping ([Topic]) -> ()) {
+    func getClassPlanning(idClass: String, callback: @escaping ([Planning]) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/topics")!
-
+        let url = URL(string: "https://esgipocket.herokuapp.com/plannings")!
+        
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         
         Alamofire.request(url, headers: headers).responseJSON { response in
             
-            var topicList: [Topic] = []
+            var planningList: [Planning] = []
             
             if response.result.isSuccess {
                 
                 let json = JSON(response.result.value)
                 
                 for (index,subJson):(String, JSON) in json {
-                    topicList.append(Topic(json: subJson))
+                    if (subJson["classe"]["_id"].stringValue == idClass) {
+                        planningList.append(Planning(json: subJson))
+                    }
                 }
-                callback(topicList)
+                callback(planningList)
             }
             else {
-                callback(topicList)
+                callback(planningList)
             }
         }
     }

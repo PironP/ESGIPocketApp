@@ -12,7 +12,7 @@ import SwiftyJSON
 class TopicViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var topics = JSON()
+    var topics: [Topic] = []
     var fileTypeRequestd: Int! // 1 for quiz 2 for courses
     
     override func viewDidLoad() {
@@ -21,6 +21,7 @@ class TopicViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.isHidden = true
+        self.tableView.tableFooterView = UIView()
         
         let topicProvider = TopicProvider()
         topicProvider.getTopic(callback: { response in
@@ -57,7 +58,7 @@ extension TopicViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell") ?? UITableViewCell(style: .default, reuseIdentifier: "topicCell")
-        cell.textLabel?.text = topics[indexPath.row]["name"].stringValue
+        cell.textLabel?.text = topics[indexPath.row].name
         
         return cell
     }
@@ -68,11 +69,11 @@ extension TopicViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.fileTypeRequestd == 2 {
             let lessonsListView = LessonsListViewController()
-            lessonsListView.idTopic = self.topics[indexPath.row]["_id"].stringValue
+            lessonsListView.idTopic = self.topics[indexPath.row].id
             self.present(lessonsListView, animated: true, completion: nil)
         } else {
             let quizListView = QuizListViewController()
-            quizListView.idTopic = self.topics[indexPath.row]["_id"].stringValue
+            quizListView.idTopic = self.topics[indexPath.row].id
             self.present(quizListView, animated: true, completion: nil)
         }
 

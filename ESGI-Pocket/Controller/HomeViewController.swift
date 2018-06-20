@@ -7,22 +7,47 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class HomeViewController: UIViewController {
 
     var jwt: String = ""
     
+    @IBOutlet weak var nextClassView: UIView!
+    @IBOutlet weak var classNameLabel: UILabel!
+    @IBOutlet weak var classStartLabel: UILabel!
+    @IBOutlet weak var classRoomLabel: UILabel!
+    @IBOutlet weak var noPlanningLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        self.nextClassView.isHidden = true
+        loadNextClass()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    func loadNextClass() {
+        let planningProvider = PlanningProvider()
+        planningProvider.getClassPlanning(idClass: "", callback: { response in
+            if response.isEmpty {
+                self.noPlanningLabel.isHidden = false
+                return
+            }
+            let classes = response[0].content
+            // find first
+            let nextClass = classes[0]
+            // field label with newtClass
+            DispatchQueue.main.async {
+                self.nextClassView.isHidden = false
+            }
+        })
+    }
+    
     @IBAction func navigationButtonPressed(_ sender: UIBarButtonItem) {
         switch sender.tag {
         case 0:

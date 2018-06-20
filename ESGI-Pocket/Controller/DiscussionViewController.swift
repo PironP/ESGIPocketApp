@@ -13,18 +13,26 @@ class DiscussionViewController: UIViewController {
 
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var containerView: UIView!
+    
     var idDiscussion = ""
+    var nameDiscussion = ""
     var messages: [Message] = []
+    
+    @IBOutlet weak var discussionNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            self.discussionNameLabel.text = nameDiscussion
 
         self.messageTextField.delegate = self
-        
+        //self.containerView.layer.cornerRadius = self.containerView.frame.width / 2
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "MessageViewCell", bundle: nil), forCellReuseIdentifier: "messageCell")
         self.tableView.separatorStyle = .none
-        self.tableView?.rowHeight = 75.0
+        self.tableView?.rowHeight = 105.0
+        self.tableView.allowsSelection = false
         loadMessages()
     }
 
@@ -86,14 +94,14 @@ extension DiscussionViewController: UITableViewDataSource{
             listCell.messageLabel.text = messages[indexPath.row].message
             listCell.timestampLabel.text = messages[indexPath.row].createdAt
             listCell.usernameLabel.text =  messages[indexPath.row].user.firstname + " " + messages[indexPath.row].user.lastname
-            
+            listCell.roundedView.backgroundColor = messages[indexPath.row].user.id == CurrentUser.currentUser.id ? UIColor.blue : UIColor.lightGray
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 105
     }
     
 }

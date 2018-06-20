@@ -39,10 +39,13 @@
 		E8445D7820D9771800F1631E /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7720D9771800F1631E /* Course.swift */; };
 		E8445D7A20D977AC00F1631E /* Classe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8445D7920D977AC00F1631E /* Classe.swift */; };
 		E85171BA20DA40FC00069C03 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85171B920DA40FC00069C03 /* Thread.swift */; };
+		E85171BC20DA567F00069C03 /* Planning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85171BB20DA567F00069C03 /* Planning.swift */; };
+		E85171BE20DA575E00069C03 /* PlanningProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85171BD20DA575E00069C03 /* PlanningProvider.swift */; };
 		E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8594F5520AD5D2600C3510B /* MessageViewCell.swift */; };
 		E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8594F5620AD5D2600C3510B /* MessageViewCell.xib */; };
 		E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */; };
 		E86DB52320BBFF2000F06E67 /* ConfirmEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */; };
+		E870CCBD20DA8E4B0078FD3A /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */; };
 		E88F792A20ACCB2800368E48 /* LessonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F792820ACCB2800368E48 /* LessonsListViewController.swift */; };
 		E88F792B20ACCB2800368E48 /* LessonsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88F792920ACCB2800368E48 /* LessonsListViewController.xib */; };
 		E88F792E20ACCBA100368E48 /* DiscussionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88F792C20ACCBA100368E48 /* DiscussionsListViewController.swift */; };
@@ -96,10 +99,13 @@
 		E8445D7720D9771800F1631E /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		E8445D7920D977AC00F1631E /* Classe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classe.swift; sourceTree = "<group>"; };
 		E85171B920DA40FC00069C03 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		E85171BB20DA567F00069C03 /* Planning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planning.swift; sourceTree = "<group>"; };
+		E85171BD20DA575E00069C03 /* PlanningProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningProvider.swift; sourceTree = "<group>"; };
 		E8594F5520AD5D2600C3510B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		E8594F5620AD5D2600C3510B /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
 		E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewController.swift; sourceTree = "<group>"; };
 		E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmEmailViewController.xib; sourceTree = "<group>"; };
+		E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		E88F792820ACCB2800368E48 /* LessonsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsListViewController.swift; sourceTree = "<group>"; };
 		E88F792920ACCB2800368E48 /* LessonsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonsListViewController.xib; sourceTree = "<group>"; };
 		E88F792C20ACCBA100368E48 /* DiscussionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionsListViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +203,8 @@
 				E809FCE020D6CB42008DB88A /* TopicProvider.swift */,
 				E8445D7520D975F500F1631E /* User.swift */,
 				E8434CC720D994B2008FF02E /* UserProvider.swift */,
+				E85171BB20DA567F00069C03 /* Planning.swift */,
+				E85171BD20DA575E00069C03 /* PlanningProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 				E831FF2720A1E21000EC1927 /* SignUpViewController.xib */,
 				E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */,
 				E809FCEB20D700B0008DB88A /* TopicViewController.xib */,
+				E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,6 +386,7 @@
 				E809FCE120D6CB42008DB88A /* TopicProvider.swift in Sources */,
 				E804693220A32EE900F4F643 /* Login.swift in Sources */,
 				E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */,
+				E85171BC20DA567F00069C03 /* Planning.swift in Sources */,
 				E8445D6E20D974EC00F1631E /* Topic.swift in Sources */,
 				E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */,
 				E8445D7620D975F500F1631E /* User.swift in Sources */,
@@ -390,10 +400,12 @@
 				E8445D7420D975E300F1631E /* Message.swift in Sources */,
 				E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */,
 				E88F793620ACCC3100368E48 /* QuizListViewController.swift in Sources */,
+				E870CCBD20DA8E4B0078FD3A /* RoundedView.swift in Sources */,
 				E809FCE920D6FD78008DB88A /* CourseProvider.swift in Sources */,
 				E809FCE720D6FD48008DB88A /* QuestionProvider.swift in Sources */,
 				E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */,
 				E88F793A20ACCC6600368E48 /* PlanningViewController.swift in Sources */,
+				E85171BE20DA575E00069C03 /* PlanningProvider.swift in Sources */,
 				E804693520A9827900F4F643 /* SelectClassViewController.swift in Sources */,
 				E8434CC820D994B2008FF02E /* UserProvider.swift in Sources */,
 				E8013C9E209334EC002FF92C /* AppDelegate.swift in Sources */,

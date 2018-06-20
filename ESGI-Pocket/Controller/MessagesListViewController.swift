@@ -18,6 +18,10 @@ class MessagesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.tableFooterView = UIView()
+        
         searchUser(username: "")
     }
 

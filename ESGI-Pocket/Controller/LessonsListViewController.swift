@@ -22,6 +22,7 @@ class LessonsListViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.isHidden = true
+        self.tableView.tableFooterView = UIView()
         
         let courseProvider = CourseProvider()
         courseProvider.getTopicCourses(idTopic: self.idTopic, callback: { response in

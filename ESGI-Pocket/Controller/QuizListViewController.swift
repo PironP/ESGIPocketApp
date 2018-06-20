@@ -12,7 +12,7 @@ import SwiftyJSON
 class QuizListViewController: UIViewController {
 
     var idTopic: String!
-    var quizList = JSON()
+    var quizList: [Quiz] = []
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noQuizLabel: UILabel!
     
@@ -21,6 +21,7 @@ class QuizListViewController: UIViewController {
 
         self.tableView.dataSource = self
         self.tableView.isHidden = true
+        self.tableView.tableFooterView = UIView()
         
         let quizProvider = QuizProvider()
         quizProvider.getQuiz(callback: { response in
@@ -43,7 +44,7 @@ class QuizListViewController: UIViewController {
     @IBAction func returnButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
 }
 
 
@@ -56,7 +57,7 @@ extension QuizListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath)
-        cell.textLabel?.text = self.quizList[indexPath.row]["name"].stringValue
+        cell.textLabel?.text = self.quizList[indexPath.row].name
         
         return cell
     }

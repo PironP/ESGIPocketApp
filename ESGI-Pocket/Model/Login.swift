@@ -34,26 +34,27 @@ class Login {
                 return
             }
             
-            guard let json = response.result.value,
-                let jsonData = json as? [String : Any] else {
-                    callback(false)
-                    return
-            }
+            let json = JSON(response.result.value)
             
             if statusCode == 401 {
-                if jsonData["error"] as! String == "Bad Credentials" {
+                if json["error"].stringValue == "Bad Credentials" {
                     callback(false)
                     return
                 }
-                else if (jsonData["id"] != nil) {
+                else if (json["_id"] != nil) {
                     // go to confirm email
                     callback(false)
                     return
                 }
             }
             
-            CurrentUser.currentUser.jwt = jsonData["token"] as! String
-            //CurrentUser.currentUser.id = dict["id"] as! String
+            CurrentUser.currentUser.jwt = json["token"].stringValue
+            CurrentUser.currentUser.id = json["user"]["_id"].stringValue
+            CurrentUser.currentUser.classe = Classe(json: json["user"]["classe"])
+            
+//            print("token = " + CurrentUser.currentUser.jwt)
+//            print("id = " + CurrentUser.currentUser.id)
+//            print("classe = " + CurrentUser.currentUser.classe.id)
             
             callback(true)
         }

@@ -15,6 +15,7 @@ final class CurrentUser {
     var lastname: String = ""
     var email: String = ""
     var jwt: String = ""
+    var classe: Classe!
     
     private init() {}
     
