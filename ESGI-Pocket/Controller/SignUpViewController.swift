@@ -23,13 +23,10 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
@@ -64,11 +61,11 @@ class SignUpViewController: UIViewController {
             DispatchQueue.main.async(execute: {
                 if response != "" {
                     CurrentUser.currentUser.id = response
+                    CurrentUser.currentUser.email = email
                     let confirmEmailViewController = ConfirmEmailViewController()
                     confirmEmailViewController.userId = response
                     
-                    
-                    self.present(confirmEmailViewController, animated: true, completion: nil)
+                    self.present(confirmEmailViewController, animated: true)
                 }
             })
         })

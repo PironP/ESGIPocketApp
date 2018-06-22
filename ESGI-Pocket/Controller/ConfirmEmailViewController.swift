@@ -15,7 +15,7 @@ class ConfirmEmailViewController: UIViewController {
     var userId: String = ""
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +38,10 @@ class ConfirmEmailViewController: UIViewController {
         
         loginModel.checkValidationCode(id: userId, validationCode: validationCode, callback: { response in
             if response {
-                // if userId is not set call api to get id
-                let selectClassViewController = SelectClassViewController()
-                self.present(selectClassViewController, animated: true, completion: nil)
+                // let selectClassViewController = SelectClassViewController()
+                // self.present(selectClassViewController, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+
             }
             else {
                 // Show error message : " Validation  code is not correct"

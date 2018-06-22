@@ -56,7 +56,7 @@ class SplashScreenViewController: UIViewController {
         // Try to login
         let loginModel = Login()
         loginModel.login(email: loginDetails["email"]!, password: loginDetails["password"]!, callback: { response in
-            if response == true {
+            if response.statusCode == 200 {
                 DispatchQueue.main.async {
                     let currentUser = CurrentUser.currentUser
 

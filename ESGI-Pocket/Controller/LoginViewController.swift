@@ -39,19 +39,22 @@ class LoginViewController: UIViewController {
             
             // execute the code in the main thread
             DispatchQueue.main.async(execute: {
-                if response == true {
-                    // response is the JWT
-                    
+                if response.statusCode == 200 {
+  
                     self.saveLoginDetailsToLocalStorage(email: email, password: password)
-
                     CurrentUser.currentUser.email = email
-                    
                     self.dismiss(animated: true, completion: nil)
 
-                
                 }
                 else {
-                    self.loginErrorLabel.isHidden = false
+                    if (response.error == "activation_required") {
+                        CurrentUser.currentUser.email = email
+                        let confirmEmailView = ConfirmEmailViewController()
+                        self.present(confirmEmailView, animated: true, completion: nil)
+                    }
+                    else {
+                        self.loginErrorLabel.isHidden = false
+                    }
                 }
             })
         })

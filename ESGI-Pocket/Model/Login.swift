@@ -13,7 +13,7 @@ import SwiftyJSON
 class Login {
     
     // Async func for log the user, return in a callback the jwt or empty string if error
-    func login(email: String, password: String, callback: @escaping (Bool) -> ()) {
+    func login(email: String, password: String, callback: @escaping (Response) -> ()) {
         
         let loginUrl = URL(string: "https://esgipocket.herokuapp.com/login")!
         
@@ -25,27 +25,22 @@ class Login {
         Alamofire.request(loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             
             guard let statusCode = response.response?.statusCode else {
-                callback(false)
+                callback(Response.init(statusCode: 500, error: "Erreur serveur"))
                 return
             }
 
-            if statusCode == 404 {
-                callback(false)
+            if statusCode == 404 || statusCode == 503 {
+                callback(Response(statusCode: statusCode, error: "Erreur serveur"))
                 return
             }
             
             let json = JSON(response.result.value)
             
+            print(json["code"])
+            
             if statusCode == 401 {
-                if json["error"].stringValue == "Bad Credentials" {
-                    callback(false)
-                    return
-                }
-                else if (json["_id"] != nil) {
-                    // go to confirm email
-                    callback(false)
-                    return
-                }
+                callback(Response(statusCode: statusCode, error: json["code"].stringValue))
+                return
             }
             
             CurrentUser.currentUser.jwt = json["token"].stringValue
@@ -56,7 +51,7 @@ class Login {
 //            print("id = " + CurrentUser.currentUser.id)
 //            print("classe = " + CurrentUser.currentUser.classe.id)
             
-            callback(true)
+            callback(Response(statusCode: 200))
         }
     
     }
@@ -64,10 +59,10 @@ class Login {
     
     func signin(email: String, password: String, firstname: String, lastName: String, callback: @escaping (String) -> ()) {
         
-        let loginUrl = URL(string: "https://esgipocket.herokuapp.com//users")!
+        let loginUrl = URL(string: "https://esgipocket.herokuapp.com/users")!
         
         let parameters: Parameters = [
-            "email" :email, "password" :password, "lastname": lastName, "firstname":firstname, "status":"student"
+            "email" :email, "password" :password, "lastname": lastName, "firstname":firstname, "role": 2
         ]
         
         Alamofire.request(loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
@@ -97,7 +92,7 @@ class Login {
         let url = URL(string: "https://esgipocket.herokuapp.com/users/activate")!
         
         let parameters: Parameters = [
-            "activationCode" : Int(validationCode), "id" : CurrentUser.currentUser.id
+            "activationCode" : Int(validationCode), "email" : CurrentUser.currentUser.email
         ]
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
