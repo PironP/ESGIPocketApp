@@ -46,6 +46,7 @@ class Login {
             CurrentUser.currentUser.jwt = json["token"].stringValue
             CurrentUser.currentUser.id = json["user"]["_id"].stringValue
             CurrentUser.currentUser.classe = Classe(json: json["user"]["classe"])
+            CurrentUser.currentUser.role = json["user"]["role"].intValue
             
 //            print("token = " + CurrentUser.currentUser.jwt)
 //            print("id = " + CurrentUser.currentUser.id)

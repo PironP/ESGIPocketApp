@@ -44,7 +44,7 @@ class TopicViewController: UIViewController {
     
 
     @IBAction func homeButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 
 }
@@ -70,11 +70,11 @@ extension TopicViewController: UITableViewDelegate{
         if self.fileTypeRequestd == 2 {
             let lessonsListView = LessonsListViewController()
             lessonsListView.idTopic = self.topics[indexPath.row].id
-            self.present(lessonsListView, animated: true, completion: nil)
+            navigationController?.pushViewController(lessonsListView, animated: true)
         } else {
             let quizListView = QuizListViewController()
             quizListView.idTopic = self.topics[indexPath.row].id
-            self.present(quizListView, animated: true, completion: nil)
+            navigationController?.pushViewController(quizListView, animated: true)
         }
 
     }

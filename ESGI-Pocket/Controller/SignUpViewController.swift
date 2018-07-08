@@ -65,7 +65,7 @@ class SignUpViewController: UIViewController {
                     let confirmEmailViewController = ConfirmEmailViewController()
                     confirmEmailViewController.userId = response
                     
-                    self.present(confirmEmailViewController, animated: true)
+                    self.navigationController?.pushViewController(confirmEmailViewController, animated: true)
                 }
             })
         })
@@ -73,13 +73,12 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func backToLoginButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func validateEmail(_ sender: Any) {
         let confirmEmailViewController = ConfirmEmailViewController()
-        
-        self.present(confirmEmailViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(confirmEmailViewController, animated: true)
     }
     
 

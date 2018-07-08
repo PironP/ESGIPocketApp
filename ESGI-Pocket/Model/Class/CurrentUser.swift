@@ -14,6 +14,7 @@ final class CurrentUser {
     var firstname: String = ""
     var lastname: String = ""
     var email: String = ""
+    var role: Int = 2
     var jwt: String = ""
     var classe: Classe!
     

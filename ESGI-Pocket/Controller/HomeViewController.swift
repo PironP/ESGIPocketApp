@@ -53,18 +53,17 @@ class HomeViewController: UIViewController {
         case 0:
             let  topicView = TopicViewController()
             topicView.fileTypeRequestd = 1
-            self.present(topicView, animated: true, completion: nil)
-            
+            navigationController?.pushViewController(topicView, animated: true)
         case 1:
             let  topicView = TopicViewController()
             topicView.fileTypeRequestd = 2
-            self.present(topicView, animated: true, completion: nil)
+            navigationController?.pushViewController(topicView, animated: true)
         case 3:
             let discussionsListView = DiscussionsListViewController()
-            self.present(discussionsListView, animated: true, completion: nil)
+            navigationController?.pushViewController(discussionsListView, animated: true)
         case 4:
             let planningView = PlanningViewController()
-            self.present(planningView, animated: true, completion: nil)
+            navigationController?.pushViewController(planningView, animated: true)
         default:
             return
         }
@@ -94,7 +93,6 @@ class HomeViewController: UIViewController {
         CurrentUser.currentUser.jwt = ""
         
         let loginView = LoginViewController()
-        self.dismiss(animated: true, completion: nil)
-        //self.present(loginView, animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -43,14 +43,14 @@ class LoginViewController: UIViewController {
   
                     self.saveLoginDetailsToLocalStorage(email: email, password: password)
                     CurrentUser.currentUser.email = email
-                    self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
 
                 }
                 else {
                     if (response.error == "activation_required") {
                         CurrentUser.currentUser.email = email
                         let confirmEmailView = ConfirmEmailViewController()
-                        self.present(confirmEmailView, animated: true, completion: nil)
+                        self.navigationController?.pushViewController(confirmEmailView, animated: true)
                     }
                     else {
                         self.loginErrorLabel.isHidden = false
@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func signUpButtonPressed(_ sender: Any) {
         let signUpViewController = SignUpViewController()
-        self.present(signUpViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(signUpViewController, animated: true)
     }
     
     

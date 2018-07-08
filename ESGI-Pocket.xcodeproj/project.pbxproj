@@ -187,29 +187,45 @@
 		E804693020A32EBD00F4F643 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E8445D7920D977AC00F1631E /* Classe.swift */,
-				E804693720A984E200F4F643 /* ClasseProvider.swift */,
-				E8445D7720D9771800F1631E /* Course.swift */,
-				E809FCE820D6FD78008DB88A /* CourseProvider.swift */,
-				E8F3130020AB60910016D511 /* CurrentUser.swift */,
-				E804693120A32EE900F4F643 /* Login.swift */,
-				E8445D7320D975E300F1631E /* Message.swift */,
-				E809FCE420D6FCC9008DB88A /* MessageProvider.swift */,
-				E8445D7120D975AB00F1631E /* Question.swift */,
-				E809FCE620D6FD48008DB88A /* QuestionProvider.swift */,
-				E8445D6F20D9756F00F1631E /* Quiz.swift */,
-				E83CF92620C45E5300758D0C /* QuizProvider.swift */,
-				E85171B920DA40FC00069C03 /* Thread.swift */,
-				E8F3130220AB69870016D511 /* ThreadProvider.swift */,
-				E8445D6D20D974EC00F1631E /* Topic.swift */,
-				E809FCE020D6CB42008DB88A /* TopicProvider.swift */,
-				E8445D7520D975F500F1631E /* User.swift */,
-				E8434CC720D994B2008FF02E /* UserProvider.swift */,
-				E85171BB20DA567F00069C03 /* Planning.swift */,
-				E85171BD20DA575E00069C03 /* PlanningProvider.swift */,
-				E870CCBE20DAB44C0078FD3A /* Response.swift */,
+				E810B20320F2466900167F7D /* Provider */,
+				E810B20220F2465F00167F7D /* Class */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E810B20220F2465F00167F7D /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E8445D7920D977AC00F1631E /* Classe.swift */,
+				E8445D7720D9771800F1631E /* Course.swift */,
+				E8F3130020AB60910016D511 /* CurrentUser.swift */,
+				E8445D7320D975E300F1631E /* Message.swift */,
+				E8445D7120D975AB00F1631E /* Question.swift */,
+				E8445D6F20D9756F00F1631E /* Quiz.swift */,
+				E85171B920DA40FC00069C03 /* Thread.swift */,
+				E8445D6D20D974EC00F1631E /* Topic.swift */,
+				E8445D7520D975F500F1631E /* User.swift */,
+				E85171BB20DA567F00069C03 /* Planning.swift */,
+				E870CCBE20DAB44C0078FD3A /* Response.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		E810B20320F2466900167F7D /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				E804693720A984E200F4F643 /* ClasseProvider.swift */,
+				E809FCE820D6FD78008DB88A /* CourseProvider.swift */,
+				E804693120A32EE900F4F643 /* Login.swift */,
+				E809FCE420D6FCC9008DB88A /* MessageProvider.swift */,
+				E809FCE620D6FD48008DB88A /* QuestionProvider.swift */,
+				E83CF92620C45E5300758D0C /* QuizProvider.swift */,
+				E8F3130220AB69870016D511 /* ThreadProvider.swift */,
+				E809FCE020D6CB42008DB88A /* TopicProvider.swift */,
+				E8434CC720D994B2008FF02E /* UserProvider.swift */,
+				E85171BD20DA575E00069C03 /* PlanningProvider.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 		E813196C20A9EBD0006C83CC /* Controller */ = {

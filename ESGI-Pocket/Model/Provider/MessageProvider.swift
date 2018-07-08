@@ -62,4 +62,26 @@ class MessageProvider {
             callback(true)
         }
     }
+    
+    func deleteMessage(messageId: String, callback: @escaping (Bool) -> ()) {
+        
+        let url = URL(string: "https://esgipocket.herokuapp.com/messages/" + messageId)!
+        
+        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
+        
+        Alamofire.request(url, method: .delete,encoding: JSONEncoding.default , headers: headers).responseJSON { response in
+            
+            guard let statusCode = response.response?.statusCode else {
+                callback(false)
+                return
+            }
+            
+            if statusCode == 404 || statusCode == 500 {
+                callback(false)
+                return
+            }
+            
+            callback(true)
+        }
+    }
 }

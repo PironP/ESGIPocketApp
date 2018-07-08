@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = SplashScreenViewController()
-        
+        let navigationController = UINavigationController(rootViewController: SplashScreenViewController())
+        navigationController.navigationBar.isHidden = true
+        // window.rootViewController = SplashScreenViewController()
+        window.rootViewController = navigationController
         window.backgroundColor = UIColor.lightGray
         window.makeKeyAndVisible()
         self.window = window

@@ -44,12 +44,12 @@ class DiscussionsListViewController: UIViewController {
     
 
     @IBAction func homeButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func privateMessageButtonPressed(_ sender: Any) {
         let messageListView = MessagesListViewController()
-        self.present(messageListView, animated: true, completion: nil)
+        navigationController?.pushViewController(messageListView, animated: true)
     }
     
 }
@@ -76,8 +76,7 @@ extension DiscussionsListViewController: UITableViewDelegate{
         let discussionView = DiscussionViewController()
         discussionView.idDiscussion = self.discussions[indexPath.row].id
         discussionView.nameDiscussion = self.discussions[indexPath.row].name
-       
-        self.present(discussionView, animated: true, completion: nil)
+        navigationController?.pushViewController(discussionView, animated: true)
     }
 
 }

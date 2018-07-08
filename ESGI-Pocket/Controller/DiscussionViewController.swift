@@ -29,11 +29,13 @@ class DiscussionViewController: UIViewController {
         self.messageTextField.delegate = self
         //self.containerView.layer.cornerRadius = self.containerView.frame.width / 2
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.register(UINib(nibName: "MessageViewCell", bundle: nil), forCellReuseIdentifier: "messageCell")
         self.tableView.separatorStyle = .none
         self.tableView?.rowHeight = 105.0
         self.tableView.allowsSelection = false
         loadMessages()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,13 +53,15 @@ class DiscussionViewController: UIViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
+                let indexPath = IndexPath(row: self.messages.count-1, section: 0)
+                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
             }
         })
     }
     
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -81,7 +85,7 @@ class DiscussionViewController: UIViewController {
     }
 }
 
-extension DiscussionViewController: UITableViewDataSource{
+extension DiscussionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messages.count
         
@@ -104,6 +108,26 @@ extension DiscussionViewController: UITableViewDataSource{
         return 105
     }
     
+}
+
+extension DiscussionViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        if CurrentUser.currentUser.role == 2 {
+            return []
+        }
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            let messageProvider = MessageProvider()
+            messageProvider.deleteMessage(messageId: self.messages[indexPath.row].id, callback: { response in
+                if response {
+                    self.loadMessages()
+                }
+            })
+        }
+        return [delete]
+    }
 }
 
 extension DiscussionViewController: UITextFieldDelegate {

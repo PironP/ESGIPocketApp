@@ -9,18 +9,14 @@
 import UIKit
 
 class SplashScreenViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,7 +31,7 @@ class SplashScreenViewController: UIViewController {
         if CurrentUser.currentUser.jwt != "" {
             // User already loged in
             let homeView = HomeViewController()
-            self.present(homeView, animated: true, completion: nil)
+            navigationController?.pushViewController(homeView, animated: true)
             return
         }
         
@@ -48,7 +44,7 @@ class SplashScreenViewController: UIViewController {
             let loginDetails = json as? [String:String] else {
             
                 let loginView = LoginViewController()
-                self.present(loginView, animated: true, completion: nil)
+                navigationController?.pushViewController(loginView, animated: true)
 
                 return
         }
@@ -62,13 +58,12 @@ class SplashScreenViewController: UIViewController {
 
                     currentUser.email = loginDetails["email"]!
                     let homeView = HomeViewController()
-                    self.present(homeView, animated: true, completion: nil)
+                    self.navigationController?.pushViewController(homeView, animated: true)
                 }
             }
             else {
-                
                 let loginView = LoginViewController()
-                self.present(loginView, animated: true, completion: nil)
+                self.navigationController?.pushViewController(loginView, animated: true)
             }
         })
         

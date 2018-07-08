@@ -113,9 +113,8 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTq-i2-m4R">
-                    <rect key="frame" x="120" y="540" width="135" height="30"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="S'INSCRIRE">
+                    <rect key="frame" x="120" y="540" width="135" height="22"/>
+                    <state key="normal" title="S'INSCRIRE" backgroundImage="button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -123,20 +122,20 @@
                     </connections>
                 </button>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vous devez remplir tous les champs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFk-DY-8O0">
-                    <rect key="frame" x="76" y="575" width="223" height="17"/>
+                    <rect key="frame" x="76" y="567" width="223" height="17"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                     <color key="textColor" red="0.85030764250000002" green="0.03381310739" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9p-xo-l5Y">
-                    <rect key="frame" x="123.5" y="602" width="128" height="30"/>
+                    <rect key="frame" x="123.5" y="594" width="128" height="30"/>
                     <state key="normal" title="Valider son email ?"/>
                     <connections>
                         <action selector="validateEmail:" destination="-1" eventType="touchUpInside" id="h8a-H6-7xC"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffp-Rm-n10">
-                    <rect key="frame" x="141" y="637" width="92" height="30"/>
+                    <rect key="frame" x="141" y="629" width="92" height="30"/>
                     <state key="normal" title="Se connecter"/>
                     <connections>
                         <action selector="backToLoginButtonPressed:" destination="-1" eventType="touchUpInside" id="jLs-qD-ajp"/>
@@ -191,4 +190,7 @@
             <viewLayoutGuide key="safeArea" id="op7-4d-fK0"/>
         </view>
     </objects>
+    <resources>
+        <image name="button" width="76" height="22"/>
+    </resources>
 </document>
