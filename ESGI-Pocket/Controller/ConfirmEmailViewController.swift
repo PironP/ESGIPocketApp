@@ -15,7 +15,7 @@ class ConfirmEmailViewController: UIViewController {
     var userId: String = ""
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +28,10 @@ class ConfirmEmailViewController: UIViewController {
         
     }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func activateAccountBtnPressed(_ sender: Any) {
         
         let loginModel = Login()
@@ -38,9 +42,9 @@ class ConfirmEmailViewController: UIViewController {
         
         loginModel.checkValidationCode(id: userId, validationCode: validationCode, callback: { response in
             if response {
-                // let selectClassViewController = SelectClassViewController()
-                // self.present(selectClassViewController, animated: true, completion: nil)
-                self.dismiss(animated: true, completion: nil)
+                let selectClassViewController = SelectClassViewController()
+                self.navigationController?.popViewController(animated: true)
+                self.navigationController?.pushViewController(selectClassViewController, animated: true)
 
             }
             else {

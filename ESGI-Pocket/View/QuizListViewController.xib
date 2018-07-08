@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LC-1j-0wq">
-                    <rect key="frame" x="15" y="20" width="76" height="22"/>
+                    <rect key="frame" x="15" y="30" width="76" height="22"/>
                     <state key="normal" title="Retour" backgroundImage="button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -66,7 +66,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="GWq-29-OzG" secondAttribute="bottom" id="RAG-or-SJV"/>
                 <constraint firstItem="d0g-A9-sBP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bZu-7m-zrC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GWq-29-OzG" secondAttribute="trailing" id="dSh-Dq-UHz"/>
-                <constraint firstItem="3LC-1j-0wq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dqy-S5-lVn"/>
+                <constraint firstItem="3LC-1j-0wq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="dqy-S5-lVn"/>
                 <constraint firstItem="JzS-Bm-MDt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gZh-jG-q29"/>
                 <constraint firstItem="JzS-Bm-MDt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k2q-FA-rx5"/>
                 <constraint firstItem="GWq-29-OzG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="klG-Te-RHP"/>

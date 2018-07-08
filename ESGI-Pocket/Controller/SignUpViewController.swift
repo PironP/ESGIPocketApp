@@ -78,7 +78,9 @@ class SignUpViewController: UIViewController {
     
     @IBAction func validateEmail(_ sender: Any) {
         let confirmEmailViewController = ConfirmEmailViewController()
+        navigationController?.popViewController(animated: true)
         navigationController?.pushViewController(confirmEmailViewController, animated: true)
+        
     }
     
 

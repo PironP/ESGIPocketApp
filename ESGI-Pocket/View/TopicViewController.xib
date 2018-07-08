@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pk9-rY-BKA">
-                    <rect key="frame" x="15" y="25" width="76" height="22"/>
+                    <rect key="frame" x="15" y="30" width="76" height="22"/>
                     <state key="normal" title="Accueil" backgroundImage="button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -52,7 +52,7 @@
             <constraints>
                 <constraint firstItem="s9Q-rM-dqa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6Ie-nZ-9iR"/>
                 <constraint firstItem="Bgs-py-pUd" firstAttribute="top" secondItem="s9Q-rM-dqa" secondAttribute="bottom" constant="10" id="AH2-Og-m4Y"/>
-                <constraint firstItem="Pk9-rY-BKA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="OUE-92-eEU"/>
+                <constraint firstItem="Pk9-rY-BKA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="OUE-92-eEU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="czX-90-jDT" secondAttribute="bottom" id="RAC-Nj-KdL"/>
                 <constraint firstItem="s9Q-rM-dqa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Yjl-MY-KeD"/>
                 <constraint firstItem="czX-90-jDT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZGs-jj-pnl"/>

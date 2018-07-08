@@ -15,6 +15,7 @@ class LessonsListViewController: UIViewController {
     var idTopic = ""
     @IBOutlet weak var noCoursesLabel: UILabel!
     var courses: [Course] = []
+    var showArchive: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,11 @@ class LessonsListViewController: UIViewController {
                 return
             }
             self.courses = response
+            self.courses.sort(by: { (course1, course2) -> Bool in
+                return course1.archive ? false : true
+            })
+            print(self.courses[0].title)
+            print(self.courses[1].title)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
@@ -48,12 +54,23 @@ class LessonsListViewController: UIViewController {
     @IBAction func returnButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-
+    
+    @IBAction func archiveSwitchChanged(_ sender: Any) {
+        self.showArchive = !self.showArchive
+        self.tableView.reloadData()
+    }
+    
 }
 
 extension LessonsListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.courses.count
+        if showArchive {
+            return self.courses.count
+        } else {
+            return self.courses.filter({ (course) -> Bool in
+                return !course.archive
+            }).count
+        }
         
     }
     

@@ -36,8 +36,6 @@ class Login {
             
             let json = JSON(response.result.value)
             
-            print(json["code"])
-            
             if statusCode == 401 {
                 callback(Response(statusCode: statusCode, error: json["code"].stringValue))
                 return
