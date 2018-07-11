@@ -34,7 +34,7 @@ class Login {
                 return
             }
             
-            let json = JSON(response.result.value)
+            let json = JSON(response.result.value!)
             
             if statusCode == 401 {
                 callback(Response(statusCode: statusCode, error: json["code"].stringValue))
@@ -43,6 +43,7 @@ class Login {
             
             CurrentUser.currentUser.jwt = json["token"].stringValue
             CurrentUser.currentUser.id = json["user"]["_id"].stringValue
+            CurrentUser.currentUser.email = json["user"]["email"].stringValue
             CurrentUser.currentUser.classe = Classe(json: json["user"]["classe"])
             CurrentUser.currentUser.role = json["user"]["role"].intValue
             

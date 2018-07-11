@@ -45,6 +45,8 @@
 		E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8594F5620AD5D2600C3510B /* MessageViewCell.xib */; };
 		E85A0C6F20F60FD200B671CB /* CourseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */; };
 		E85A0C7020F60FD200B671CB /* CourseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85A0C6E20F60FD200B671CB /* CourseViewCell.xib */; };
+		E85A0C7320F642A300B671CB /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0C7120F642A300B671CB /* LessonViewController.swift */; };
+		E85A0C7420F642A300B671CB /* LessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85A0C7220F642A300B671CB /* LessonViewController.xib */; };
 		E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */; };
 		E86DB52320BBFF2000F06E67 /* ConfirmEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */; };
 		E870CCBD20DA8E4B0078FD3A /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */; };
@@ -108,6 +110,8 @@
 		E8594F5620AD5D2600C3510B /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
 		E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewCell.swift; sourceTree = "<group>"; };
 		E85A0C6E20F60FD200B671CB /* CourseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseViewCell.xib; sourceTree = "<group>"; };
+		E85A0C7120F642A300B671CB /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		E85A0C7220F642A300B671CB /* LessonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonViewController.xib; sourceTree = "<group>"; };
 		E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewController.swift; sourceTree = "<group>"; };
 		E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmEmailViewController.xib; sourceTree = "<group>"; };
 		E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 				E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */,
 				E809FCEA20D700B0008DB88A /* TopicViewController.swift */,
 				E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */,
+				E85A0C7120F642A300B671CB /* LessonViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,11 +263,13 @@
 			isa = PBXGroup;
 			children = (
 				E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */,
+				E85A0C6E20F60FD200B671CB /* CourseViewCell.xib */,
 				E88F792D20ACCBA100368E48 /* DiscussionsListViewController.xib */,
 				E816614C20D7A3AE001BB754 /* DiscussionViewController.xib */,
 				E804692D20A32C3100F4F643 /* HomeViewController.xib */,
 				E8013CA6209334ED002FF92C /* LaunchScreen.storyboard */,
 				E88F792920ACCB2800368E48 /* LessonsListViewController.xib */,
+				E85A0C7220F642A300B671CB /* LessonViewController.xib */,
 				E831FF2320A1DA5500EC1927 /* LoginViewController.xib */,
 				E88F793120ACCBEA00368E48 /* MessagesListViewController.xib */,
 				E8594F5620AD5D2600C3510B /* MessageViewCell.xib */,
@@ -273,7 +280,6 @@
 				E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */,
 				E809FCEB20D700B0008DB88A /* TopicViewController.xib */,
 				E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */,
-				E85A0C6E20F60FD200B671CB /* CourseViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 				E86DB52320BBFF2000F06E67 /* ConfirmEmailViewController.xib in Resources */,
 				E804693620A9827900F4F643 /* SelectClassViewController.xib in Resources */,
 				E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */,
+				E85A0C7420F642A300B671CB /* LessonViewController.xib in Resources */,
 				E88F793720ACCC3100368E48 /* QuizListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +426,7 @@
 				E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */,
 				E8445D7620D975F500F1631E /* User.swift in Sources */,
 				E88F793220ACCBEA00368E48 /* MessagesListViewController.swift in Sources */,
+				E85A0C7320F642A300B671CB /* LessonViewController.swift in Sources */,
 				E88F792E20ACCBA100368E48 /* DiscussionsListViewController.swift in Sources */,
 				E83CF92720C45E5300758D0C /* QuizProvider.swift in Sources */,
 				E8445D7820D9771800F1631E /* Course.swift in Sources */,

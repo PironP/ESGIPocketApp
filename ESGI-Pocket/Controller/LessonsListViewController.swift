@@ -25,6 +25,7 @@ class LessonsListViewController: UIViewController {
         self.tableView.isHidden = true
         self.tableView.register(UINib(nibName: "CourseViewCell", bundle: nil), forCellReuseIdentifier: "courseCell")
         self.tableView.tableFooterView = UIView()
+        self.tableView.separatorStyle = .none
         
         let courseProvider = CourseProvider()
         courseProvider.getTopicCourses(idTopic: self.idTopic, callback: { response in
@@ -37,8 +38,7 @@ class LessonsListViewController: UIViewController {
             self.courses.sort(by: { (course1, course2) -> Bool in
                 return course1.archive ? false : true
             })
-            print(self.courses[0].title)
-            print(self.courses[1].title)
+
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
@@ -89,7 +89,7 @@ extension LessonsListViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 120
     }
     
 }
@@ -97,9 +97,12 @@ extension LessonsListViewController: UITableViewDataSource{
 extension LessonsListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let url = URL(string: self.courses[indexPath.row].content) {
-            UIApplication.shared.open(url)
-        }
+//        if let url = URL(string: self.courses[indexPath.row].content) {
+//            UIApplication.shared.open(url)
+//        }
+        let lessonView = LessonViewController()
+        lessonView.course = self.courses[indexPath.row]
+        navigationController?.pushViewController(lessonView, animated: true)
     }
     
 }

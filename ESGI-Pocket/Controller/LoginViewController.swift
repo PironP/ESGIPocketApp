@@ -42,7 +42,6 @@ class LoginViewController: UIViewController {
                 if response.statusCode == 200 {
   
                     self.saveLoginDetailsToLocalStorage(email: email, password: password)
-                    CurrentUser.currentUser.email = email
                     self.navigationController?.popViewController(animated: true)
 
                 }

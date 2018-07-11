@@ -44,7 +44,6 @@ class ConfirmEmailViewController: UIViewController {
             if response {
                 let selectClassViewController = SelectClassViewController()
                 self.navigationController?.popViewController(animated: true)
-                self.navigationController?.pushViewController(selectClassViewController, animated: true)
 
             }
             else {
