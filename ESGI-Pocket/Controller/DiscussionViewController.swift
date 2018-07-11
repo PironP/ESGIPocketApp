@@ -61,8 +61,6 @@ class DiscussionViewController: UIViewController {
                 self.tableView.reloadData()
                 self.scrollToBottom()
                 self.tableView.isHidden = false
-                let indexPath = IndexPath(row: self.messages.count-1, section: 0)
-                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
             }
         })
     }
