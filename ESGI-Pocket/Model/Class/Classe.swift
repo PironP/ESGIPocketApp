@@ -15,18 +15,21 @@ class Classe {
     var year: String
     var group: String
     var speciality: String
+    var specialityAcronym: String
     
-    init(id: String, year: String, group: String, speciality: String) {
+    init(id: String, year: String, group: String, speciality: String, specialityAcronym: String) {
         self.id = id
         self.year = year
         self.group = group
         self.speciality = speciality
+        self.specialityAcronym = specialityAcronym
     }
     
     init(json: JSON) {
         self.id = json["_id"].stringValue
-        self.year = json["year"].stringValue
-        self.group = json["group"].stringValue
-        self.speciality = json["speciality"].stringValue
+        self.year = json["year"]["name"].stringValue
+        self.group = json["group"]["name"].stringValue
+        self.speciality = json["speciality"]["name"].stringValue
+        self.specialityAcronym = json["speciality"]["acronym"].stringValue
     }
 }

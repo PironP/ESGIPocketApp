@@ -23,6 +23,7 @@ class LessonsListViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.isHidden = true
+        self.tableView.register(UINib(nibName: "CourseViewCell", bundle: nil), forCellReuseIdentifier: "courseCell")
         self.tableView.tableFooterView = UIView()
         
         let courseProvider = CourseProvider()
@@ -76,10 +77,19 @@ extension LessonsListViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "coursesCell") ?? UITableViewCell(style: .default, reuseIdentifier: "coursesCell")
-        cell.textLabel?.text = courses[indexPath.row].title
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath)
+        if let listCell = cell as? CourseViewCell {
+            listCell.courseTitle.text = courses[indexPath.row].title
+            // listCell.courseAuthor = courses[indexPath.row].user
+            listCell.courseAuthor.text = "Auteur"
+            
+        }
+
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
 }

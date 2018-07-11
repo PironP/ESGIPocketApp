@@ -30,9 +30,15 @@ class SplashScreenViewController: UIViewController {
   
         if CurrentUser.currentUser.jwt != "" {
             // User already loged in
-            let homeView = HomeViewController()
-            navigationController?.pushViewController(homeView, animated: true)
-            return
+            if CurrentUser.currentUser.classe != nil {
+                let homeView = HomeViewController()
+                navigationController?.pushViewController(homeView, animated: true)
+                return
+            }
+            else {
+                let selectClassView = SelectClassViewController()
+                navigationController?.pushViewController(selectClassView, animated: true)
+            }
         }
         
         // read local storage

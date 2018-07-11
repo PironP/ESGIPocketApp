@@ -14,7 +14,7 @@ class ClasseProvider {
     
     func getSection(callback: @escaping ([Classe]) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/sections")!
+        let url = URL(string: "https://esgipocket.herokuapp.com/classes")!
 
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         

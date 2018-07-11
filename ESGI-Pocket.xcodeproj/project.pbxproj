@@ -20,7 +20,7 @@
 		E809FCE120D6CB42008DB88A /* TopicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE020D6CB42008DB88A /* TopicProvider.swift */; };
 		E809FCE520D6FCC9008DB88A /* MessageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE420D6FCC9008DB88A /* MessageProvider.swift */; };
 		E809FCE720D6FD48008DB88A /* QuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE620D6FD48008DB88A /* QuestionProvider.swift */; };
-		E809FCE920D6FD78008DB88A /* CourseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE820D6FD78008DB88A /* CourseProvider.swift */; };
+		E809FCE920D6FD78008DB88A /* LessonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE820D6FD78008DB88A /* LessonProvider.swift */; };
 		E809FCEC20D700B0008DB88A /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCEA20D700B0008DB88A /* TopicViewController.swift */; };
 		E809FCED20D700B0008DB88A /* TopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809FCEB20D700B0008DB88A /* TopicViewController.xib */; };
 		E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */; };
@@ -43,6 +43,8 @@
 		E85171BE20DA575E00069C03 /* PlanningProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85171BD20DA575E00069C03 /* PlanningProvider.swift */; };
 		E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8594F5520AD5D2600C3510B /* MessageViewCell.swift */; };
 		E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8594F5620AD5D2600C3510B /* MessageViewCell.xib */; };
+		E85A0C6F20F60FD200B671CB /* CourseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */; };
+		E85A0C7020F60FD200B671CB /* CourseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85A0C6E20F60FD200B671CB /* CourseViewCell.xib */; };
 		E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */; };
 		E86DB52320BBFF2000F06E67 /* ConfirmEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */; };
 		E870CCBD20DA8E4B0078FD3A /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */; };
@@ -81,7 +83,7 @@
 		E809FCE020D6CB42008DB88A /* TopicProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicProvider.swift; sourceTree = "<group>"; };
 		E809FCE420D6FCC9008DB88A /* MessageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProvider.swift; sourceTree = "<group>"; };
 		E809FCE620D6FD48008DB88A /* QuestionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProvider.swift; sourceTree = "<group>"; };
-		E809FCE820D6FD78008DB88A /* CourseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProvider.swift; sourceTree = "<group>"; };
+		E809FCE820D6FD78008DB88A /* LessonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonProvider.swift; sourceTree = "<group>"; };
 		E809FCEA20D700B0008DB88A /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
 		E809FCEB20D700B0008DB88A /* TopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicViewController.xib; sourceTree = "<group>"; };
 		E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,8 @@
 		E85171BD20DA575E00069C03 /* PlanningProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningProvider.swift; sourceTree = "<group>"; };
 		E8594F5520AD5D2600C3510B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		E8594F5620AD5D2600C3510B /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
+		E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewCell.swift; sourceTree = "<group>"; };
+		E85A0C6E20F60FD200B671CB /* CourseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseViewCell.xib; sourceTree = "<group>"; };
 		E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewController.swift; sourceTree = "<group>"; };
 		E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmEmailViewController.xib; sourceTree = "<group>"; };
 		E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -177,8 +181,8 @@
 				E813196C20A9EBD0006C83CC /* Controller */,
 				E804693020A32EBD00F4F643 /* Model */,
 				E831FF1920A1D2F400EC1927 /* View */,
-				E8013C9D209334EC002FF92C /* AppDelegate.swift */,
 				E8013CA4209334ED002FF92C /* Assets.xcassets */,
+				E8013C9D209334EC002FF92C /* AppDelegate.swift */,
 				E8013CA9209334ED002FF92C /* Info.plist */,
 			);
 			path = "ESGI-Pocket";
@@ -215,7 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				E804693720A984E200F4F643 /* ClasseProvider.swift */,
-				E809FCE820D6FD78008DB88A /* CourseProvider.swift */,
+				E809FCE820D6FD78008DB88A /* LessonProvider.swift */,
 				E804693120A32EE900F4F643 /* Login.swift */,
 				E809FCE420D6FCC9008DB88A /* MessageProvider.swift */,
 				E809FCE620D6FD48008DB88A /* QuestionProvider.swift */,
@@ -245,6 +249,7 @@
 				E831FF2620A1E21000EC1927 /* SignUpViewController.swift */,
 				E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */,
 				E809FCEA20D700B0008DB88A /* TopicViewController.swift */,
+				E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */,
 				E809FCEB20D700B0008DB88A /* TopicViewController.xib */,
 				E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */,
+				E85A0C6E20F60FD200B671CB /* CourseViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				E816614E20D7A3AE001BB754 /* DiscussionViewController.xib in Resources */,
 				E831FF2920A1E21000EC1927 /* SignUpViewController.xib in Resources */,
 				E831FF2520A1DA5500EC1927 /* LoginViewController.xib in Resources */,
+				E85A0C7020F60FD200B671CB /* CourseViewCell.xib in Resources */,
 				E88F793320ACCBEA00368E48 /* MessagesListViewController.xib in Resources */,
 				E88F792F20ACCBA100368E48 /* DiscussionsListViewController.xib in Resources */,
 				E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */,
@@ -407,6 +414,7 @@
 				E870CCBF20DAB44C0078FD3A /* Response.swift in Sources */,
 				E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */,
 				E85171BC20DA567F00069C03 /* Planning.swift in Sources */,
+				E85A0C6F20F60FD200B671CB /* CourseViewCell.swift in Sources */,
 				E8445D6E20D974EC00F1631E /* Topic.swift in Sources */,
 				E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */,
 				E8445D7620D975F500F1631E /* User.swift in Sources */,
@@ -421,7 +429,7 @@
 				E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */,
 				E88F793620ACCC3100368E48 /* QuizListViewController.swift in Sources */,
 				E870CCBD20DA8E4B0078FD3A /* RoundedView.swift in Sources */,
-				E809FCE920D6FD78008DB88A /* CourseProvider.swift in Sources */,
+				E809FCE920D6FD78008DB88A /* LessonProvider.swift in Sources */,
 				E809FCE720D6FD48008DB88A /* QuestionProvider.swift in Sources */,
 				E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */,
 				E88F793A20ACCC6600368E48 /* PlanningViewController.swift in Sources */,
