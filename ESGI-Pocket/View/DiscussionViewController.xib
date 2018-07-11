@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="containerView" destination="yQS-DU-Koc" id="Ylg-Rl-a75"/>
                 <outlet property="discussionNameLabel" destination="clt-CC-VMd" id="BDi-QE-2iS"/>
+                <outlet property="bottomConstraint" destination="24a-gu-ela" id="sig-OS-jjE"/>
                 <outlet property="messageTextField" destination="iJb-UI-q17" id="9tf-8s-vPO"/>
                 <outlet property="tableView" destination="jos-D1-1jx" id="QRp-XF-7z8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -62,7 +63,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="305" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="send"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHF-7E-mzx">
                             <rect key="frame" x="315" y="0.0" width="30" height="30"/>
