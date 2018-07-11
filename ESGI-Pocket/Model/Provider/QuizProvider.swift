@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class QuizProvider {
     
-    func getQuiz(callback: @escaping ([Quiz]) -> ()) {
+    func getQuizzes(callback: @escaping ([Quiz]) -> ()) {
         
         let url = URL(string: ServerAdress.serverAdress + "/quizzes")!
 
@@ -33,6 +33,21 @@ class QuizProvider {
             }
             else {
                 callback(quizList)
+            }
+        }
+    }
+    
+    func getQuiz(quizId: String, callback: @escaping (Quiz) -> ()) {
+        
+        let url = URL(string: "https://esgipocket.herokuapp.com/quizzes/" + quizId)!
+        
+        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
+        
+        Alamofire.request(url, headers: headers).responseJSON { response in
+            if response.result.isSuccess {
+                let json = JSON(response.result.value)
+                
+                callback(Quiz(json: json))
             }
         }
     }

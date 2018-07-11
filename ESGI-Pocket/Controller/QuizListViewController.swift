@@ -20,11 +20,12 @@ class QuizListViewController: UIViewController {
         super.viewDidLoad()
 
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.isHidden = true
         self.tableView.tableFooterView = UIView()
         
         let quizProvider = QuizProvider()
-        quizProvider.getQuiz(callback: { response in
+        quizProvider.getQuizzes(callback: { response in
             if response.count == 0 {
                 self.noQuizLabel.isHidden = false
                 return
@@ -62,4 +63,15 @@ extension QuizListViewController: UITableViewDataSource{
         return cell
     }
         
+}
+
+extension QuizListViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let quizPresentationView = QuizPresentationViewController()
+        quizPresentationView.quiz = quizList[indexPath.row]
+        navigationController?.pushViewController(quizPresentationView, animated: true)
+        
+    }
+    
 }

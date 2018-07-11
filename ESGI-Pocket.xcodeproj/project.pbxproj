@@ -50,6 +50,8 @@
 		E85A0C7320F642A300B671CB /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0C7120F642A300B671CB /* LessonViewController.swift */; };
 		E85A0C7420F642A300B671CB /* LessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85A0C7220F642A300B671CB /* LessonViewController.xib */; };
 		E85A0C7620F690F200B671CB /* ServerAdress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0C7520F690F200B671CB /* ServerAdress.swift */; };
+		E85A0C6520F51FBC00B671CB /* QuizQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0C6320F51FBC00B671CB /* QuizQuestionViewController.swift */; };
+		E85A0C6620F51FBC00B671CB /* QuizQuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85A0C6420F51FBC00B671CB /* QuizQuestionViewController.xib */; };
 		E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */; };
 		E86DB52320BBFF2000F06E67 /* ConfirmEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */; };
 		E870CCBD20DA8E4B0078FD3A /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */; };
@@ -121,6 +123,8 @@
 		E85A0C7120F642A300B671CB /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		E85A0C7220F642A300B671CB /* LessonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonViewController.xib; sourceTree = "<group>"; };
 		E85A0C7520F690F200B671CB /* ServerAdress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAdress.swift; sourceTree = "<group>"; };
+		E85A0C6320F51FBC00B671CB /* QuizQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewController.swift; sourceTree = "<group>"; };
+		E85A0C6420F51FBC00B671CB /* QuizQuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizQuestionViewController.xib; sourceTree = "<group>"; };
 		E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailViewController.swift; sourceTree = "<group>"; };
 		E86DB52120BBFF2000F06E67 /* ConfirmEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmEmailViewController.xib; sourceTree = "<group>"; };
 		E870CCBC20DA8E4B0078FD3A /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				E88F793820ACCC6600368E48 /* PlanningViewController.swift */,
 				E88F793420ACCC3100368E48 /* QuizListViewController.swift */,
 				E810B20420F34B8600167F7D /* QuizPresentationViewController.swift */,
+				E85A0C6320F51FBC00B671CB /* QuizQuestionViewController.swift */,
 				E804693320A9827900F4F643 /* SelectClassViewController.swift */,
 				E831FF2620A1E21000EC1927 /* SignUpViewController.swift */,
 				E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */,
@@ -293,6 +298,7 @@
 				E88F793920ACCC6600368E48 /* PlanningViewController.xib */,
 				E88F793520ACCC3100368E48 /* QuizListViewController.xib */,
 				E810B20520F34B8700167F7D /* QuizPresentationViewController.xib */,
+				E85A0C6420F51FBC00B671CB /* QuizQuestionViewController.xib */,
 				E804693420A9827900F4F643 /* SelectClassViewController.xib */,
 				E831FF2720A1E21000EC1927 /* SignUpViewController.xib */,
 				E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */,
@@ -372,6 +378,7 @@
 				E804692F20A32C3100F4F643 /* HomeViewController.xib in Resources */,
 				E810B20720F34B8700167F7D /* QuizPresentationViewController.xib in Resources */,
 				E88F793B20ACCC6600368E48 /* PlanningViewController.xib in Resources */,
+				E85A0C6620F51FBC00B671CB /* QuizQuestionViewController.xib in Resources */,
 				E8013CA8209334ED002FF92C /* LaunchScreen.storyboard in Resources */,
 				E809FCED20D700B0008DB88A /* TopicViewController.xib in Resources */,
 				E8013CA5209334ED002FF92C /* Assets.xcassets in Resources */,
@@ -454,6 +461,7 @@
 				E8445D7820D9771800F1631E /* Course.swift in Sources */,
 				E85171BA20DA40FC00069C03 /* Thread.swift in Sources */,
 				E809FCEC20D700B0008DB88A /* TopicViewController.swift in Sources */,
+				E85A0C6520F51FBC00B671CB /* QuizQuestionViewController.swift in Sources */,
 				E804693820A984E200F4F643 /* ClasseProvider.swift in Sources */,
 				E8445D7420D975E300F1631E /* Message.swift in Sources */,
 				E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */,
