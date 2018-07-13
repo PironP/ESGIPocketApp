@@ -25,11 +25,7 @@ class LessonViewController: UIViewController {
         let url: URL = URL(string: course.content)!
         let request = URLRequest(url: url)
         webView.load(request)
-        
-//        webView = WKWebView(frame: self.view.frame)
-//        self.view.addSubview(self.view.webView)
-//        webView.navigationDelegate = self
-//        webView.loadHTMLString(htmlString, baseURL: nil)
+
     }
 
     override func didReceiveMemoryWarning() {

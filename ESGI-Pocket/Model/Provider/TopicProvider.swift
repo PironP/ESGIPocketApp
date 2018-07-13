@@ -12,9 +12,9 @@ import SwiftyJSON
 
 class TopicProvider {
     
-    func getTopic(callback: @escaping ([Topic]) -> ()) {
+    func getAllTopics(callback: @escaping ([Topic]) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/topics")!
+        let url = URL(string: ServerAdress.serverAdress + "/topics")!
 
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         
@@ -36,4 +36,5 @@ class TopicProvider {
             }
         }
     }
+    
 }

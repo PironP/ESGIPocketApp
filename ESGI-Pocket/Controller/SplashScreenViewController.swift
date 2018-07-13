@@ -30,21 +30,13 @@ class SplashScreenViewController: UIViewController {
   
         if CurrentUser.currentUser.jwt != "" {
             // User already loged in
-            if CurrentUser.currentUser.classe != nil {
-                let homeView = HomeViewController()
-                navigationController?.pushViewController(homeView, animated: true)
-                return
-            }
-            else {
-                let selectClassView = SelectClassViewController()
-                navigationController?.pushViewController(selectClassView, animated: true)
-            }
+            redirectAfterLogin()
         }
         
         // read local storage
         let basePath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let filePath = basePath.appendingPathComponent("loginDetails.json")
-        print(basePath)
+        
         guard let data = try? Data(contentsOf: filePath),
             let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
             let loginDetails = json as? [String:String] else {
@@ -60,11 +52,8 @@ class SplashScreenViewController: UIViewController {
         loginModel.login(email: loginDetails["email"]!, password: loginDetails["password"]!, callback: { response in
             if response.statusCode == 200 {
                 DispatchQueue.main.async {
-                    let currentUser = CurrentUser.currentUser
 
-                    currentUser.email = loginDetails["email"]!
-                    let homeView = HomeViewController()
-                    self.navigationController?.pushViewController(homeView, animated: true)
+                    self.redirectAfterLogin()
                 }
             }
             else {
@@ -73,6 +62,19 @@ class SplashScreenViewController: UIViewController {
             }
         })
         
+    }
+    
+    func redirectAfterLogin() {
+
+        if CurrentUser.currentUser.classe != nil {
+            let homeView = HomeViewController()
+            navigationController?.pushViewController(homeView, animated: true)
+            return
+        }
+        else {
+            let selectClassView = SelectClassViewController()
+            navigationController?.pushViewController(selectClassView, animated: true)
+        }
     }
 
 }

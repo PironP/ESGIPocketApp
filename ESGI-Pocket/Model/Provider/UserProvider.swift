@@ -17,9 +17,9 @@ class UserProvider {
         let url: URL
         
         if username == "" {
-            url = URL(string: "https://esgipocket.herokuapp.com/users")!
+            url = URL(string: ServerAdress.serverAdress + "/users")!
         } else {
-            url = URL(string: "https://esgipocket.herokuapp.com/users/" + username)!
+            url = URL(string: ServerAdress.serverAdress + "/users/" + username)!
         }
 
         
@@ -41,6 +41,39 @@ class UserProvider {
             else {
                 callback(userList)
             }
+        }
+    }
+    
+    func selectClassForUser(idClass: String, idUser: String, callback: @escaping (Bool) -> ()) {
+
+        let url = URL(string: ServerAdress.serverAdress + "/users/" + idUser)!
+        
+        let parameters: Parameters = [
+            "class" :idClass, "id": idUser]
+        
+        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
+        
+        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            
+            guard let statusCode = response.response?.statusCode else {
+                callback(false)
+                return
+            }
+            
+            print(statusCode)
+            
+            if statusCode == 404 || statusCode == 500 {
+                callback(false)
+                return
+            }
+            
+            let json = JSON(response.value)
+            
+            CurrentUser.currentUser.classe = Classe(json: json)
+            
+            
+            
+            callback(true)
         }
     }
     

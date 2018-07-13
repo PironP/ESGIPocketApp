@@ -16,6 +16,7 @@ class Classe {
     var group: String
     var speciality: String
     var specialityAcronym: String
+    var topics: [Topic]?
     
     init(id: String, year: String, group: String, speciality: String, specialityAcronym: String) {
         self.id = id
@@ -32,4 +33,5 @@ class Classe {
         self.speciality = json["speciality"]["name"].stringValue
         self.specialityAcronym = json["speciality"]["acronym"].stringValue
     }
+
 }

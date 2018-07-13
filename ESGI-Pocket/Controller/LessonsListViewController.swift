@@ -81,6 +81,7 @@ extension LessonsListViewController: UITableViewDataSource{
         if let listCell = cell as? CourseViewCell {
             listCell.courseTitle.text = courses[indexPath.row].title
             // listCell.courseAuthor = courses[indexPath.row].user
+            
             listCell.courseAuthor.text = "Auteur"
             
         }

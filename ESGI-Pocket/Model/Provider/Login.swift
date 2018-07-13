@@ -15,7 +15,7 @@ class Login {
     // Async func for log the user, return in a callback the jwt or empty string if error
     func login(email: String, password: String, callback: @escaping (Response) -> ()) {
         
-        let loginUrl = URL(string: "https://esgipocket.herokuapp.com/login")!
+        let loginUrl = URL(string: ServerAdress.serverAdress + "/login")!
         
         let parameters: Parameters = [
             "email": email,
@@ -41,16 +41,14 @@ class Login {
                 return
             }
             
-            CurrentUser.currentUser.jwt = json["token"].stringValue
-            CurrentUser.currentUser.id = json["user"]["_id"].stringValue
-            CurrentUser.currentUser.email = json["user"]["email"].stringValue
-            CurrentUser.currentUser.classe = Classe(json: json["user"]["classe"])
-            CurrentUser.currentUser.role = json["user"]["role"].intValue
+            CurrentUser.currentUser.setValue(json: json)
             
-//            print("token = " + CurrentUser.currentUser.jwt)
-//            print("id = " + CurrentUser.currentUser.id)
-//            print("classe = " + CurrentUser.currentUser.classe.id)
+            var topicList: [Topic] = []
             
+            for (index,subJson):(String, JSON) in json["user"]["class"]["topics"] {
+                topicList.append(Topic(json: subJson))
+            }
+            CurrentUser.currentUser.classe?.topics = topicList
             callback(Response(statusCode: 200))
         }
     
@@ -59,7 +57,7 @@ class Login {
     
     func signin(email: String, password: String, firstname: String, lastName: String, callback: @escaping (String) -> ()) {
         
-        let loginUrl = URL(string: "https://esgipocket.herokuapp.com/users")!
+        let loginUrl = URL(string: ServerAdress.serverAdress + "/users")!
         
         let parameters: Parameters = [
             "email" :email, "password" :password, "lastname": lastName, "firstname":firstname, "role": 2
@@ -89,19 +87,25 @@ class Login {
     
     func checkValidationCode(id: String, validationCode: String, callback: @escaping (Bool) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/users/activate")!
+        let url = URL(string: ServerAdress.serverAdress + "/users/activate")!
+        
+        guard let code = Int(validationCode) else {
+            callback(false)
+            return
+        }
         
         let parameters: Parameters = [
-            "activationCode" : Int(validationCode), "email" : CurrentUser.currentUser.email
+            "activationCode" : code,
+            "email" : CurrentUser.currentUser.email
         ]
-        
+
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-            
+
             guard let statusCode = response.response?.statusCode else {
                 callback(false)
                 return
             }
-            
+
             if statusCode == 404 || statusCode == 500 || statusCode == 401 {
                 callback(false)
                 return

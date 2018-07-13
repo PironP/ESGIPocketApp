@@ -15,7 +15,7 @@ class DiscussionProvider {
     
     func getDiscussions(callback: @escaping ([Thread]) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/threads")!
+        let url = URL(string: ServerAdress.serverAdress + "/threads")!
 
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         

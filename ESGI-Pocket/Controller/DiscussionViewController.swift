@@ -18,6 +18,7 @@ class DiscussionViewController: UIViewController {
 
     var defaultBottomConstraint: CGFloat = 0
     var idDiscussion = ""
+    var idReceiver = ""
     var nameDiscussion = ""
     var messages: [Message] = []
 
@@ -35,14 +36,20 @@ class DiscussionViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(DiscussionViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
         self.messageTextField.delegate = self
-        //self.containerView.layer.cornerRadius = self.containerView.frame.width / 2
+
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(UINib(nibName: "MessageViewCell", bundle: nil), forCellReuseIdentifier: "messageCell")
         self.tableView.separatorStyle = .none
         self.tableView?.rowHeight = 105.0
         self.tableView.allowsSelection = false
-        loadMessages()
+        if idDiscussion != "" {
+            loadThreadMessages()
+        }
+        else if idReceiver != "" {
+            loadPrivatesMessages()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,9 +57,24 @@ class DiscussionViewController: UIViewController {
 
     }
 
-    func loadMessages() {
+    func loadThreadMessages() {
         let messageProvider = MessageProvider()
         messageProvider.getThreadMessages(threadId: self.idDiscussion, callback: { response in
+            if response.count == 0 {
+                return
+            }
+            self.messages = response
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.scrollToBottom()
+                self.tableView.isHidden = false
+            }
+        })
+    }
+    
+    func loadPrivatesMessages() {
+        let messageProvider = MessageProvider()
+        messageProvider.getPrivateMessages(idReceiver: self.idDiscussion, callback: { response in
             if response.count == 0 {
                 return
             }
@@ -105,32 +127,69 @@ class DiscussionViewController: UIViewController {
     @IBAction func sendMessageButtonPressed(_ sender: Any) {
         sendMessage()
     }
-
+    
     func sendMessage() {
         messageTextField.resignFirstResponder()
-
+        
         guard let message = self.messageTextField.text else {
             return
         }
-
+        
         if message.count == 0 {
             return
         }
+        
+        if self.idDiscussion != "" {
+            sendThreadMessage(message: message)
+        }
+        else if self.idReceiver != "" {
+            sendPrivateMessage(message: message)
+        }
+        
+    }
 
+    func sendThreadMessage(message: String) {
+        
         let messageModel = MessageProvider()
         messageModel.sendThreadMessage(message: message, idDiscussion: self.idDiscussion) { (result) in
             if (result) {
                 self.messageTextField.text? = ""
-                self.loadMessages()
+                self.loadThreadMessages()
             }
         }
     }
 
+    func sendPrivateMessage(message: String) {
+        
+        let messageModel = MessageProvider()
+        messageModel.sendPrivateMessage(message: message, idReceiver: self.idReceiver) { (result) in
+            if (result) {
+                self.messageTextField.text? = ""
+                self.loadPrivatesMessages()
+            }
+        }
+    }
+    
     func scrollToBottom() {
         DispatchQueue.main.async {
             let indexPath = IndexPath(row: self.messages.count-1, section: 0)
             self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
         }
+    }
+    
+    func formatDate(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        
+        if let formattedDate = dateFormatter.date(from: date) {
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .medium
+            return dateFormatter.string(from: formattedDate)
+        }
+
+        return date
+        
     }
 }
 
@@ -145,9 +204,10 @@ extension DiscussionViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath)
          if let listCell = cell as? MessageViewCell {
             listCell.messageLabel.text = messages[indexPath.row].message
-            listCell.timestampLabel.text = messages[indexPath.row].createdAt
             listCell.usernameLabel.text =  messages[indexPath.row].user.firstname + " " + messages[indexPath.row].user.lastname
             listCell.roundedView.backgroundColor = messages[indexPath.row].user.id == CurrentUser.currentUser.id ? UIColor.blue : UIColor.lightGray
+            listCell.timestampLabel.text = self.formatDate(date: messages[indexPath.row].createdAt)
+
         }
 
         return cell
@@ -170,7 +230,12 @@ extension DiscussionViewController: UITableViewDelegate {
             let messageProvider = MessageProvider()
             messageProvider.deleteMessage(messageId: self.messages[indexPath.row].id, callback: { response in
                 if response {
-                    self.loadMessages()
+                    if self.idDiscussion != "" {
+                        self.loadThreadMessages()
+                    }
+                    else if self.idReceiver != "" {
+                        self.loadPrivatesMessages()
+                    }
                 }
             })
         }
@@ -180,7 +245,7 @@ extension DiscussionViewController: UITableViewDelegate {
 
 extension DiscussionViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textfield: UITextField) -> Bool {
-        sendMessage()
+        self.sendMessage()
         return true
     }
 }

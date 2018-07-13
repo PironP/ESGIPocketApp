@@ -18,13 +18,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var classStartLabel: UILabel!
     @IBOutlet weak var classRoomLabel: UILabel!
     @IBOutlet weak var noPlanningLabel: UILabel!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.welcomeLabel.text = "Bonjour, " + CurrentUser.currentUser.firstname.capitalized + " " + CurrentUser.currentUser.lastname.capitalized
+        
         self.nextClassView.isHidden = true
         loadNextClass()
+        
+//        print(CurrentUser.currentUser.classe?.id)
+//        print(CurrentUser.currentUser.classe?.group)
+//        print(CurrentUser.currentUser.classe?.specialityAcronym)
+//        print(CurrentUser.currentUser.classe?.year)
     }
 
     override func didReceiveMemoryWarning() {

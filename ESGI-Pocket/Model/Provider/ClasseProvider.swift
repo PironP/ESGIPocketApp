@@ -12,9 +12,9 @@ import SwiftyJSON
 
 class ClasseProvider {
     
-    func getSection(callback: @escaping ([Classe]) -> ()) {
+    func getClasses(callback: @escaping ([Classe]) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/classes")!
+        let url = URL(string: ServerAdress.serverAdress + "/classes")!
 
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         
@@ -37,5 +37,4 @@ class ClasseProvider {
             }
         }
     }
-    
 }

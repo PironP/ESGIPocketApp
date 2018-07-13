@@ -14,7 +14,7 @@ class QuestionProvider {
 
     func getQuestions(callback: @escaping ([Question]) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/questions")!
+        let url = URL(string: ServerAdress.serverAdress + "/questions")!
 
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         

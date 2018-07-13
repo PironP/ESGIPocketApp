@@ -14,7 +14,7 @@ class PlanningProvider {
     
     func getClassPlanning(idClass: String, callback: @escaping ([Planning]) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/plannings")!
+        let url = URL(string: ServerAdress.serverAdress + "/plannings")!
         
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         

@@ -14,7 +14,7 @@ class MessageProvider {
     
     func getThreadMessages(threadId: String, callback: @escaping ([Message]) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/threads/" + threadId + "/messages")!
+        let url = URL(string: ServerAdress.serverAdress + "/threads/" + threadId + "/messages")!
 
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         
@@ -39,7 +39,7 @@ class MessageProvider {
     
     func sendThreadMessage(message: String, idDiscussion: String, callback: @escaping (Bool) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/messages")!
+        let url = URL(string: ServerAdress.serverAdress + "/messages")!
         
         let parameters: Parameters = [
             "message": message,
@@ -63,9 +63,62 @@ class MessageProvider {
         }
     }
     
+    func getPrivateMessages(idReceiver: String, callback: @escaping ([Message]) -> ()) {
+        
+        // TO UPDATE
+        let url = URL(string: ServerAdress.serverAdress + "/threads/" + idReceiver + "/messages")!
+        
+        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
+        
+        Alamofire.request(url, method: .get, headers: headers).responseJSON { response in
+            
+            var messageList: [Message] = []
+            
+            if response.result.isSuccess {
+                
+                let json = JSON(response.result.value)
+                
+                for (index,subJson):(String, JSON) in json {
+                    messageList.append(Message(json: subJson))
+                }
+                callback(messageList)
+            }
+            else {
+                callback(messageList)
+            }
+        }
+    }
+    
+    func sendPrivateMessage(message: String, idReceiver: String, callback: @escaping (Bool) -> ()) {
+        
+        let url = URL(string: ServerAdress.serverAdress + "/messages")!
+        
+        // TO UPDATE
+        let parameters: Parameters = [
+            "message": message,
+            "receiver": idReceiver
+        ]
+        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            
+            guard let statusCode = response.response?.statusCode else {
+                callback(false)
+                return
+            }
+            
+            if statusCode == 404 || statusCode == 401 {
+                callback(false)
+                return
+            }
+            
+            callback(true)
+        }
+    }
+    
     func deleteMessage(messageId: String, callback: @escaping (Bool) -> ()) {
         
-        let url = URL(string: "https://esgipocket.herokuapp.com/messages/" + messageId)!
+        let url = URL(string: ServerAdress.serverAdress + "/messages/" + messageId)!
         
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         

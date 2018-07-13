@@ -47,17 +47,33 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdU-1f-HG6">
+                    <rect key="frame" x="291" y="30" width="51" height="31"/>
+                    <connections>
+                        <action selector="filterTopicByClassSwitchChanged:" destination="-1" eventType="valueChanged" id="cHz-Bj-lYh"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vos matières" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFA-pW-zq9">
+                    <rect key="frame" x="268" y="71" width="99" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="s9Q-rM-dqa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6Ie-nZ-9iR"/>
                 <constraint firstItem="Bgs-py-pUd" firstAttribute="top" secondItem="s9Q-rM-dqa" secondAttribute="bottom" constant="10" id="AH2-Og-m4Y"/>
+                <constraint firstItem="tdU-1f-HG6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="MBz-ch-b0b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wFA-pW-zq9" secondAttribute="trailing" constant="8" id="NMe-IS-vxz"/>
                 <constraint firstItem="Pk9-rY-BKA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="OUE-92-eEU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="czX-90-jDT" secondAttribute="bottom" id="RAC-Nj-KdL"/>
                 <constraint firstItem="s9Q-rM-dqa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Yjl-MY-KeD"/>
                 <constraint firstItem="czX-90-jDT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZGs-jj-pnl"/>
                 <constraint firstItem="czX-90-jDT" firstAttribute="top" secondItem="Bgs-py-pUd" secondAttribute="bottom" constant="15" id="aYu-Vd-SHV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tdU-1f-HG6" secondAttribute="trailing" constant="35" id="dl2-YB-9NH"/>
                 <constraint firstItem="Bgs-py-pUd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="exH-K0-DhC"/>
+                <constraint firstItem="wFA-pW-zq9" firstAttribute="top" secondItem="tdU-1f-HG6" secondAttribute="bottom" constant="10" id="rxx-zS-YSW"/>
                 <constraint firstItem="Pk9-rY-BKA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="tL6-YL-k1z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="czX-90-jDT" secondAttribute="trailing" id="v94-6d-yxx"/>
             </constraints>

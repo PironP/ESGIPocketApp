@@ -13,8 +13,8 @@ class CourseViewCell: UITableViewCell {
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var courseTitle: UILabel!
     @IBOutlet weak var courseAuthor: UILabel!
-    @IBOutlet weak var votePro: UILabel!
-    @IBOutlet weak var voteCons: UILabel!
+    @IBOutlet weak var like: UILabel!
+    @IBOutlet weak var dislike: UILabel!
     
     
     override func awakeFromNib() {

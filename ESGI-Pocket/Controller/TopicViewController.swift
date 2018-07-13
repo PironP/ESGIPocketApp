@@ -14,6 +14,7 @@ class TopicViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var topics: [Topic] = []
     var fileTypeRequestd: Int! // 1 for quiz 2 for courses
+    var filterByClasse: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,31 @@ class TopicViewController: UIViewController {
         self.tableView.isHidden = true
         self.tableView.tableFooterView = UIView()
         
+        loadTopics()
+        
+    }
+    
+    @IBAction func filterTopicByClassSwitchChanged(_ sender: Any) {
+        filterByClasse = !filterByClasse
+        loadTopics()
+    }
+    
+    func loadTopics() {
+        filterByClasse ? loadClassesTopics() : loadAllTopics()
+    }
+    
+    func loadClassesTopics() {
+        if let classeTopics = CurrentUser.currentUser.classe?.topics {
+            
+            self.topics = classeTopics
+            self.tableView.reloadData()
+            self.tableView.isHidden = false
+        }
+    }
+    
+    func loadAllTopics() {
         let topicProvider = TopicProvider()
-        topicProvider.getTopic(callback: { response in
+        topicProvider.getAllTopics(callback: { response in
             if response.count == 0 {
                 return
             }
@@ -36,10 +60,11 @@ class TopicViewController: UIViewController {
             
         })
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

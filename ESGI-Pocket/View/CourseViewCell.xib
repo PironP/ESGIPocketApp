@@ -91,9 +91,9 @@
             <connections>
                 <outlet property="courseAuthor" destination="JI0-qv-ddY" id="1EQ-tH-yaQ"/>
                 <outlet property="courseTitle" destination="z33-MC-pLE" id="c8C-f2-uNl"/>
+                <outlet property="dislike" destination="cH2-qD-Dmi" id="Ube-3G-ofx"/>
+                <outlet property="like" destination="hyA-U4-UQt" id="Db6-4n-quf"/>
                 <outlet property="roundedView" destination="Gql-tj-l35" id="JEa-wj-OFx"/>
-                <outlet property="voteCons" destination="cH2-qD-Dmi" id="aCV-UA-gmx"/>
-                <outlet property="votePro" destination="hyA-U4-UQt" id="VHa-MH-eJk"/>
             </connections>
             <point key="canvasLocation" x="92" y="96"/>
         </tableViewCell>

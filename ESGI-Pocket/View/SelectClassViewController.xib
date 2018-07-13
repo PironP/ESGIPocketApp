@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectClassViewController" customModule="ESGI_Pocket" customModuleProvider="target">
             <connections>
                 <outlet property="classPickerView" destination="ACg-4D-205" id="Ezg-hK-c9o"/>
+                <outlet property="confimClassButton" destination="BW6-sj-k5o" id="GPG-qX-YN4"/>
+                <outlet property="selectedClassLabel" destination="dLJ-4K-CNT" id="QFv-nV-bUD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -48,33 +50,67 @@
                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Année *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NG-zk-cws">
-                    <rect key="frame" x="30" y="198.5" width="67" height="21.5"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACg-4D-205">
                     <rect key="frame" x="0.0" y="451" width="375" height="216"/>
                 </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hr1-sI-Djb">
+                    <rect key="frame" x="107" y="253.5" width="160" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="WGW-qn-ggx"/>
+                        <constraint firstAttribute="height" constant="40" id="p72-0l-VbB"/>
+                    </constraints>
+                    <state key="normal" title="Choisir sa classe" backgroundImage="button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="selectClassButtonPressed:" destination="-1" eventType="touchUpInside" id="RsX-Nc-Bmd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLJ-4K-CNT">
+                    <rect key="frame" x="30" y="344" width="315" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BW6-sj-k5o">
+                    <rect key="frame" x="107" y="394" width="160" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Ap5-IO-I2Q"/>
+                        <constraint firstAttribute="width" constant="160" id="tOP-jh-lcr"/>
+                    </constraints>
+                    <state key="normal" title="Valider sa classe" backgroundImage="button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="confirmClassButtonPressed:" destination="-1" eventType="touchUpInside" id="eOs-Ms-od4"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="4NG-zk-cws" firstAttribute="top" secondItem="XU4-3C-axr" secondAttribute="bottom" constant="25" id="1Nr-2C-V7k"/>
+                <constraint firstItem="BW6-sj-k5o" firstAttribute="top" secondItem="dLJ-4K-CNT" secondAttribute="bottom" constant="50" id="4u2-Eb-jlS"/>
                 <constraint firstItem="hGW-9e-EXt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="780-IE-N4O"/>
+                <constraint firstItem="hr1-sI-Djb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AbE-o5-6Nv"/>
+                <constraint firstItem="hr1-sI-Djb" firstAttribute="top" secondItem="XU4-3C-axr" secondAttribute="bottom" constant="80" id="DQv-w0-U2t"/>
                 <constraint firstItem="qSv-uS-fXg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="G8f-TL-m2h"/>
                 <constraint firstItem="qSv-uS-fXg" firstAttribute="top" secondItem="5Kd-58-TgG" secondAttribute="bottom" id="JmE-Sh-4w3"/>
                 <constraint firstItem="hGW-9e-EXt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="K6c-14-LLp"/>
-                <constraint firstItem="4NG-zk-cws" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="O2W-pc-4uU"/>
                 <constraint firstItem="XU4-3C-axr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="QSq-Hk-vIY"/>
                 <constraint firstItem="XU4-3C-axr" firstAttribute="top" secondItem="qSv-uS-fXg" secondAttribute="bottom" constant="20" id="Qed-2r-TLu"/>
                 <constraint firstItem="ACg-4D-205" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ua3-oT-aBO"/>
                 <constraint firstItem="ACg-4D-205" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Vpe-ed-cmT"/>
                 <constraint firstItem="ACg-4D-205" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="cVK-7V-gnO"/>
+                <constraint firstItem="BW6-sj-k5o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eCe-KR-Q1Y"/>
+                <constraint firstItem="dLJ-4K-CNT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="iLE-7p-u1U"/>
                 <constraint firstItem="5Kd-58-TgG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="kNH-8L-PGp"/>
+                <constraint firstItem="dLJ-4K-CNT" firstAttribute="top" secondItem="hr1-sI-Djb" secondAttribute="bottom" constant="50" id="mHb-lp-bl9"/>
                 <constraint firstItem="5Kd-58-TgG" firstAttribute="top" secondItem="hGW-9e-EXt" secondAttribute="bottom" constant="15" id="wZa-hs-kkg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dLJ-4K-CNT" secondAttribute="trailing" constant="30" id="z95-ge-cYf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
+    <resources>
+        <image name="button" width="76" height="22"/>
+    </resources>
 </document>
