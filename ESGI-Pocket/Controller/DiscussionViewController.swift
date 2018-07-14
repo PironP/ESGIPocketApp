@@ -74,7 +74,7 @@ class DiscussionViewController: UIViewController {
     
     func loadPrivatesMessages() {
         let messageProvider = MessageProvider()
-        messageProvider.getPrivateMessages(idReceiver: self.idDiscussion, callback: { response in
+        messageProvider.getPrivateMessages(idReceiver: self.idReceiver, callback: { response in
             if response.count == 0 {
                 return
             }

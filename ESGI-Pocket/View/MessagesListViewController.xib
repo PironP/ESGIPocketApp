@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="queryTextField" destination="vgl-a5-esf" id="oA9-bM-OGt"/>
                 <outlet property="tableView" destination="pcj-4P-fv0" id="JDI-uE-NHd"/>
+                <outlet property="userFilter" destination="cBW-ul-4xF" id="cXX-bC-jgQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -49,7 +50,7 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="searchButtonPressed:" destination="-1" eventType="touchUpInside" id="BgM-5s-GnQ"/>
+                                <action selector="filterUser:" destination="-1" eventType="touchUpInside" id="ijy-x2-67a"/>
                             </connections>
                         </button>
                     </subviews>
@@ -69,16 +70,30 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pcj-4P-fv0">
-                    <rect key="frame" x="0.0" y="107" width="375" height="560"/>
+                    <rect key="frame" x="0.0" y="145" width="375" height="522"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cBW-ul-4xF">
+                    <rect key="frame" x="50" y="107" width="275" height="29"/>
+                    <segments>
+                        <segment title="Classe"/>
+                        <segment title="ESGI"/>
+                        <segment title="Enseignants"/>
+                    </segments>
+                    <connections>
+                        <action selector="filterUser:" destination="-1" eventType="valueChanged" id="p75-Jg-ig5"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="pcj-4P-fv0" firstAttribute="top" secondItem="8lP-1F-pFM" secondAttribute="bottom" constant="10" id="1v7-dn-JGg"/>
+                <constraint firstItem="pcj-4P-fv0" firstAttribute="top" secondItem="cBW-ul-4xF" secondAttribute="bottom" constant="10" id="1v7-dn-JGg"/>
                 <constraint firstItem="8lP-1F-pFM" firstAttribute="top" secondItem="sO2-Al-3W8" secondAttribute="bottom" constant="15" id="2F9-ZI-0yq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cBW-ul-4xF" secondAttribute="trailing" constant="50" id="738-0Z-oqd"/>
                 <constraint firstItem="sO2-Al-3W8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="AKm-t5-Wyb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pcj-4P-fv0" secondAttribute="trailing" id="BjC-40-l6O"/>
+                <constraint firstItem="cBW-ul-4xF" firstAttribute="top" secondItem="8lP-1F-pFM" secondAttribute="bottom" constant="10" id="Du3-nk-b8F"/>
+                <constraint firstItem="cBW-ul-4xF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="GPR-mW-XQt"/>
                 <constraint firstItem="8lP-1F-pFM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Ibw-Ah-DsY"/>
                 <constraint firstItem="F1J-SZ-jFP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NHr-eW-2NF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8lP-1F-pFM" secondAttribute="trailing" constant="30" id="S0x-7x-aWJ"/>

@@ -33,6 +33,6 @@ class User {
         self.lastname = json["lastname"].stringValue
         self.email = json["email"].stringValue
         self.role = json["role"].intValue
-        self.classe = Classe(json: json["classe"])
+        self.classe = Classe(json: json["class"])
     }
 }

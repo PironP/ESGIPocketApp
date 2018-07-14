@@ -41,14 +41,20 @@ class HomeViewController: UIViewController {
 
     func loadNextClass() {
         let planningProvider = PlanningProvider()
-        planningProvider.getClassPlanning(idClass: "", callback: { response in
+        guard let idClass = CurrentUser.currentUser.classe?.id else {
+            self.noPlanningLabel.isHidden = false
+            return
+        }
+        planningProvider.getClassPlanning(idClass: idClass, callback: { response in
             if response.isEmpty {
+                print("resonse is empty")
                 self.noPlanningLabel.isHidden = false
                 return
             }
             let classes = response[0].content
             // find first
             let nextClass = classes[0]
+            print(response[0])
             // field label with newtClass
             DispatchQueue.main.async {
                 self.nextClassView.isHidden = false
@@ -66,10 +72,10 @@ class HomeViewController: UIViewController {
             let  topicView = TopicViewController()
             topicView.fileTypeRequestd = 2
             navigationController?.pushViewController(topicView, animated: true)
-        case 3:
+        case 2:
             let discussionsListView = DiscussionsListViewController()
             navigationController?.pushViewController(discussionsListView, animated: true)
-        case 4:
+        case 3:
             let planningView = PlanningViewController()
             navigationController?.pushViewController(planningView, animated: true)
         default:

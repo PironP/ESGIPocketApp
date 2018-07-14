@@ -16,7 +16,7 @@
                 <outlet property="classRoomLabel" destination="KU5-24-D0t" id="Kmv-Jw-5k6"/>
                 <outlet property="classStartLabel" destination="xSL-fB-RR3" id="G0M-vO-TKG"/>
                 <outlet property="nextClassView" destination="eoZ-em-oDq" id="dQZ-PQ-hGH"/>
-                <outlet property="noPlanningLabel" destination="KU5-24-D0t" id="gdD-Cy-lmg"/>
+                <outlet property="noPlanningLabel" destination="ZT1-VZ-sXp" id="YFF-QM-vfy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="welcomeLabel" destination="hM7-KD-u2A" id="zgh-Pv-Rv5"/>
             </connections>
@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prochain cours :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztT-IS-RAU">
-                    <rect key="frame" x="50" y="186.5" width="123.5" height="20.5"/>
+                    <rect key="frame" x="50" y="205.5" width="123.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -46,10 +46,10 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-logo" translatesAutoresizingMaskIntoConstraints="NO" id="TIj-wv-Xac">
-                    <rect key="frame" x="90.5" y="45" width="194" height="61"/>
+                    <rect key="frame" x="82.5" y="45" width="210" height="80"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="61" id="hID-rr-Apa"/>
-                        <constraint firstAttribute="width" constant="194" id="ryU-yO-zMf"/>
+                        <constraint firstAttribute="height" constant="80" id="hID-rr-Apa"/>
+                        <constraint firstAttribute="width" constant="210" id="ryU-yO-zMf"/>
                     </constraints>
                 </imageView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgO-wd-mHY">
@@ -70,19 +70,13 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="DJt-JI-XKX"/>
-                        <barButtonItem tag="2" image="nav-logo" width="55" style="plain" id="VAP-Pz-obr">
-                            <connections>
-                                <action selector="navigationButtonPressed:" destination="-1" id="M3P-fJ-sPR"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="iMI-1e-gPf"/>
-                        <barButtonItem tag="3" image="nav-chat" width="55" style="plain" id="HKR-HA-eWx">
+                        <barButtonItem tag="2" image="nav-chat" width="55" style="plain" id="HKR-HA-eWx">
                             <connections>
                                 <action selector="navigationButtonPressed:" destination="-1" id="8O2-vC-WXC"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="F28-KG-odh"/>
-                        <barButtonItem tag="4" image="nav-planning" width="55" style="plain" id="jTg-KI-Cks">
+                        <barButtonItem tag="3" image="nav-planning" width="55" style="plain" id="jTg-KI-Cks">
                             <connections>
                                 <action selector="navigationButtonPressed:" destination="-1" id="84x-nm-XgO"/>
                             </connections>
@@ -91,7 +85,7 @@
                     <color key="tintColor" red="0.73439369070000005" green="0.73062756920000005" blue="0.73815981220000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </toolbar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoZ-em-oDq">
-                    <rect key="frame" x="10" y="212" width="355" height="125"/>
+                    <rect key="frame" x="10" y="231" width="355" height="125"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{{lesson_name}}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPO-Sy-NU3">
                             <rect key="frame" x="116" y="10" width="123.5" height="20.5"/>
@@ -128,13 +122,13 @@
                     </constraints>
                 </view>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aucun planning pour ta classe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT1-VZ-sXp">
-                    <rect key="frame" x="73" y="337" width="229.5" height="20.5"/>
+                    <rect key="frame" x="73" y="356" width="229.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM7-KD-u2A">
-                    <rect key="frame" x="30" y="136" width="315" height="20.5"/>
+                    <rect key="frame" x="30" y="155" width="315" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -170,7 +164,6 @@
         <image name="main-logo" width="400" height="104"/>
         <image name="nav-chat" width="100" height="100"/>
         <image name="nav-courses" width="100" height="100"/>
-        <image name="nav-logo" width="100" height="100"/>
         <image name="nav-planning" width="100" height="100"/>
         <image name="nav-quiz" width="100" height="100"/>
     </resources>

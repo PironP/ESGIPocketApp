@@ -12,15 +12,11 @@ import SwiftyJSON
 
 class UserProvider {
     
-    func getUser(username: String, callback: @escaping ([User]) -> ()) {
+    func getUsers(callback: @escaping ([User]) -> ()) {
         
         let url: URL
         
-        if username == "" {
             url = URL(string: ServerAdress.serverAdress + "/users")!
-        } else {
-            url = URL(string: ServerAdress.serverAdress + "/users/" + username)!
-        }
 
         
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
