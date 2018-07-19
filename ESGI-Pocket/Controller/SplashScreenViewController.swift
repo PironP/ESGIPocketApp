@@ -31,6 +31,7 @@ class SplashScreenViewController: UIViewController {
         if CurrentUser.currentUser.jwt != "" {
             // User already loged in
             redirectAfterLogin()
+            return
         }
         
         // read local storage
@@ -65,6 +66,12 @@ class SplashScreenViewController: UIViewController {
     }
     
     func redirectAfterLogin() {
+        
+        if CurrentUser.currentUser.role == 3 {
+            let messageListView = MessagesListViewController()
+            navigationController?.pushViewController(messageListView, animated: true)
+            return
+        }
 
         if CurrentUser.currentUser.classe != nil {
             let homeView = HomeViewController()

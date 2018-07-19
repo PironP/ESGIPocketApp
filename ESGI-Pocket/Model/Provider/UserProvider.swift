@@ -56,8 +56,6 @@ class UserProvider {
                 return
             }
             
-            print(statusCode)
-            
             if statusCode == 404 || statusCode == 500 {
                 callback(false)
                 return

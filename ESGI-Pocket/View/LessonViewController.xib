@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="courseAuthor" destination="H1X-On-8dv" id="AU3-kK-fKb"/>
                 <outlet property="courseTitle" destination="55K-Fa-hPn" id="HCZ-uy-ZLn"/>
+                <outlet property="dislikeButton" destination="xpP-wf-xTT" id="DMC-A0-V1P"/>
+                <outlet property="likeButton" destination="zXc-BS-hxG" id="lpq-mU-YOC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="5gj-9a-Bxg" id="Dob-0W-u5C"/>
             </connections>
@@ -39,14 +41,6 @@
                         <constraint firstAttribute="width" constant="120" id="Imf-YX-3y1"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpP-wf-xTT">
-                    <rect key="frame" x="330" y="35" width="35" height="35"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="35" id="c8z-T2-C9g"/>
-                        <constraint firstAttribute="height" constant="35" id="o0k-3P-lJU"/>
-                    </constraints>
-                    <state key="normal" title="Button" image="item-dislike"/>
-                </button>
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXc-BS-hxG">
                     <rect key="frame" x="275" y="35" width="35" height="35"/>
                     <constraints>
@@ -54,6 +48,20 @@
                         <constraint firstAttribute="height" constant="35" id="WHM-2z-htz"/>
                     </constraints>
                     <state key="normal" title="Button" image="item-like"/>
+                    <connections>
+                        <action selector="voteForCourse:" destination="-1" eventType="touchUpInside" id="tcD-eh-rOq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpP-wf-xTT">
+                    <rect key="frame" x="330" y="35" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="c8z-T2-C9g"/>
+                        <constraint firstAttribute="height" constant="35" id="o0k-3P-lJU"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="item-dislike"/>
+                    <connections>
+                        <action selector="voteForCourse:" destination="-1" eventType="touchUpInside" id="wEP-LE-ZTT"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55K-Fa-hPn">
                     <rect key="frame" x="10" y="90" width="355" height="21"/>

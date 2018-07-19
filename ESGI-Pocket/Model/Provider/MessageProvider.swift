@@ -63,10 +63,9 @@ class MessageProvider {
         }
     }
     
-    func getPrivateMessages(idReceiver: String, callback: @escaping ([Message]) -> ()) {
+    func getAllPrivateMessages(callback: @escaping ([Message]) -> ()) {
         
-        // TO UPDATE
-        let url = URL(string: ServerAdress.serverAdress + "/threads/" + idReceiver + "/messages")!
+        let url = URL(string: ServerAdress.serverAdress + "/messages/" + CurrentUser.currentUser.id + "/messages")!
         
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         
@@ -81,6 +80,34 @@ class MessageProvider {
                 for (index,subJson):(String, JSON) in json {
                     messageList.append(Message(json: subJson))
                 }
+                
+                callback(messageList)
+            }
+            else {
+                callback(messageList)
+            }
+        }
+    }
+    
+    func getPrivateMessages(idReceiver: String, callback: @escaping ([Message]) -> ()) {
+        
+        // TODO
+        let url = URL(string: ServerAdress.serverAdress + "/messages/" + idReceiver + "/messages")!
+        
+        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
+        
+        Alamofire.request(url, method: .get, headers: headers).responseJSON { response in
+            
+            var messageList: [Message] = []
+            
+            if response.result.isSuccess {
+                
+                let json = JSON(response.result.value)
+                
+                for (index,subJson):(String, JSON) in json {
+                    messageList.append(Message(json: subJson))
+                }
+                
                 callback(messageList)
             }
             else {
@@ -93,7 +120,7 @@ class MessageProvider {
         
         let url = URL(string: ServerAdress.serverAdress + "/messages")!
         
-        // TO UPDATE
+        // TO TEST
         let parameters: Parameters = [
             "message": message,
             "receiver": idReceiver

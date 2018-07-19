@@ -15,7 +15,7 @@ class Message {
     var message: String
     var createdAt: String
     var user: User
-    var receiver: User?
+    var receiverId: String?
     var thread: Thread?
     
     init(id: String, message: String, createdAt: String, user: User, thread: Thread) {
@@ -26,12 +26,12 @@ class Message {
         self.thread = thread
     }
     
-    init(id: String, message: String, createdAt: String, user: User, receiver: User) {
+    init(id: String, message: String, createdAt: String, user: User, receiverId: String) {
         self.id = id
         self.message = message
         self.createdAt = createdAt
         self.user = user
-        self.receiver = receiver
+        self.receiverId = receiverId
     }
     
     init(json: JSON) {
@@ -39,8 +39,8 @@ class Message {
         self.message = json["message"].stringValue
         self.createdAt = json["createdAt"].stringValue
         self.user = User(json: json["user"])
-        if json["receiver"] != nil {
-            self.receiver = User(json: json["receiver"])
+        if json["receiver"].exists() {
+            self.receiverId = json["receiver"].stringValue
         } else {
         self.thread = Thread(json: json["thread"])
         }

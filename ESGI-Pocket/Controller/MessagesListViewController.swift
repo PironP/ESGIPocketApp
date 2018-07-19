@@ -14,6 +14,7 @@ class MessagesListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var queryTextField: UITextField!
     @IBOutlet weak var userFilter: UISegmentedControl!
+    @IBOutlet weak var returnButton: UIButton!
     
     var users: [User] = []
     var usersList: [User] = []
@@ -26,6 +27,11 @@ class MessagesListViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         
         getUser()
+        
+        if (CurrentUser.currentUser.role == 3) {
+            returnButton.isHidden = true
+            userFilter.removeSegment(at: 2, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,14 +46,28 @@ class MessagesListViewController: UIViewController {
                 return
             }
             self.users = response
+            self.getPrivatesMessages()
+
+        })
+    }
+    
+    func getPrivatesMessages() {
+        let messageProvider = MessageProvider()
+        messageProvider.getAllPrivateMessages(callback: { response in
+            
+            for user in self.users {
+                user.privateMessage = response.filter({ (message) -> Bool in
+                    message.receiverId == user.id
+                })
+            }
             DispatchQueue.main.async {
                 self.filterUser(self)
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
             }
-            
         })
     }
+    
     
     @IBAction func returnButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -56,19 +76,20 @@ class MessagesListViewController: UIViewController {
     @IBAction func filterUser(_ sender: Any) {
         switch self.userFilter.selectedSegmentIndex {
         case 0:
+            usersList = users.filter({ (user) -> Bool in
+                user.role != 3
+                
+            })
+        case 1:
+            usersList = users.filter({ (user) -> Bool in
+                user.role == 3
+            })
+        case 2:
             guard let classeId = CurrentUser.currentUser.classe?.id else {
                 return
             }
             usersList = users.filter({ (user) -> Bool in
                 user.classe.id == classeId
-            })
-        case 1:
-            usersList = users.filter({ (user) -> Bool in
-                user.role != 3
-            })
-        case 2:
-            usersList = users.filter({ (user) -> Bool in
-                user.role == 3
             })
         default:
             usersList = users
@@ -78,6 +99,7 @@ class MessagesListViewController: UIViewController {
             searchUser()
         }
         
+        self.sortUsersByMessagesCount()
         self.tableView.reloadData()
     }
     
@@ -87,6 +109,12 @@ class MessagesListViewController: UIViewController {
         }
         usersList = usersList.filter({ (user) -> Bool in
             return user.lastname.lowercased().range(of: nameSearched) != nil || user.firstname.lowercased().range(of: nameSearched) != nil
+        })
+    }
+    
+    func sortUsersByMessagesCount() {
+        self.usersList.sort(by: { (user1, user2) -> Bool in
+            return user1.privateMessage.count >= user2.privateMessage.count
         })
     }
 }

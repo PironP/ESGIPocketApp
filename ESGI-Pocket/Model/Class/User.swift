@@ -17,6 +17,7 @@ class User {
     var email: String
     var role: Int
     var classe: Classe
+    var privateMessage: [Message] = []
     
     init(id: String, firstname: String, lastname: String, email: String, role: Int, classe: Classe ) {
         self.id = id

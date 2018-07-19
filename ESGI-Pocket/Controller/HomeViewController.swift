@@ -47,14 +47,12 @@ class HomeViewController: UIViewController {
         }
         planningProvider.getClassPlanning(idClass: idClass, callback: { response in
             if response.isEmpty {
-                print("resonse is empty")
                 self.noPlanningLabel.isHidden = false
                 return
             }
             let classes = response[0].content
             // find first
             let nextClass = classes[0]
-            print(response[0])
             // field label with newtClass
             DispatchQueue.main.async {
                 self.nextClassView.isHidden = false
@@ -89,10 +87,8 @@ class HomeViewController: UIViewController {
     
     @IBAction func disconnectButtonPressed(_ sender: Any) {
         
-        
         let basePath: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let filePath = basePath.appendingPathComponent("loginDetails.json")
-        print(basePath)
         
         let dict = ["email" :"", "password" :""]
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: .init(rawValue: 0)) else {

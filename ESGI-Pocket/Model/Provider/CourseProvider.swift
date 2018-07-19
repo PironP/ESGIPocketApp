@@ -41,8 +41,7 @@ class CourseProvider {
     
     func getVoteForCourse(idCourse: String, callback: @escaping (JSON) -> ()) {
         
-        // TO CHANGE
-        let url = URL(string: ServerAdress.serverAdress + "/topics/" + idCourse + "/courses")!
+        let url = URL(string: ServerAdress.serverAdress + "/coursesStudent/" + idCourse + "/courses")!
         
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         
@@ -51,6 +50,7 @@ class CourseProvider {
             if response.result.isSuccess {
                 
                 let json = JSON(response.result.value)
+                
                 
                 callback(json)
             }
@@ -62,11 +62,10 @@ class CourseProvider {
     
     func addVoteForCourse(idCourse: String, like: Bool, callback: @escaping (Bool) -> ()) {
         
-        // TO CHANGE
-        let url = URL(string: ServerAdress.serverAdress + "/topics/" + idCourse + "/courses")!
+        let url = URL(string: ServerAdress.serverAdress + "/coursesStudent")!
         
         let parameters: Parameters = [
-        "idCourse" :idCourse, "like": like.description]
+            "course": idCourse, "vote": like, "user": CurrentUser.currentUser.id]
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
@@ -76,49 +75,13 @@ class CourseProvider {
                 return
             }
             
-            if statusCode == 404 {
-                callback(false)
+            if statusCode == 201 {
+                callback(true)
                 return
             }
-            
-            guard let json = response.result.value,
-                let jsonData = json as? [String : Any] else {
-                    callback(false)
-                    return
-            }
-            
-            callback(true)
+
+            callback(false)
         }
     }
-    
-    func changeVoteForCourse(idCourse: String, like: Bool, callback: @escaping (Bool) -> ()) {
-        // TO CHANGE
-        let url = URL(string: ServerAdress.serverAdress + "/topics/" + idCourse + "/courses")!
-        
-        let parameters: Parameters = [
-            "idCourse" :idCourse]
-        
-        let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
-        
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-            
-            guard let statusCode = response.response?.statusCode else {
-                callback(false)
-                return
-            }
-            
-            if statusCode == 404 {
-                callback(false)
-                return
-            }
-            
-            guard let json = response.result.value,
-                let jsonData = json as? [String : Any] else {
-                    callback(false)
-                    return
-            }
-            
-            callback(true)
-        }
-    }
+
 }

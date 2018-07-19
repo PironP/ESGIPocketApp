@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessagesListViewController" customModule="ESGI_Pocket" customModuleProvider="target">
             <connections>
                 <outlet property="queryTextField" destination="vgl-a5-esf" id="oA9-bM-OGt"/>
+                <outlet property="returnButton" destination="sO2-Al-3W8" id="1R7-Sb-nNl"/>
                 <outlet property="tableView" destination="pcj-4P-fv0" id="JDI-uE-NHd"/>
                 <outlet property="userFilter" destination="cBW-ul-4xF" id="cXX-bC-jgQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -76,9 +77,9 @@
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cBW-ul-4xF">
                     <rect key="frame" x="50" y="107" width="275" height="29"/>
                     <segments>
-                        <segment title="Classe"/>
                         <segment title="ESGI"/>
                         <segment title="Enseignants"/>
+                        <segment title="Classe"/>
                     </segments>
                     <connections>
                         <action selector="filterUser:" destination="-1" eventType="valueChanged" id="p75-Jg-ig5"/>

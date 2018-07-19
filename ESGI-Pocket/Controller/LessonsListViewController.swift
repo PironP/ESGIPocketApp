@@ -26,7 +26,9 @@ class LessonsListViewController: UIViewController {
         self.tableView.register(UINib(nibName: "CourseViewCell", bundle: nil), forCellReuseIdentifier: "courseCell")
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let courseProvider = CourseProvider()
         courseProvider.getTopicCourses(idTopic: self.idTopic, callback: { response in
             if response.count == 0 {
@@ -35,10 +37,8 @@ class LessonsListViewController: UIViewController {
                 return
             }
             self.courses = response
-            self.courses.sort(by: { (course1, course2) -> Bool in
-                return course1.archive ? false : true
-            })
-
+            self.sortCoursesList()
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
@@ -46,7 +46,19 @@ class LessonsListViewController: UIViewController {
             
         })
     }
-
+    
+    func sortCoursesList() {
+        self.courses.sort(by: { (course1, course2) -> Bool in
+            if !course1.archive && course2.archive {
+                return true
+            } else if course1.archive && !course2.archive {
+                return false
+            } else {
+                return (course1.like - course1.dislike) >= (course2.like - course2.dislike) ? true : false
+            }
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,9 +92,9 @@ extension LessonsListViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath)
         if let listCell = cell as? CourseViewCell {
             listCell.courseTitle.text = courses[indexPath.row].title
-            // listCell.courseAuthor = courses[indexPath.row].user
-            
-            listCell.courseAuthor.text = "Auteur"
+            listCell.courseAuthor.text = courses[indexPath.row].authorName
+            listCell.like.text = courses[indexPath.row].like.description
+            listCell.dislike.text = courses[indexPath.row].dislike.description
             
         }
 
