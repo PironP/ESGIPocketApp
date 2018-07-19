@@ -99,6 +99,10 @@ class MessagesListViewController: UIViewController {
             searchUser()
         }
         
+        usersList = usersList.filter({ (user) -> Bool in
+            user.id != CurrentUser.currentUser.id
+        })
+        
         self.sortUsersByMessagesCount()
         self.tableView.reloadData()
     }

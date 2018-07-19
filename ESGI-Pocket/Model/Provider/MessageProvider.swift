@@ -91,7 +91,6 @@ class MessageProvider {
     
     func getPrivateMessages(idReceiver: String, callback: @escaping ([Message]) -> ()) {
         
-        // TODO
         let url = URL(string: ServerAdress.serverAdress + "/messages/" + idReceiver + "/messages")!
         
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
