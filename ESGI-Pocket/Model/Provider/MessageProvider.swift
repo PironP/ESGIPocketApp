@@ -119,7 +119,6 @@ class MessageProvider {
         
         let url = URL(string: ServerAdress.serverAdress + "/messages")!
         
-        // TO TEST
         let parameters: Parameters = [
             "message": message,
             "receiver": idReceiver

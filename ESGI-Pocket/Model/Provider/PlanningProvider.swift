@@ -31,11 +31,31 @@ class PlanningProvider {
                         planningList.append(Planning(json: subJson))
                     }
                 }
-                callback(planningList)
+                callback(self.sortPlanningsByMostRecent(planningList: planningList))
             }
             else {
                 callback(planningList)
             }
         }
+    }
+    
+    func sortPlanningsByMostRecent(planningList: [Planning]) -> [Planning] {
+        var planningsToSort = planningList
+        planningsToSort.sort { (planning1, planning2) -> Bool in
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+            dateFormatter.locale = Locale(identifier: "fr_FR")
+            
+            guard let formattedDatePlanning1 = dateFormatter.date(from: planning1.uploadedAt) else {
+                return false
+            }
+            guard let formattedDatePlanning2 = dateFormatter.date(from: planning2.uploadedAt) else {
+                return true
+            }
+            return formattedDatePlanning1 >= formattedDatePlanning2
+                
+        }
+        
+        return planningsToSort
     }
 }

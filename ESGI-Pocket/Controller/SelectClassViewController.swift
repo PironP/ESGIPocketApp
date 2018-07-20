@@ -51,7 +51,6 @@ class SelectClassViewController: UIViewController {
     }
     
     @IBAction func confirmClassButtonPressed(_ sender: Any) {
-        // TODO
         guard let classe = selectedClass else {
             return
         }

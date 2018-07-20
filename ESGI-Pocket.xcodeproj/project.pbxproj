@@ -65,6 +65,8 @@
 		E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */; };
 		E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */; };
 		E8EAB3F22102328700514D83 /* PlanningItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAB3F12102328700514D83 /* PlanningItem.swift */; };
+		E8EAB3F521023F7E00514D83 /* PlanningViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAB3F321023F7E00514D83 /* PlanningViewCell.swift */; };
+		E8EAB3F621023F7E00514D83 /* PlanningViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EAB3F421023F7E00514D83 /* PlanningViewCell.xib */; };
 		E8F3130120AB60910016D511 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130020AB60910016D511 /* CurrentUser.swift */; };
 		E8F3130320AB69870016D511 /* ThreadProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F3130220AB69870016D511 /* ThreadProvider.swift */; };
 /* End PBXBuildFile section */
@@ -132,6 +134,8 @@
 		E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
 		E8EAB3F12102328700514D83 /* PlanningItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningItem.swift; sourceTree = "<group>"; };
+		E8EAB3F321023F7E00514D83 /* PlanningViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningViewCell.swift; sourceTree = "<group>"; };
+		E8EAB3F421023F7E00514D83 /* PlanningViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanningViewCell.xib; sourceTree = "<group>"; };
 		E8F3130020AB60910016D511 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		E8F3130220AB69870016D511 /* ThreadProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,15 +216,15 @@
 				E8445D7720D9771800F1631E /* Course.swift */,
 				E8F3130020AB60910016D511 /* CurrentUser.swift */,
 				E8445D7320D975E300F1631E /* Message.swift */,
+				E85171BB20DA567F00069C03 /* Planning.swift */,
+				E8EAB3F12102328700514D83 /* PlanningItem.swift */,
 				E8445D7120D975AB00F1631E /* Question.swift */,
 				E8445D6F20D9756F00F1631E /* Quiz.swift */,
+				E870CCBE20DAB44C0078FD3A /* Response.swift */,
+				E85A0C7520F690F200B671CB /* ServerAdress.swift */,
 				E85171B920DA40FC00069C03 /* Thread.swift */,
 				E8445D6D20D974EC00F1631E /* Topic.swift */,
 				E8445D7520D975F500F1631E /* User.swift */,
-				E85171BB20DA567F00069C03 /* Planning.swift */,
-				E870CCBE20DAB44C0078FD3A /* Response.swift */,
-				E85A0C7520F690F200B671CB /* ServerAdress.swift */,
-				E8EAB3F12102328700514D83 /* PlanningItem.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -246,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				E86DB52020BBFF2000F06E67 /* ConfirmEmailViewController.swift */,
+				E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */,
 				E88F792C20ACCBA100368E48 /* DiscussionsListViewController.swift */,
 				E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */,
 				E804692C20A32C3100F4F643 /* HomeViewController.swift */,
@@ -254,13 +259,13 @@
 				E831FF2220A1DA5500EC1927 /* LoginViewController.swift */,
 				E88F793020ACCBEA00368E48 /* MessagesListViewController.swift */,
 				E8594F5520AD5D2600C3510B /* MessageViewCell.swift */,
+				E8EAB3F321023F7E00514D83 /* PlanningViewCell.swift */,
 				E88F793820ACCC6600368E48 /* PlanningViewController.swift */,
 				E88F793420ACCC3100368E48 /* QuizListViewController.swift */,
 				E804693320A9827900F4F643 /* SelectClassViewController.swift */,
 				E831FF2620A1E21000EC1927 /* SignUpViewController.swift */,
 				E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */,
 				E809FCEA20D700B0008DB88A /* TopicViewController.swift */,
-				E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				E831FF2320A1DA5500EC1927 /* LoginViewController.xib */,
 				E88F793120ACCBEA00368E48 /* MessagesListViewController.xib */,
 				E8594F5620AD5D2600C3510B /* MessageViewCell.xib */,
+				E8EAB3F421023F7E00514D83 /* PlanningViewCell.xib */,
 				E88F793920ACCC6600368E48 /* PlanningViewController.xib */,
 				E88F793520ACCC3100368E48 /* QuizListViewController.xib */,
 				E804693420A9827900F4F643 /* SelectClassViewController.xib */,
@@ -367,6 +373,7 @@
 				E804693620A9827900F4F643 /* SelectClassViewController.xib in Resources */,
 				E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */,
 				E85A0C7420F642A300B671CB /* LessonViewController.xib in Resources */,
+				E8EAB3F621023F7E00514D83 /* PlanningViewCell.xib in Resources */,
 				E88F793720ACCC3100368E48 /* QuizListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +433,7 @@
 				E804693220A32EE900F4F643 /* Login.swift in Sources */,
 				E870CCBF20DAB44C0078FD3A /* Response.swift in Sources */,
 				E86DB52220BBFF2000F06E67 /* ConfirmEmailViewController.swift in Sources */,
+				E8EAB3F521023F7E00514D83 /* PlanningViewCell.swift in Sources */,
 				E85171BC20DA567F00069C03 /* Planning.swift in Sources */,
 				E85A0C6F20F60FD200B671CB /* CourseViewCell.swift in Sources */,
 				E8445D6E20D974EC00F1631E /* Topic.swift in Sources */,

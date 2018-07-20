@@ -11,26 +11,26 @@ import SwiftyJSON
 
 class PlanningItem {
     
-    var cours: String = ""
+    var topic: String = ""
     var date: String = ""
-    var heureDebut: String = ""
-    var heureFin: String = ""
-    var salle: String = ""
+    var startTime: String = ""
+    var endTime: String = ""
+    var room: String = ""
     
-    init(cours: String, date: String, heureDebut: String, heureFin: String, salle: String) {
-        self.cours = cours
+    init(topic: String, date: String, startTime: String, endTime: String, room: String) {
+        self.topic = topic
         self.date = date
-        self.heureDebut = heureDebut
-        self.heureFin = heureFin
-        self.salle = salle
+        self.startTime = startTime
+        self.endTime = endTime
+        self.room = room
     }
     
-    init(json: JSON) {
-        self.cours = json["cours"].stringValue
-        self.date = json["date"].stringValue
-        self.heureDebut = json["heureDebut"].stringValue
-        self.heureFin = json["heureFin"].stringValue
-        self.salle = json["salle"].stringValue
+    init(json: JSON, date: String) {
+        self.topic = json["subject"].stringValue
+        self.date = date
+        self.startTime = json["beginning"].stringValue
+        self.endTime = json["end"].stringValue
+        self.room = json["classrooms"][0].stringValue
     }
     
 }

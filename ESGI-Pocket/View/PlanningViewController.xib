@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlanningViewController" customModule="ESGI_Pocket" customModuleProvider="target">
             <connections>
+                <outlet property="listView" destination="aX9-Mq-kdY" id="hM3-rY-6LP"/>
+                <outlet property="noPlanningLabel" destination="5yS-wP-9Cg" id="PV4-fy-xon"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,12 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planning View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5M1-wD-eXy">
-                    <rect key="frame" x="134" y="323" width="107.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpb-dh-vSk">
                     <rect key="frame" x="15" y="30" width="76" height="22"/>
                     <state key="normal" title="Accueil" backgroundImage="button">
@@ -35,18 +31,42 @@
                         <action selector="homeButtonPressed:" destination="-1" eventType="touchUpInside" id="BBs-3f-dG3"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aX9-Mq-kdY">
+                    <rect key="frame" x="0.0" y="62" width="375" height="605"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auncun planning disponible pour ta classe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yS-wP-9Cg">
+                    <rect key="frame" x="26.5" y="323" width="322" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-logo" translatesAutoresizingMaskIntoConstraints="NO" id="tlI-4g-fKd">
+                    <rect key="frame" x="127" y="20" width="120" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="N2Q-jk-CL8"/>
+                        <constraint firstAttribute="height" constant="40" id="VTX-mo-c6Z"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aX9-Mq-kdY" secondAttribute="bottom" id="1DW-fI-c2y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aX9-Mq-kdY" secondAttribute="trailing" id="1M4-kc-2pm"/>
                 <constraint firstItem="Zpb-dh-vSk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="4SG-we-Tha"/>
-                <constraint firstItem="5M1-wD-eXy" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8pg-cm-Laa"/>
-                <constraint firstItem="5M1-wD-eXy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qgv-eE-2ny"/>
+                <constraint firstItem="aX9-Mq-kdY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="M0p-6r-3MU"/>
+                <constraint firstItem="5yS-wP-9Cg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="VNE-2k-6DU"/>
                 <constraint firstItem="Zpb-dh-vSk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="aVk-1z-vmk"/>
+                <constraint firstItem="5yS-wP-9Cg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eKj-wW-Wod"/>
+                <constraint firstItem="aX9-Mq-kdY" firstAttribute="top" secondItem="Zpb-dh-vSk" secondAttribute="bottom" constant="10" id="ghq-QA-pxO"/>
+                <constraint firstItem="tlI-4g-fKd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lCR-PM-CHg"/>
+                <constraint firstItem="tlI-4g-fKd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pQL-Hp-YtW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
     <resources>
         <image name="button" width="76" height="22"/>
+        <image name="main-logo" width="400" height="104"/>
     </resources>
 </document>

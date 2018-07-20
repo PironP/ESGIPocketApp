@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     var jwt: String = ""
     
     @IBOutlet weak var nextClassView: UIView!
+    @IBOutlet weak var nextClassLabel: UILabel!
     @IBOutlet weak var classNameLabel: UILabel!
     @IBOutlet weak var classStartLabel: UILabel!
     @IBOutlet weak var classRoomLabel: UILabel!
@@ -24,15 +25,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.welcomeLabel.text = "Bonjour, " + CurrentUser.currentUser.firstname.capitalized + " " + CurrentUser.currentUser.lastname.capitalized
+        self.welcomeLabel.text = "Bonjour " + CurrentUser.currentUser.firstname.capitalized + "," + CurrentUser.currentUser.lastname.capitalized
         
         self.nextClassView.isHidden = true
         loadNextClass()
         
-//        print(CurrentUser.currentUser.classe?.id)
-//        print(CurrentUser.currentUser.classe?.group)
-//        print(CurrentUser.currentUser.classe?.specialityAcronym)
-//        print(CurrentUser.currentUser.classe?.year)
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,16 +50,23 @@ class HomeViewController: UIViewController {
             let classes = response[0]
             // find first
             if classes.items.count == 0 {
+                self.nextClassLabel.isHidden = true
+                self.noPlanningLabel.isHidden = false
                 return
             }
             let nextClass = classes.items[0]
             // field label with newtClass
-            DispatchQueue.main.async {
-                self.nextClassView.isHidden = false
-                self.classNameLabel.text = nextClass.cours
-                self.classRoomLabel.text = nextClass.salle
-                self.classStartLabel.text = nextClass.date + " " + nextClass.heureDebut
+            self.nextClassView.isHidden = false
+            self.nextClassView.layer.cornerRadius = 10
+            self.classNameLabel.text = nextClass.topic
+            self.classRoomLabel.text = nextClass.room
+            guard let nextClassDate = nextClass.date.split(separator: " ").first?.description else {
+                self.classStartLabel.text = nextClass.date + " " + nextClass.startTime
+                return
             }
+            self.classStartLabel.text = nextClassDate + " " + nextClass.startTime
+
+            
         })
     }
     
