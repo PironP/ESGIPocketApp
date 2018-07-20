@@ -50,12 +50,18 @@ class HomeViewController: UIViewController {
                 self.noPlanningLabel.isHidden = false
                 return
             }
-            let classes = response[0].content
+            let classes = response[0]
             // find first
-            let nextClass = classes[0]
+            if classes.items.count == 0 {
+                return
+            }
+            let nextClass = classes.items[0]
             // field label with newtClass
             DispatchQueue.main.async {
                 self.nextClassView.isHidden = false
+                self.classNameLabel.text = nextClass.cours
+                self.classRoomLabel.text = nextClass.salle
+                self.classStartLabel.text = nextClass.date + " " + nextClass.heureDebut
             }
         })
     }

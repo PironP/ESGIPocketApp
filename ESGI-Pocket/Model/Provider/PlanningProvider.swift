@@ -14,7 +14,7 @@ class PlanningProvider {
     
     func getClassPlanning(idClass: String, callback: @escaping ([Planning]) -> ()) {
         
-        let url = URL(string: ServerAdress.serverAdress + "/plannings")!
+        let url = URL(string: ServerAdress.serverAdress + "/plannings/" + idClass + "/classe")!
         
         let headers: HTTPHeaders = ["authorization": CurrentUser.currentUser.jwt]
         
@@ -27,7 +27,7 @@ class PlanningProvider {
                 let json = JSON(response.result.value)
                 
                 for (index,subJson):(String, JSON) in json {
-                    if (subJson["classe"]["_id"].stringValue == idClass) {
+                    if (subJson["class"].stringValue == idClass) {
                         planningList.append(Planning(json: subJson))
                     }
                 }
