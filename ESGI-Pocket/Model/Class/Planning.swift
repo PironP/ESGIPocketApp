@@ -36,16 +36,10 @@ class Planning {
     }
     
     func setPlanningItems(json: JSON) {
-        for (_, subJson1):(String, JSON) in json {
-            for (_, subJson2):(String, JSON) in subJson1 {
-                for (_, subJson3):(String, JSON) in subJson2 {
-                    for (_, subJson4):(String, JSON) in subJson3 {
-                        for (_, subJson5):(String, JSON) in subJson4 {
-                            for (_, subJson6):(String, JSON) in subJson5 {
-                                self.items.append(PlanningItem(json: subJson6, date: subJson4["date"].stringValue))
-                            }
-                        }
-                    }
+        for (_, weeks):(String, JSON) in json["weeks"] {
+            for (_, days):(String, JSON) in weeks["days"] {
+                for (_, courses):(String, JSON) in days["courses"] {
+                    self.items.append(PlanningItem(json: courses, date: days["date"].stringValue))
                 }
             }
         }
@@ -57,6 +51,7 @@ class Planning {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             dateFormatter.locale = Locale(identifier: "fr_FR")
+
             
             guard let formattedDate = dateFormatter.date(from: item.date) else {
                 return false

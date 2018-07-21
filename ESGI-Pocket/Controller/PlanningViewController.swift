@@ -83,7 +83,7 @@ extension PlanningViewController: UITableViewDataSource {
                 listCell.classDate.text = self.planningItems[indexPath.row].date
                 return cell
             }
-            listCell.classDate.text = nextClassDate + " " + self.planningItems[indexPath.row].startTime
+            listCell.classDate.text = nextClassDate
         }
         return cell
     }

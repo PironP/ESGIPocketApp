@@ -26,12 +26,14 @@ class PlanningProvider {
                 
                 let json = JSON(response.result.value)
                 
+                planningList = self.sortPlanningsByMostRecent(planningList: planningList)
+                
                 for (index,subJson):(String, JSON) in json {
                     if (subJson["class"].stringValue == idClass) {
                         planningList.append(Planning(json: subJson))
                     }
                 }
-                callback(self.sortPlanningsByMostRecent(planningList: planningList))
+                callback(planningList)
             }
             else {
                 callback(planningList)
