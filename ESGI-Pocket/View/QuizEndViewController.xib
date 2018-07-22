@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizEndViewController" customModule="ESGI_Pocket" customModuleProvider="target">
+            <connections>
+                <outlet property="quizNameLabel" destination="N72-tg-h9a" id="Dr0-QL-8iR"/>
+                <outlet property="quizResultLabel" destination="6WF-N8-K56" id="YLB-oj-0p6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB6-qc-DmD">
+                    <rect key="frame" x="15" y="35" width="76" height="22"/>
+                    <state key="normal" title="Retour" backgroundImage="button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="returnButtonPressed:" destination="-1" eventType="touchUpInside" id="VAR-63-d77"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-logo" translatesAutoresizingMaskIntoConstraints="NO" id="rZB-1N-jMV">
+                    <rect key="frame" x="127.5" y="20" width="120" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5zR-QQ-SCq"/>
+                        <constraint firstAttribute="width" constant="120" id="BBA-iT-XXP"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fin du quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOe-br-Lgb">
+                    <rect key="frame" x="138" y="135" width="98.5" height="23"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quizName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N72-tg-h9a">
+                    <rect key="frame" x="148.5" y="188" width="78" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quizResult" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WF-N8-K56">
+                    <rect key="frame" x="147.5" y="289" width="80" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBJ-wa-Yt5">
+                    <rect key="frame" x="132.5" y="365" width="110" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="5QV-cN-dbR"/>
+                        <constraint firstAttribute="height" constant="35" id="R0K-Gi-k7Q"/>
+                    </constraints>
+                    <state key="normal" title="Refaire le quiz" backgroundImage="button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="retryQuizButtonPressed:" destination="-1" eventType="touchUpInside" id="hDt-dN-eCW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQI-5n-oCc">
+                    <rect key="frame" x="132" y="440" width="110" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="CbB-Um-sIB"/>
+                        <constraint firstAttribute="width" constant="110" id="NGv-LI-xMm"/>
+                    </constraints>
+                    <state key="normal" title="Retour" backgroundImage="button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="returnButtonPressed:" destination="-1" eventType="touchUpInside" id="Ywg-wo-98t"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="6WF-N8-K56" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5Cp-5Y-GrZ"/>
+                <constraint firstItem="fBJ-wa-Yt5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9UN-jz-1pw"/>
+                <constraint firstItem="KQI-5n-oCc" firstAttribute="top" secondItem="fBJ-wa-Yt5" secondAttribute="bottom" constant="40" id="Dzt-HQ-D4k"/>
+                <constraint firstItem="N72-tg-h9a" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FAc-jX-wXK"/>
+                <constraint firstItem="rZB-1N-jMV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J9o-pf-Spl"/>
+                <constraint firstItem="6WF-N8-K56" firstAttribute="top" secondItem="N72-tg-h9a" secondAttribute="bottom" constant="80" id="PXi-R2-OIs"/>
+                <constraint firstItem="rZB-1N-jMV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Rgf-Ki-gNj"/>
+                <constraint firstItem="N72-tg-h9a" firstAttribute="top" secondItem="nOe-br-Lgb" secondAttribute="bottom" constant="30" id="RyN-6a-398"/>
+                <constraint firstItem="fBJ-wa-Yt5" firstAttribute="top" secondItem="6WF-N8-K56" secondAttribute="bottom" constant="55" id="SdN-X3-dao"/>
+                <constraint firstItem="nOe-br-Lgb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="U8w-YC-jqB"/>
+                <constraint firstItem="IB6-qc-DmD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="Vh3-fL-CEe"/>
+                <constraint firstItem="nOe-br-Lgb" firstAttribute="top" secondItem="rZB-1N-jMV" secondAttribute="bottom" constant="75" id="h8l-Zj-E1o"/>
+                <constraint firstItem="IB6-qc-DmD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="oXi-4n-Nn4"/>
+                <constraint firstItem="KQI-5n-oCc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xCl-AQ-ZKc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button" width="76" height="22"/>
+        <image name="main-logo" width="400" height="104"/>
+    </resources>
+</document>

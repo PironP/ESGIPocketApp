@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="questionLabel" destination="vBo-hC-V9J" id="H6H-AD-kao"/>
                 <outlet property="questionNumberLabel" destination="xn6-kC-LTu" id="swQ-gM-MIp"/>
+                <outlet property="quizQuestionView" destination="Tnk-yl-zUo" id="vxW-lV-f0m"/>
                 <outlet property="responseListView" destination="y7v-ar-xBU" id="0D0-C6-eic"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -45,7 +46,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tnk-yl-zUo">
                     <rect key="frame" x="20" y="111" width="335" height="200"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBo-hC-V9J">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBo-hC-V9J">
                             <rect key="frame" x="10" y="10" width="315" height="180"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>

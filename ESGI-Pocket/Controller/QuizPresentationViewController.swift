@@ -14,14 +14,26 @@ class QuizPresentationViewController: UIViewController {
     
     @IBOutlet weak var topicNameLabel: UILabel!
     @IBOutlet weak var quizNameLabel: UILabel!
+    @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var statsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topicNameLabel.text = quiz.topic.name
         quizNameLabel.text = quiz.name
+        authorNameLabel.text = quiz.author.firstname + " " + quiz.author.lastname
         
-        // Get stats for this quiz
+        getQuiz()
+    }
+    
+    func getQuiz() {
+        let quizProvider = QuizProvider()
+        quizProvider.getQuestions(quiz: self.quiz) { questionList in
+            if questionList.count > 0 {
+                self.quiz.questions = questionList
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +45,13 @@ class QuizPresentationViewController: UIViewController {
     }
     
     @IBAction func takeQuizButtonPressed(_ sender: Any) {
-        
+        if self.quiz.questions.count == 0 {
+            self.getQuiz()
+            return
+        }
+        let quizQuestionViewController = QuizQuestionViewController()
+        quizQuestionViewController.quiz = self.quiz
+        navigationController?.popViewController(animated: true)
+        navigationController?.pushViewController(quizQuestionViewController, animated: true)
     }
 }

@@ -26,7 +26,7 @@ class ClasseProvider {
                 
                 let json = JSON(response.result.value)
                 
-                for (index,subJson):(String, JSON) in json {
+                for (_, subJson):(String, JSON) in json {
                     classeList.append(Classe(json: subJson))
                 }
                 

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizPresentationViewController" customModule="ESGI_Pocket" customModuleProvider="target">
             <connections>
+                <outlet property="authorNameLabel" destination="BAm-mz-mca" id="8xH-YE-eTT"/>
                 <outlet property="quizNameLabel" destination="kOC-Nu-sJD" id="nJ2-nz-Xuf"/>
                 <outlet property="statsLabel" destination="DyO-hB-YWn" id="rux-eZ-q0t"/>
                 <outlet property="topicNameLabel" destination="B8i-Gy-BCk" id="l2X-zp-izM"/>
@@ -70,7 +71,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StatsForUser" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyO-hB-YWn">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fonctionnalités à venir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyO-hB-YWn">
                     <rect key="frame" x="57.5" y="464.5" width="260" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="Efj-OD-Ji8"/>
@@ -80,12 +81,27 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crée par :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIu-Gg-hIa">
+                    <rect key="frame" x="149.5" y="187" width="75" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="authorName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAm-mz-mca">
+                    <rect key="frame" x="139.5" y="228" width="95" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="BNA-JL-Uyw" firstAttribute="top" secondItem="Gmp-A7-Pw7" secondAttribute="bottom" constant="60" id="442-lA-Q0A"/>
+                <constraint firstItem="BAm-mz-mca" firstAttribute="top" secondItem="fIu-Gg-hIa" secondAttribute="bottom" constant="20" id="8tg-ot-r6g"/>
                 <constraint firstItem="N2c-zn-8f0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="96A-ge-0AR"/>
                 <constraint firstItem="Gmp-A7-Pw7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="H1Z-eW-qW6"/>
+                <constraint firstItem="BAm-mz-mca" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Iw2-lN-wYL"/>
+                <constraint firstItem="fIu-Gg-hIa" firstAttribute="top" secondItem="kOC-Nu-sJD" secondAttribute="bottom" constant="25" id="Kmx-co-wdd"/>
                 <constraint firstItem="kOC-Nu-sJD" firstAttribute="top" secondItem="B8i-Gy-BCk" secondAttribute="bottom" constant="30" id="M9U-xH-Dy9"/>
                 <constraint firstItem="B8i-Gy-BCk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MXw-Be-QQa"/>
                 <constraint firstItem="BNA-JL-Uyw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Wvj-cH-mae"/>
@@ -94,6 +110,7 @@
                 <constraint firstItem="N2c-zn-8f0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="gOb-df-VhT"/>
                 <constraint firstItem="YRK-kB-7p7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ldk-OI-5Pn"/>
                 <constraint firstItem="DyO-hB-YWn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qxo-R7-CH5"/>
+                <constraint firstItem="fIu-Gg-hIa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sVP-45-CcC"/>
                 <constraint firstItem="DyO-hB-YWn" firstAttribute="top" secondItem="BNA-JL-Uyw" secondAttribute="bottom" constant="30" id="uOd-Xi-jB9"/>
                 <constraint firstItem="YRK-kB-7p7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="uS0-Mv-hOk"/>
                 <constraint firstItem="Gmp-A7-Pw7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vOA-Gk-4eH"/>

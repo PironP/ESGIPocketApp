@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.welcomeLabel.text = "Bonjour " + CurrentUser.currentUser.firstname.capitalized + "," + CurrentUser.currentUser.lastname.capitalized
+        self.welcomeLabel.text = "Bonjour " + CurrentUser.currentUser.firstname.capitalized + " " + CurrentUser.currentUser.lastname.capitalized + ","
         
         self.nextClassView.isHidden = true
         loadNextClass()
