@@ -28,7 +28,7 @@ class PlanningProvider {
                 
                 planningList = self.sortPlanningsByMostRecent(planningList: planningList)
                 
-                for (index,subJson):(String, JSON) in json {
+                for (_, subJson):(String, JSON) in json {
                     if (subJson["class"].stringValue == idClass) {
                         planningList.append(Planning(json: subJson))
                     }

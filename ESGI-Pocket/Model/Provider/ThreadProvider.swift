@@ -27,7 +27,7 @@ class DiscussionProvider {
                 
                 let json = JSON(response.result.value)
                 
-                for (index,subJson):(String, JSON) in json {
+                for (_, subJson):(String, JSON) in json {
                     discussionList.append(Thread(json: subJson))
                 }
                 callback(discussionList)

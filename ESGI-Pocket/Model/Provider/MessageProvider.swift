@@ -26,7 +26,7 @@ class MessageProvider {
             
                 let json = JSON(response.result.value)
                 
-                for (index,subJson):(String, JSON) in json {
+                for (_, subJson):(String, JSON) in json {
                     messageList.append(Message(json: subJson))
                 }
                 callback(messageList)
@@ -77,7 +77,7 @@ class MessageProvider {
                 
                 let json = JSON(response.result.value)
                 
-                for (index,subJson):(String, JSON) in json {
+                for (_, subJson):(String, JSON) in json {
                     messageList.append(Message(json: subJson))
                 }
                 
@@ -103,7 +103,7 @@ class MessageProvider {
                 
                 let json = JSON(response.result.value)
                 
-                for (index,subJson):(String, JSON) in json {
+                for (_, subJson):(String, JSON) in json {
                     messageList.append(Message(json: subJson))
                 }
                 

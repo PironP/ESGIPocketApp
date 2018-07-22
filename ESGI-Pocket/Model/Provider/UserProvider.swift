@@ -29,7 +29,7 @@ class UserProvider {
                 
                 let json = JSON(response.result.value)
                 
-                for (index,subJson):(String, JSON) in json {
+                for (_, subJson):(String, JSON) in json {
                     userList.append(User(json: subJson))
                 }
                 callback(userList)

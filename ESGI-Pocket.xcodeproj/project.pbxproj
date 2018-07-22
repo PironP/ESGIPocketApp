@@ -19,10 +19,11 @@
 		E804693820A984E200F4F643 /* ClasseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804693720A984E200F4F643 /* ClasseProvider.swift */; };
 		E809FCE120D6CB42008DB88A /* TopicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE020D6CB42008DB88A /* TopicProvider.swift */; };
 		E809FCE520D6FCC9008DB88A /* MessageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE420D6FCC9008DB88A /* MessageProvider.swift */; };
-		E809FCE720D6FD48008DB88A /* QuestionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE620D6FD48008DB88A /* QuestionProvider.swift */; };
 		E809FCE920D6FD78008DB88A /* CourseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCE820D6FD78008DB88A /* CourseProvider.swift */; };
 		E809FCEC20D700B0008DB88A /* TopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E809FCEA20D700B0008DB88A /* TopicViewController.swift */; };
 		E809FCED20D700B0008DB88A /* TopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E809FCEB20D700B0008DB88A /* TopicViewController.xib */; };
+		E810B20620F34B8700167F7D /* QuizPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E810B20420F34B8600167F7D /* QuizPresentationViewController.swift */; };
+		E810B20720F34B8700167F7D /* QuizPresentationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E810B20520F34B8700167F7D /* QuizPresentationViewController.xib */; };
 		E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */; };
 		E816614E20D7A3AE001BB754 /* DiscussionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E816614C20D7A3AE001BB754 /* DiscussionViewController.xib */; };
 		E831FF2420A1DA5500EC1927 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831FF2220A1DA5500EC1927 /* LoginViewController.swift */; };
@@ -43,6 +44,8 @@
 		E85171BE20DA575E00069C03 /* PlanningProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85171BD20DA575E00069C03 /* PlanningProvider.swift */; };
 		E8594F5720AD5D2600C3510B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8594F5520AD5D2600C3510B /* MessageViewCell.swift */; };
 		E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8594F5620AD5D2600C3510B /* MessageViewCell.xib */; };
+		E85A0C6520F51FBC00B671CB /* QuizQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0C6320F51FBC00B671CB /* QuizQuestionViewController.swift */; };
+		E85A0C6620F51FBC00B671CB /* QuizQuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85A0C6420F51FBC00B671CB /* QuizQuestionViewController.xib */; };
 		E85A0C6F20F60FD200B671CB /* CourseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */; };
 		E85A0C7020F60FD200B671CB /* CourseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85A0C6E20F60FD200B671CB /* CourseViewCell.xib */; };
 		E85A0C7320F642A300B671CB /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A0C7120F642A300B671CB /* LessonViewController.swift */; };
@@ -64,6 +67,9 @@
 		E88F793B20ACCC6600368E48 /* PlanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88F793920ACCC6600368E48 /* PlanningViewController.xib */; };
 		E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */; };
 		E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */; };
+		E8C6767021039F2C007DA2E1 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6766F21039F2C007DA2E1 /* Answer.swift */; };
+		E8C6767321047111007DA2E1 /* QuizEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C6767121047111007DA2E1 /* QuizEndViewController.swift */; };
+		E8C6767421047111007DA2E1 /* QuizEndViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8C6767221047111007DA2E1 /* QuizEndViewController.xib */; };
 		E8EAB3F22102328700514D83 /* PlanningItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAB3F12102328700514D83 /* PlanningItem.swift */; };
 		E8EAB3F521023F7E00514D83 /* PlanningViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAB3F321023F7E00514D83 /* PlanningViewCell.swift */; };
 		E8EAB3F621023F7E00514D83 /* PlanningViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8EAB3F421023F7E00514D83 /* PlanningViewCell.xib */; };
@@ -88,10 +94,11 @@
 		E804693720A984E200F4F643 /* ClasseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClasseProvider.swift; sourceTree = "<group>"; };
 		E809FCE020D6CB42008DB88A /* TopicProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicProvider.swift; sourceTree = "<group>"; };
 		E809FCE420D6FCC9008DB88A /* MessageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProvider.swift; sourceTree = "<group>"; };
-		E809FCE620D6FD48008DB88A /* QuestionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionProvider.swift; sourceTree = "<group>"; };
 		E809FCE820D6FD78008DB88A /* CourseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProvider.swift; sourceTree = "<group>"; };
 		E809FCEA20D700B0008DB88A /* TopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicViewController.swift; sourceTree = "<group>"; };
 		E809FCEB20D700B0008DB88A /* TopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicViewController.xib; sourceTree = "<group>"; };
+		E810B20420F34B8600167F7D /* QuizPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresentationViewController.swift; sourceTree = "<group>"; };
+		E810B20520F34B8700167F7D /* QuizPresentationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizPresentationViewController.xib; sourceTree = "<group>"; };
 		E816614B20D7A3AE001BB754 /* DiscussionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionViewController.swift; sourceTree = "<group>"; };
 		E816614C20D7A3AE001BB754 /* DiscussionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscussionViewController.xib; sourceTree = "<group>"; };
 		E831FF2220A1DA5500EC1927 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +119,8 @@
 		E85171BD20DA575E00069C03 /* PlanningProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningProvider.swift; sourceTree = "<group>"; };
 		E8594F5520AD5D2600C3510B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		E8594F5620AD5D2600C3510B /* MessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewCell.xib; sourceTree = "<group>"; };
+		E85A0C6320F51FBC00B671CB /* QuizQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewController.swift; sourceTree = "<group>"; };
+		E85A0C6420F51FBC00B671CB /* QuizQuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizQuestionViewController.xib; sourceTree = "<group>"; };
 		E85A0C6D20F60FD200B671CB /* CourseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewCell.swift; sourceTree = "<group>"; };
 		E85A0C6E20F60FD200B671CB /* CourseViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseViewCell.xib; sourceTree = "<group>"; };
 		E85A0C7120F642A300B671CB /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +142,9 @@
 		E88F793920ACCC6600368E48 /* PlanningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanningViewController.xib; sourceTree = "<group>"; };
 		E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
+		E8C6766F21039F2C007DA2E1 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		E8C6767121047111007DA2E1 /* QuizEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEndViewController.swift; sourceTree = "<group>"; };
+		E8C6767221047111007DA2E1 /* QuizEndViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizEndViewController.xib; sourceTree = "<group>"; };
 		E8EAB3F12102328700514D83 /* PlanningItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningItem.swift; sourceTree = "<group>"; };
 		E8EAB3F321023F7E00514D83 /* PlanningViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningViewCell.swift; sourceTree = "<group>"; };
 		E8EAB3F421023F7E00514D83 /* PlanningViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanningViewCell.xib; sourceTree = "<group>"; };
@@ -212,6 +224,7 @@
 		E810B20220F2465F00167F7D /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				E8C6766F21039F2C007DA2E1 /* Answer.swift */,
 				E8445D7920D977AC00F1631E /* Classe.swift */,
 				E8445D7720D9771800F1631E /* Course.swift */,
 				E8F3130020AB60910016D511 /* CurrentUser.swift */,
@@ -237,7 +250,6 @@
 				E804693120A32EE900F4F643 /* Login.swift */,
 				E809FCE420D6FCC9008DB88A /* MessageProvider.swift */,
 				E85171BD20DA575E00069C03 /* PlanningProvider.swift */,
-				E809FCE620D6FD48008DB88A /* QuestionProvider.swift */,
 				E83CF92620C45E5300758D0C /* QuizProvider.swift */,
 				E8F3130220AB69870016D511 /* ThreadProvider.swift */,
 				E809FCE020D6CB42008DB88A /* TopicProvider.swift */,
@@ -261,7 +273,10 @@
 				E8594F5520AD5D2600C3510B /* MessageViewCell.swift */,
 				E8EAB3F321023F7E00514D83 /* PlanningViewCell.swift */,
 				E88F793820ACCC6600368E48 /* PlanningViewController.swift */,
+				E8C6767121047111007DA2E1 /* QuizEndViewController.swift */,
 				E88F793420ACCC3100368E48 /* QuizListViewController.swift */,
+				E810B20420F34B8600167F7D /* QuizPresentationViewController.swift */,
+				E85A0C6320F51FBC00B671CB /* QuizQuestionViewController.swift */,
 				E804693320A9827900F4F643 /* SelectClassViewController.swift */,
 				E831FF2620A1E21000EC1927 /* SignUpViewController.swift */,
 				E8A13AF220AAE19700717121 /* SplashScreenViewController.swift */,
@@ -286,7 +301,10 @@
 				E8594F5620AD5D2600C3510B /* MessageViewCell.xib */,
 				E8EAB3F421023F7E00514D83 /* PlanningViewCell.xib */,
 				E88F793920ACCC6600368E48 /* PlanningViewController.xib */,
+				E8C6767221047111007DA2E1 /* QuizEndViewController.xib */,
 				E88F793520ACCC3100368E48 /* QuizListViewController.xib */,
+				E810B20520F34B8700167F7D /* QuizPresentationViewController.xib */,
+				E85A0C6420F51FBC00B671CB /* QuizQuestionViewController.xib */,
 				E804693420A9827900F4F643 /* SelectClassViewController.xib */,
 				E831FF2720A1E21000EC1927 /* SignUpViewController.xib */,
 				E8A13AF320AAE19700717121 /* SplashScreenViewController.xib */,
@@ -364,7 +382,9 @@
 				E88F792F20ACCBA100368E48 /* DiscussionsListViewController.xib in Resources */,
 				E8594F5820AD5D2600C3510B /* MessageViewCell.xib in Resources */,
 				E804692F20A32C3100F4F643 /* HomeViewController.xib in Resources */,
+				E810B20720F34B8700167F7D /* QuizPresentationViewController.xib in Resources */,
 				E88F793B20ACCC6600368E48 /* PlanningViewController.xib in Resources */,
+				E85A0C6620F51FBC00B671CB /* QuizQuestionViewController.xib in Resources */,
 				E8013CA8209334ED002FF92C /* LaunchScreen.storyboard in Resources */,
 				E809FCED20D700B0008DB88A /* TopicViewController.xib in Resources */,
 				E8013CA5209334ED002FF92C /* Assets.xcassets in Resources */,
@@ -373,6 +393,7 @@
 				E804693620A9827900F4F643 /* SelectClassViewController.xib in Resources */,
 				E8A13AF520AAE19700717121 /* SplashScreenViewController.xib in Resources */,
 				E85A0C7420F642A300B671CB /* LessonViewController.xib in Resources */,
+				E8C6767421047111007DA2E1 /* QuizEndViewController.xib in Resources */,
 				E8EAB3F621023F7E00514D83 /* PlanningViewCell.xib in Resources */,
 				E88F793720ACCC3100368E48 /* QuizListViewController.xib in Resources */,
 			);
@@ -438,6 +459,7 @@
 				E85A0C6F20F60FD200B671CB /* CourseViewCell.swift in Sources */,
 				E8445D6E20D974EC00F1631E /* Topic.swift in Sources */,
 				E8A13AF420AAE19700717121 /* SplashScreenViewController.swift in Sources */,
+				E8C6767021039F2C007DA2E1 /* Answer.swift in Sources */,
 				E8445D7620D975F500F1631E /* User.swift in Sources */,
 				E88F793220ACCBEA00368E48 /* MessagesListViewController.swift in Sources */,
 				E8EAB3F22102328700514D83 /* PlanningItem.swift in Sources */,
@@ -447,13 +469,13 @@
 				E8445D7820D9771800F1631E /* Course.swift in Sources */,
 				E85171BA20DA40FC00069C03 /* Thread.swift in Sources */,
 				E809FCEC20D700B0008DB88A /* TopicViewController.swift in Sources */,
+				E85A0C6520F51FBC00B671CB /* QuizQuestionViewController.swift in Sources */,
 				E804693820A984E200F4F643 /* ClasseProvider.swift in Sources */,
 				E8445D7420D975E300F1631E /* Message.swift in Sources */,
 				E816614D20D7A3AE001BB754 /* DiscussionViewController.swift in Sources */,
 				E88F793620ACCC3100368E48 /* QuizListViewController.swift in Sources */,
 				E870CCBD20DA8E4B0078FD3A /* RoundedView.swift in Sources */,
 				E809FCE920D6FD78008DB88A /* CourseProvider.swift in Sources */,
-				E809FCE720D6FD48008DB88A /* QuestionProvider.swift in Sources */,
 				E831FF2820A1E21000EC1927 /* SignUpViewController.swift in Sources */,
 				E88F793A20ACCC6600368E48 /* PlanningViewController.swift in Sources */,
 				E85171BE20DA575E00069C03 /* PlanningProvider.swift in Sources */,
@@ -464,7 +486,9 @@
 				E8445D7220D975AB00F1631E /* Question.swift in Sources */,
 				E8445D7A20D977AC00F1631E /* Classe.swift in Sources */,
 				E8F3130120AB60910016D511 /* CurrentUser.swift in Sources */,
+				E810B20620F34B8700167F7D /* QuizPresentationViewController.swift in Sources */,
 				E8445D7020D9756F00F1631E /* Quiz.swift in Sources */,
+				E8C6767321047111007DA2E1 /* QuizEndViewController.swift in Sources */,
 				E809FCE520D6FCC9008DB88A /* MessageProvider.swift in Sources */,
 				E804692E20A32C3100F4F643 /* HomeViewController.swift in Sources */,
 				E88F792A20ACCB2800368E48 /* LessonsListViewController.swift in Sources */,

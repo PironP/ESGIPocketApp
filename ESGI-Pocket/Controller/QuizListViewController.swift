@@ -20,16 +20,19 @@ class QuizListViewController: UIViewController {
         super.viewDidLoad()
 
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.isHidden = true
         self.tableView.tableFooterView = UIView()
         
         let quizProvider = QuizProvider()
-        quizProvider.getQuiz(callback: { response in
+        quizProvider.getQuizzes(callback: { response in
             if response.count == 0 {
                 self.noQuizLabel.isHidden = false
                 return
             }
-            self.quizList = response
+            self.quizList = response.filter({ (quiz) -> Bool in
+                quiz.topic.id == self.idTopic
+            })
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
@@ -56,10 +59,22 @@ extension QuizListViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "quizCell") ?? UITableViewCell(style: .default, reuseIdentifier: "quizCell")
         cell.textLabel?.text = self.quizList[indexPath.row].name
         
         return cell
+ 
     }
         
+}
+
+extension QuizListViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let quizPresentationView = QuizPresentationViewController()
+        quizPresentationView.quiz = quizList[indexPath.row]
+        navigationController?.pushViewController(quizPresentationView, animated: true)
+        
+    }
+    
 }
