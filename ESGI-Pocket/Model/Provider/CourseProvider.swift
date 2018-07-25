@@ -24,9 +24,9 @@ class CourseProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
-                for (index,subJson):(String, JSON) in json {
+                for (_,subJson):(String, JSON) in json {
                     coursesList.append(Course(json: subJson))
                 }
                 
@@ -49,7 +49,7 @@ class CourseProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 
                 callback(json)

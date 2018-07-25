@@ -24,7 +24,7 @@ class PlanningProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 planningList.append(Planning(json: json))
                 callback(planningList)

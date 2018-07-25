@@ -24,7 +24,7 @@ class QuizProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 for (_,subJson):(String, JSON) in json {
                     quizList.append(Quiz(json: subJson))
@@ -49,7 +49,8 @@ class QuizProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
+
                 
                 for (_, subJson):(String, JSON) in json {
                     questionList.append(Question(json: subJson))
@@ -75,7 +76,7 @@ class QuizProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 for (_,subJson):(String, JSON) in json {
                     questionList.append(Question(json: subJson))
@@ -100,7 +101,7 @@ class QuizProvider {
             var answserList: [Answer] = []
             
             if response.result.isSuccess {
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 for (_, subJson):(String, JSON) in json {
                     answserList.append(Answer(json: subJson))

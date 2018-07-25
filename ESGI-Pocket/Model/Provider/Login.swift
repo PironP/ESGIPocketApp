@@ -46,12 +46,11 @@ class Login {
             if (json["user"]["class"].exists()) {
                 var topicList: [Topic] = []
                 
-                for (index,subJson):(String, JSON) in json["user"]["class"]["topics"] {
+                for (_,subJson):(String, JSON) in json["user"]["class"]["topics"] {
                     topicList.append(Topic(json: subJson))
                 }
                 CurrentUser.currentUser.classe?.topics = topicList
             }
-            let user = CurrentUser.currentUser;
             callback(Response(statusCode: 200))
         }
     
@@ -115,7 +114,7 @@ class Login {
             }
             
             guard let json = response.result.value,
-                let jsonData = json as? [String : Any] else {
+                let _ = json as? [String : Any] else {
                     callback(false)
                     return
             }

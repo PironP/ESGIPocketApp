@@ -27,7 +27,7 @@ class UserProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 for (_, subJson):(String, JSON) in json {
                     userList.append(User(json: subJson))
@@ -61,7 +61,7 @@ class UserProvider {
                 return
             }
             
-            let json = JSON(response.value)
+            let json = JSON(response.value!)
             
             CurrentUser.currentUser.classe = Classe(json: json)
             

@@ -25,7 +25,7 @@ class DiscussionProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 for (_, subJson):(String, JSON) in json {
                     discussionList.append(Thread(json: subJson))

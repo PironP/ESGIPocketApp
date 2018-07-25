@@ -24,7 +24,7 @@ class MessageProvider {
             
             if response.result.isSuccess {
             
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 for (_, subJson):(String, JSON) in json {
                     messageList.append(Message(json: subJson))
@@ -75,7 +75,7 @@ class MessageProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 for (_, subJson):(String, JSON) in json {
                     messageList.append(Message(json: subJson))
@@ -101,7 +101,7 @@ class MessageProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 for (_, subJson):(String, JSON) in json {
                     messageList.append(Message(json: subJson))

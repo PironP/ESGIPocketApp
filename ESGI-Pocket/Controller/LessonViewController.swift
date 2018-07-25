@@ -25,6 +25,8 @@ class LessonViewController: UIViewController {
         courseTitle.text = course.title
         getVote()
         
+        courseAuthor.text = course.authorName
+        
         if let courseUrl = course.url {
             let url: URL = URL(string: courseUrl)!
             let request = URLRequest(url: url)
@@ -32,7 +34,7 @@ class LessonViewController: UIViewController {
             return
         }
         if let courseContent = course.content {
-            // TO DO
+            
             webView.isHidden = true
             return
         }

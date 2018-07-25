@@ -24,7 +24,7 @@ class ClasseProvider {
             
             if response.result.isSuccess {
                 
-                let json = JSON(response.result.value)
+                let json = JSON(response.result.value!)
                 
                 for (_, subJson):(String, JSON) in json {
                     classeList.append(Classe(json: subJson))

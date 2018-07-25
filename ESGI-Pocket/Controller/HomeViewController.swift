@@ -111,8 +111,7 @@ class HomeViewController: UIViewController {
         }
         
         CurrentUser.currentUser.jwt = ""
-        
-        let loginView = LoginViewController()
+
         navigationController?.popViewController(animated: true)
     }
 }
