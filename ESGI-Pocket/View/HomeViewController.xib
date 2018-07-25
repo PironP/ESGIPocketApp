@@ -59,25 +59,26 @@
                         <constraint firstAttribute="height" constant="60" id="mJH-8V-bee"/>
                     </constraints>
                     <items>
-                        <barButtonItem image="nav-quiz" width="55" style="plain" id="bqL-Sg-8Zb">
+                        <barButtonItem image="nav-quiz" width="80" style="plain" id="bqL-Sg-8Zb">
                             <connections>
                                 <action selector="navigationButtonPressed:" destination="-1" id="5v1-8q-DgC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jiL-sA-Djz"/>
+                        <barButtonItem width="30" style="plain" systemItem="flexibleSpace" id="jiL-sA-Djz"/>
                         <barButtonItem tag="1" image="nav-courses" width="55" style="plain" id="vo4-tw-j4M">
                             <connections>
                                 <action selector="navigationButtonPressed:" destination="-1" id="rdV-Mq-a4X"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="DJt-JI-XKX"/>
+                        <barButtonItem width="30" style="plain" systemItem="flexibleSpace" id="DJt-JI-XKX"/>
                         <barButtonItem tag="2" image="nav-chat" width="55" style="plain" id="HKR-HA-eWx">
+                            <inset key="largeContentSizeImageInsets" minX="0.0" minY="-2" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="navigationButtonPressed:" destination="-1" id="8O2-vC-WXC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="F28-KG-odh"/>
-                        <barButtonItem tag="3" image="nav-planning" width="55" style="plain" id="jTg-KI-Cks">
+                        <barButtonItem width="30" style="plain" systemItem="flexibleSpace" id="F28-KG-odh"/>
+                        <barButtonItem tag="3" image="nav-planning" width="80" style="plain" id="jTg-KI-Cks">
                             <connections>
                                 <action selector="navigationButtonPressed:" destination="-1" id="84x-nm-XgO"/>
                             </connections>

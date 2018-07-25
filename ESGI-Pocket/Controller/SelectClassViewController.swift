@@ -57,6 +57,7 @@ class SelectClassViewController: UIViewController {
         let userProvider = UserProvider()
         userProvider.selectClassForUser(idClass: classe.id, idUser: CurrentUser.currentUser.id) { (response) in
             if response {
+                CurrentUser.currentUser.jwt = ""
                 self.navigationController?.popViewController(animated: true)
             }
         }

@@ -49,10 +49,10 @@ class TopicViewController: UIViewController {
     func loadAllTopics() {
         let topicProvider = TopicProvider()
         topicProvider.getAllTopics(callback: { response in
+            self.topics = response
             if response.count == 0 {
                 return
             }
-            self.topics = response
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.tableView.isHidden = false

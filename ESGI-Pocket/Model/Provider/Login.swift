@@ -43,12 +43,15 @@ class Login {
             
             CurrentUser.currentUser.setValue(json: json)
             
-            var topicList: [Topic] = []
-            
-            for (index,subJson):(String, JSON) in json["user"]["class"]["topics"] {
-                topicList.append(Topic(json: subJson))
+            if (json["user"]["class"].exists()) {
+                var topicList: [Topic] = []
+                
+                for (index,subJson):(String, JSON) in json["user"]["class"]["topics"] {
+                    topicList.append(Topic(json: subJson))
+                }
+                CurrentUser.currentUser.classe?.topics = topicList
             }
-            CurrentUser.currentUser.classe?.topics = topicList
+            let user = CurrentUser.currentUser;
             callback(Response(statusCode: 200))
         }
     

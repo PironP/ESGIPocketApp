@@ -64,7 +64,7 @@ class SignUpViewController: UIViewController {
                     CurrentUser.currentUser.email = email
                     let confirmEmailViewController = ConfirmEmailViewController()
                     confirmEmailViewController.userId = response
-                    
+                    self.navigationController?.popViewController(animated: true)
                     self.navigationController?.pushViewController(confirmEmailViewController, animated: true)
                 }
             })

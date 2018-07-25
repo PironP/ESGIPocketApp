@@ -26,14 +26,16 @@ class QuizListViewController: UIViewController {
         
         let quizProvider = QuizProvider()
         quizProvider.getQuizzes(callback: { response in
-            if response.count == 0 {
-                self.noQuizLabel.isHidden = false
-                return
-            }
+
             self.quizList = response.filter({ (quiz) -> Bool in
                 quiz.topic.id == self.idTopic
             })
+            
             DispatchQueue.main.async {
+                if self.quizList.count == 0 {
+                    self.noQuizLabel.isHidden = false
+                    return
+                }
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
             }
