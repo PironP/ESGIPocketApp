@@ -46,9 +46,6 @@ class ConfirmEmailViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
 
             }
-            else {
-                // Show error message : " Validation  code is not correct"
-            }
         })
         
     }

@@ -110,9 +110,6 @@ extension LessonsListViewController: UITableViewDataSource{
 extension LessonsListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        if let url = URL(string: self.courses[indexPath.row].content) {
-//            UIApplication.shared.open(url)
-//        }
         let lessonView = LessonViewController()
         lessonView.course = self.courses[indexPath.row]
         navigationController?.pushViewController(lessonView, animated: true)
